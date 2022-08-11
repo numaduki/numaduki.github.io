@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome | ユーザーマニュアル - nu</title>
+<link rel="stylesheet" type="text/css" href="../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../index.html"><img src="../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../all/index.html">全カテゴリ</a></li>
+							<li><a href="../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="date">last update: 2022/06/19</p>
+			</div>
+			<h2 class="articleheading"><a href="../sinonome/01-basic.html">sinonome / ユーザーマニュアル</a></h2>
+		</div>
+		<div class="subnav">
+			<ul><li><a href="#c_file">ファイル</a></li><li><a href="#c_setting">基本設定</a></li><li><a href="#c_entry">記事を書く</a></li><li><a href="#c_page">ページを書く</a></li><li><a href="#c_filemeta">ファイルごとのメタ情報を書く</a></li><li><a href="#c_body">本文の記法について</a></li></ul>
+		</div>
+		<div class="body">
+			<h3 class="heading1" id="c_file">ファイル</h3>
+<p>主要なファイルやディレクトリについて、解説します。</p>
+<p><strong>sino.exe</strong><br />
+実行ファイルです。これを実行することで、ウェブサイトを出力します。</p>
+<p><strong>\profiles\default</strong><br />
+記事のテキストや画像ファイル等、あなたが用意するデータを入れるディレクトリです。<br />
+中には既にサンプルのデータが入っています。</p>
+<p><strong>\themes</strong>（ディレクトリ）<br />
+テーマを格納するディレクトリです。<br />
+中にはサンプルのテーマ（<strong>\sample-blog</strong>）が入っています。</p>
+<p>当マニュアルでは、</p>
+<ul>
+<li>ユーザーマニュアル: \profiles\default 内のファイルを編集し、ウェブサイトを出力する方法</li>
+<li>開発マニュアル: \themes 内に、独自のテーマを作る方法</li>
+</ul>
+<p>について解説します。</p>
+<h3 class="heading1" id="c_setting">基本設定</h3>
+<p>\profiles\default 内の settings.txt で、基本の設定を行います。<br />
+「キー, 値」のフォーマットで書いていきます。<br />
+カンマの後ろには半角スペースが必要ですのでご注意ください。</p>
+<p><strong>sitetitle</strong>,<br />
+サイト名</p>
+<p><strong>sitedescription</strong>,<br />
+サイトの概要</p>
+<p><strong>siteauthor</strong>,<br />
+サイトの作者</p>
+<p><strong>template_directory</strong>, default<br />
+使用するテンプレートのディレクトリ名</p>
+<p><strong>output_directory</strong>, sitefile\<br />
+サイトファイル一式を出力するパス<br />
+（相対パスで指定し、最後は必ず \ で終わるようにします）<br />
+（上のディレクトリ「..\」は指定しないようにしてください）</p>
+<p><strong>output_skipifnotchange</strong>, 1<br />
+出力結果に変化がない場合は出力しない<br />
+0→出力する 1→出力しない</p>
+<p><strong>archive_autosplit_entrycount</strong>, 10<br />
+記事アーカイブの1ページあたりの記事数</p>
+<p><strong>public_html_url</strong>,<br />
+実際に公開するURL</p>
+<p><strong>remove_blankline</strong>, 1<br />
+空行がある場合、削除するかどうか<br />
+0→そのまま残す 1→削除する</p>
+<h3 class="heading1" id="c_entry">記事を書く</h3>
+<h4 class="heading2">タイトルと本文を書く</h4>
+<p>記事は、\profiles\default\entries 内の entry.md というファイルに書きます。<br />
+ファイル入力のフォーマットは以下の通りです。</p>
+<pre><code class="md"># ひなまつり
+
+今日はひなまつりです。
+この歳になってはもう関係ないな。
+
+甘酒ではなくストロングゼロ飲んで寝る。
+</code></pre>
+<p>まず、タイトルを<code>#</code>の後に書きます。</p>
+<p>その次の行から、本文を入力します。<br />
+なお、テキストのみを書く場合は、HTMLタグを入力する必要はありません。<br />
+上記の例の本文は、以下のようなHTMLに自動で変換されます。</p>
+<pre><code class="html">&lt;p&gt;
+今日はひなまつりです。&lt;br&gt;
+この歳になってはもう関係ないな。
+&lt;/p&gt;
+&lt;p&gt;
+甘酒ではなくストロングゼロ飲んで寝る。
+&lt;/p&gt;
+</code></pre>
+<p>なお、タイトルの頭に<code>(draft)</code>と書くと、その記事は下書き扱いになります。<br />
+下書きの記事は、sinonomeに読み込まれません。</p>
+<h4 class="heading2">メタ情報を書く</h4>
+<p>しかしこのままでは、ブログ記事の「投稿日時」がわかりません。<br /></p>
+<p>そこで、タイトルの次の行に、<code>&lt;!-- ～ --&gt;</code>で囲んで、この記事の情報を記述します。<br />
+記事のタイトルと本文ではない、それ以外の情報をメタ情報といいます。</p>
+<pre><code class="md"># ひなまつり
+
+&lt;!--
+DATE: 2020-03-03
+OUTPUTPATH: hinamaturi2020
+--&gt;
+
+今日はひなまつりです。
+この歳になってはもう関係ないな。
+
+甘酒ではなくストロングゼロ飲んで寝る。
+</code></pre>
+<p>DATEは、記事の年月日です。<br />
+OUTPUTPATHは、このブログ内での、この記事のIDです。</p>
+<p>これらは、必要なものだけ書けばいいです。<br />
+<code>DATE</code>を入力しなかった場合は、sinonomeが処理を行った時点の日時が使用されます。<br />
+<code>OUTPUTPATH</code>を入力しなかった場合は、適当な数字が割り振られます。</p>
+<p><code>DATE</code>は「年4桁-月2桁-日2桁」もしくは「年4桁-月2桁-日2桁 時2桁:分2桁:秒2桁」のフォーマットで書いてください。<br />
+これ以外のフォーマットで書いた場合は、未入力とみなされます。</p>
+<h4 class="heading2">画像を使う</h4>
+<p>本文に画像を表示する場合、まず画像を <strong>\profiles\default 内の \files ディレクトリ</strong>に入れます。</p>
+<p>そして通常通り、HTMLタグ（imgタグ）、またはMarkdown（後述）で入れ込みます。<br />
+ただし通常と違うのは、ファイルパスに{root}を使用するという点です。</p>
+<pre><code class="md">&lt;img src="{root}logo.png" alt="ロゴ画像"&gt;
+または
+![ロゴ画像]({root}logo.png)
+</code></pre>
+<p>{root}は、ページの出力ディレクトリの階層に合わせて、相対パスに置き換えられます。<br />
+{root}を書かないと、トップページ以外でうまく画像が読み込まれませんので、注意してください。</p>
+<h4 class="heading2">複数の記事を書く</h4>
+<p>記事は、先ほど説明したフォーマットを繰り返し書いて、いくつでも書けます。<br />
+新しい記事は、<strong>上に追記</strong>していってください。</p>
+<p>つまり、以下のようになります。<br /></p>
+<pre><code class="md"># こどもの日
+
+&lt;!--
+DATE: 2020-05-05
+OUTPUTPATH: kodomo2020
+--&gt;
+
+今日は晴れ。こどもの日です。
+
+長崎では鯉の形の生菓子を食べます。  
+甘くておいしい。
+
+# エイプリルフール
+
+&lt;!--
+DATE: 2020-04-01
+OUTPUTPATH: aprilfool2020
+--&gt;
+
+今日はエイプリルフールです。
+
+大村公園は桜が満開です。  
+缶ビール持って花見に行こうかな。
+
+# ひなまつり
+
+&lt;!--
+DATE: 2020-03-03
+OUTPUTPATH: hinamaturi2020
+--&gt;
+
+今日はひなまつりです。  
+この歳になってはもう関係ないな。
+
+甘酒ではなくストロングゼロ飲んで寝る。
+
+（..以下、繰り返し）
+</code></pre>
+<p>この例ではタイトル・メタ情報・本文の間に空行を1行入れていますが、空行は好きなだけ入れて構いません。</p>
+<h4 class="heading2">記事にタグをつける</h4>
+<p>各記事に、タグを付けることができます。<br />
+sinonome では、使用するタグはあらかじめ \profiles\default ディレクトリ内の tags.txt に記述しておきます。</p>
+<pre><code class="text">科学,science
+宇宙,universe
+思想・宗教,thought-religion
+生活,life
+音楽,music
+文学,literature
+スポーツ,sport
+サブカルチャー,subculture
+食べ物,food
+</code></pre>
+<p>「タグ名,タグID」で1行ずつ入力します。<br />
+タグIDは半角英数記号で入力してください。<br />
+このフォーマットの都合上、タグ名やタグIDに半角カンマ「,」を含めることはできません。</p>
+<p>あとは、タグを付けたい記事のメタ情報領域に「TAG: タグ名」のフォーマットで書くだけです。<br />
+カンマで区切って、複数付けることができます。<br />
+tags.txt に書いた順序で書く必要はありません。</p>
+<pre><code class="md"># クリスマスイブ
+
+&lt;!--
+DATE: 2020-12-24
+OUTPUTPATH: xmaseve-2020
+TAG: 生活,食べ物
+--&gt;
+
+（..本文）
+</code></pre>
+<p>記事にタグを付けると、同じタグを付けた記事の一覧を表示することができます。</p>
+<h3 class="heading1" id="c_page">ページを書く</h3>
+<p>sinonome は、記事だけではなく、ページも作成することができます。<br />
+ページは記事と違い、上部に表示されるメニューからアクセスできますので、ブログの説明や、著者のプロフィールなどを記載するのに向いています。</p>
+<p>ページの内容は、\profiles\default\webpages 内の page.md ファイルに入力します。<br />
+フォーマットは以下の通り。</p>
+<pre><code class="md"># このブログについて
+
+&lt;!--
+OUTPUTPATH: about-blog
+--&gt;
+
+このブログはサンプルブログです。  
+ごゆっくりご覧ください。
+
+# 作者について
+
+&lt;!--
+OUTPUTPATH: about-author
+--&gt;
+
+作者は猫である。名前はまだない。  
+メールアドレスもない。ないないばっかでキリがない。
+
+（..以下、繰り返し）
+</code></pre>
+<p>基本的には、記事の書き方と全く同じです。</p>
+<h3 class="heading1" id="c_filemeta">ファイルごとのメタ情報を書く</h3>
+<p>各記事、各ウェブページにメタ情報を記述できるのは述べた通りですが、それらを記述する「記事ファイル」や「ウェブページファイル」にも、メタ情報を入力することができます。</p>
+<p>サンプルテーマを使用する場合、書く必要はありません。<br />
+ただし、テーマによってはここに内容を記述することがあります。<br /></p>
+<p>ファイルのメタ情報も、<code>&lt;!-- --&gt;</code>（HTMLのコメントアウト）で囲んで入力します。<br />
+書く場所は、ファイルの一番最初です。<br />
+（それより下に、記事データ・ウェブページデータが入ります）</p>
+<pre><code class="html">&lt;!--
+TITLE: sinonome 開発マニュアル
+OUTPUTPATH: sinonome-develop
+DEFINE: 置換前,置換後
+--&gt;
+
+（以下、記事データ・ウェブページデータの繰り返し）
+</code></pre>
+<p>詳しくは、<a href="03-resource.html">リソース</a>を参照してください。</p>
+<h3 class="heading1" id="c_body">本文の記法について</h3>
+<p>入力した本文は、自動でウェブページ表示用の言語（HTMLといいます）に変換されます。</p>
+<p>sinonomeでは、文章を普通に改行するだけでは、ウェブページ上では改行されません。<br />
+ウェブページ上で改行を行いたい場合は、行の末尾に2つ半角スペースを入力するか、手動で改行用のタグ<code>&lt;br&gt;</code>を入力してください。</p>
+<h4 class="heading2">Markdown について</h4>
+<p>本文はMarkdown 形式として処理されます。<br />
+Markdown 形式のうち、特に「CommonMark」と呼ばれる文法を使用しています。<br />
+参考: <a href="https://qiita.com/Prof-Cheese/items/9629438b06aacc068c98">https://qiita.com/Prof-Cheese/items/9629438b06aacc068c98</a></p>
+<p>　</p>
+<p>以上です。あとは、sino.exe を実行するだけです。<br />
+\profiles\default\SITEFILE というディレクトリに、書いた記事とページが載ったウェブサイトが生成されます。
+ブラウザーで開いて確認してください。</p>
+		</div>
+	</article>
+</div>
+<div class="prevnext">
+	<ul>
+		<li>
+			<a href="../sinonome/index.html">
+				<span>PREV</span>
+				<span>イントロダクション</span>
+			</a>
+		</li>
+		<li>
+			<a href="../sinonome/02-develop.html">
+				<span>NEXT</span>
+				<span>テーマ開発マニュアル</span>
+			</a>
+		</li>
+	</ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

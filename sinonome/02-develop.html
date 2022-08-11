@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome | テーマ開発マニュアル - nu</title>
+<link rel="stylesheet" type="text/css" href="../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../index.html"><img src="../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../all/index.html">全カテゴリ</a></li>
+							<li><a href="../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="date">last update: 2022/06/19</p>
+			</div>
+			<h2 class="articleheading"><a href="../sinonome/02-develop.html">sinonome / テーマ開発マニュアル</a></h2>
+		</div>
+		<div class="subnav">
+			<ul><li><a href="#c_theme">テーマの作成（テンプレートの編集）</a></li><li><a href="#c_indextemplate">インデックステンプレート</a></li><li><a href="#c_archivetemplate">アーカイブテンプレート</a></li><li><a href="#c_module">モジュール</a></li></ul>
+		</div>
+		<div class="body">
+			<h3 class="heading1" id="c_theme">テーマの作成（テンプレートの編集）</h3>
+<p>独自のデザインのウェブサイトを出力する場合は、自分でテーマを作る必要があります。<br />
+（sinonome では、テンプレートや必要ファイルを含めた一式を「テーマ」と呼びます）</p>
+<p>テーマは <code>\themes</code> に格納されます。<br />
+<code>\profiles\プロファイルディレクトリ\settings.txt</code> でテーマのディレクトリ名を指定することで、自分の作ったテーマによるウェブサイトを出力できます。</p>
+<p>主な構成は、ファイル3つと <code>\resources</code> ディレクトリです。</p>
+<pre><code class="">\themes
+    \sample-blog
+        \resources      画像・CSS・スクリプトなど
+        indexes.html    インデックステンプレート
+        archives.html   アーカイブテンプレート
+        modules.html    モジュール
+</code></pre>
+<p><code>\resources</code> ディレクトリには、テーマで使用する画像やCSS、スクリプトなどのファイルを入れてください。<br />
+<code>sino.exe</code> の実行時に、サイト出力ディレクトリのルートにコピーされます。</p>
+<h3 class="heading1" id="c_indextemplate">インデックステンプレート</h3>
+<p>インデックステンプレートは、ある1つのファイルを出力します。<br />
+例えば、以下のようなものです。</p>
+<ul>
+<li><code>index.html</code>（トップページ）</li>
+<li><code>sitemap.xml</code>（検索エンジン用）</li>
+<li><code>robots.txt</code>（同上）</li>
+</ul>
+<p>以下のフォーマットで記述します。</p>
+<pre><code class="html">TITLE: トップページ
+OUTPUTPATH: index.html
+----
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;トップページ&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;{blogname}&lt;/h1&gt;
+
+        &lt;h2&gt;お知らせ&lt;/h2&gt;
+        &lt;ul&gt;
+        {entries file="information"}
+            &lt;li&gt;&lt;a href="{entrylink}"&gt;{entrytitle}&lt;/a&gt;&lt;/li&gt;
+        {/entries}
+        &lt;/ul&gt;
+
+        &lt;h2&gt;カテゴリ別記事一覧&lt;/h2&gt;
+        &lt;ul&gt;
+        {archives archive_type="entryarchive"}
+            &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;&lt;/li&gt;
+        {/archives}
+        &lt;/ul&gt;
+
+        &lt;h2&gt;タグ別記事一覧&lt;/h2&gt;
+        &lt;ul&gt;
+        {archives archive_type="tagarchive"}
+            &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;&lt;/li&gt;
+        {/archives}
+        &lt;/ul&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><code>&lt;h3&gt;</code>や<code>&lt;ul&gt;</code>といったHTMLタグに混ざって、<code>{ ～ }</code>で囲まれた見慣れないタグがあります。<br />
+これらは sinonome のテンプレートタグです。</p>
+<p>sinonome ではテンプレートタグを使用することによって、ブログ記事やウェブページ、その他の情報を出力ファイルに埋め込みます。<br />
+（書き方やタグの種類は後述します。）</p>
+<p>記述ルールは、記事ファイルやウェブページファイルとは異なります。<br />
+<code>----</code>で区切った上にメタ情報、<code>----</code>で区切った下にコードを入力します。<br />
+複数書く場合は<code>--------</code>で区切ります。</p>
+<h4 class="heading2">インデックステンプレートのメタ情報</h4>
+<p><strong>TITLE</strong><br />
+このテンプレートの名前。</p>
+<p><strong>OUTPUTPATH</strong><br />
+出力するファイル名。拡張子を含めたファイル名を入力します。</p>
+<p>OUTPUTPATH は、記事やウェブページと異なり、拡張子まで入力します。<br />
+様々な拡張子のファイルを書き出せます。例えば、</p>
+<ul>
+<li>サイトマップ <code>sitemap.xml</code></li>
+<li>検索エンジン制御 <code>robots.txt</code></li>
+<li>アクセス制御 <code>.htaccess</code></li>
+<li>テンプレートタグの内容を埋め込んだスタイルシートやスクリプト</li>
+</ul>
+<p>など。</p>
+<h3 class="heading1" id="c_archivetemplate">アーカイブテンプレート</h3>
+<p>アーカイブテンプレートは、記事やウェブページを埋め込んだファイルを出力します。<br />
+ファイルは、指定する方法に従って出力されます。<br />
+具体的には、</p>
+<ol>
+<li>個別の記事ページ</li>
+<li>ウェブページ</li>
+<li>記事の一覧ページ（新しい記事順の一覧、一定の記事数ごとにページ分け）</li>
+<li>タグ別の記事の一覧ページ（タグAのついた記事一覧、タグBのついた記事一覧…）</li>
+</ol>
+<p>などを出力するものです。</p>
+<h4 class="heading2">記事ファイルの分割について</h4>
+<p>sinonome では、<strong>記事ファイルやウェブページファイルは2つ以上作成することができます。</strong></p>
+<p>例えばサンプルでは <code>\profiles\default\entry</code>ディレクトリには<code>entry.md</code>ファイルが1つしか入っていませんが、このディレクトリにファイルをいくらでも追加できます。</p>
+<p>追加するファイルのファイル名には、特に決まりはありません。<br />
+たとえば、2020年の記事は<code>2020.md</code>に、2021年の記事は<code>2021.md</code>に、……といったふうに、ファイルに分けて書くことができます。</p>
+<pre><code class="">\sources
+    \entries
+        2020.md
+        2021.md
+        2022.md
+        ...
+</code></pre>
+<p>なお、ファイル名の先頭に<code>-</code>をつけると、そのファイルは無視されます。</p>
+<h4 class="heading2">アーカイブテンプレートのメタ情報</h4>
+<p>メタ情報の入力ルールは、インデックステンプレートと同じです。<br />
+（<code>----</code>でメタ情報とコードを区切って入力、<code>--------</code>で区切って複数入力）</p>
+<p><strong>TITLE</strong><br />
+テンプレートのタイトルを入力します。</p>
+<p><strong>TYPE</strong><br />
+どのようなアーカイブを出力するかを指定します。</p>
+<table>
+  <tr>
+    <th>値</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td><code>entry</code></td>
+    <td>ブログ記事のページを出力します。（上記の1.にあたります）</td>
+  </tr>
+  <tr>
+    <td><code>webpage</code></td>
+    <td>ウェブページを出力します。（上記の2.にあたります）</td>
+  </tr>
+  <tr>
+    <td><code>entryarchive</code></td>
+    <td>ブログ記事の一覧を出力します。（上記の3.にあたります）</td>
+  </tr>
+  <tr>
+    <td><code>tagarchive</code></td>
+    <td>タグ別のブログ記事一覧を出力します。（上記の4.にあたります）</td>
+  </tr>
+</table>
+<p><strong>OUTPUTPATH</strong><br />
+出力ファイル名、または出力ディレクトリパスを入力します。</p>
+<ul>
+<li><code>TYPE</code>が<code>webpage</code>または<code>entry</code>の場合は、<strong>出力ファイル名</strong>を入力します。  <br /></li>
+<li><code>TYPE</code>が<code>entryarchive</code>または<code>tagarchive</code>の場合は、<strong>出力ディレクトリパス</strong>を入力します。  <br />
+（出力ディレクトリパスは、 \ で終わるように記述します）</li>
+</ul>
+<p>なお、アーカイブテンプレートの<code>OUTPUTPATH</code>に限り、以下の特殊なタグを使って、出力ファイル名・出力パスを指定可能です。<br />
+これによって、アーカイブを出力するディレクトリをある程度柔軟に設定することが可能になります。</p>
+<table>
+  <tr>
+    <th>タグ名</th>
+    <th>概要</th>
+  </tr>
+  <tr>
+    <td><code>&lt;groupbasename&gt;</code></td>
+    <td>ブログ記事ファイル・ウェブページファイルのメタ情報（後述します）に入力される OUTPUTPATH です。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;entrybasename&gt;</code></td>
+    <td>各記事のメタ情報に入力された OUTPUTPATH です。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;entrydateyear&gt;</code></td>
+    <td>各記事のメタ情報に入力された DATE の西暦部分です。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;entrydatemonth&gt;</code></td>
+    <td>各記事のメタ情報に入力された DATE の月部分です。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;entrytag&gt;</code></td>
+    <td>各記事につけられたタグのうち、最初のタグのタグIDです。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;webpagebasename&gt;</code></td>
+    <td>各ウェブページのメタ情報に入力された OUTPUTPATH です。</td>
+  </tr>
+  <tr>
+    <td><code>&lt;ext&gt;</code></td>
+    <td>拡張子です。<br>現在は<code>.html</code>に置き換わるだけですが、今後任意に設定可能にする予定です。（例えば<code>.php</code>や<code>.shtml</code>など）</td>
+  </tr>
+</table>
+<h3 class="heading1" id="c_module">モジュール</h3>
+<p>モジュールは、テンプレートコードをパーツ化したものです。<br />
+繰り返し使われるコードは、パーツにして呼び出すようにすれば、メンテナンスがしやすくなります。</p>
+<p>モジュールを呼び出すには、<code>{include}</code>タグを使用します。以下のように。</p>
+<pre><code class="html">{include module="モジュールのタイトル"}
+</code></pre>
+<h4 class="heading2">モジュールのメタ情報</h4>
+<p><strong>TITLE</strong><br />
+モジュールのタイトルを入力します。<code>include</code>タグの<code>module</code>属性の値になります。</p>
+		</div>
+	</article>
+</div>
+<div class="prevnext">
+	<ul>
+		<li>
+			<a href="../sinonome/01-basic.html">
+				<span>PREV</span>
+				<span>ユーザーマニュアル</span>
+			</a>
+		</li>
+		<li>
+			<a href="../sinonome/03-resource.html">
+				<span>NEXT</span>
+				<span>リソース（ユーザー向け）</span>
+			</a>
+		</li>
+	</ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

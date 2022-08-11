@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome | タグアーカイブ - nu</title>
+<link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../../index.html"><img src="../../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../../all/index.html">全カテゴリ</a></li>
+							<li><a href="../../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<h2 class="sectionheading">アーカイブ - sinonome (1 / 2)</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/07/11</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220711.html">sinonome v0.0.10</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li>辞書ファイルの拡張子を<code>.c</code>から<code>.dic</code>に変更</li>
+<li>README.md 細部変更</li>
+</ul>
+<p>ソフトウェアのバージョン管理を、このバージョンよりGitHubに移行しました。<br />
+またGitHubではバージョン番号は普通につけるのが推奨されているようなので、普通の付け方に変更しました。</p>
+<p><a href="https://github.com/numaduki/ssg-sinonome/releases">リリース一覧</a>のページで、変更点の確認が可能です。<br />
+ダウンロードするには、「Latest」と書いてあるバージョンのAssetsの中の「Source code (zip)」というリンクをクリックしてください。</p>
+<p><img src="../../files/sinonome/20220710-0001.png" alt="Assetsの中のSource codeからダウンロード"/></p>
+<p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
+ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
+よろしくお願いします。</p>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/07/03</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220703.html">sinonome preview 9</a></h3>
+		</div>
+		<div class="body">
+				<p>まず非常に重要な変更点として、<strong>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更しました。</strong><br />
+Markdownで<code>[]</code>はよく使われるため、これを避けたいという意図です。<br />
+（当初はMarkdownの利用を考えていなかったので、他の言語と被らないという基準で<code>[:～:]</code>としていました）</p>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0009.zip">ダウンロード</a></p>
+<h4 class="heading1">変更点</h4>
+<h5 class="heading2">重要な変更</h5>
+<ul>
+<li>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更</li>
+<li><code>strform</code>モディファイアの値にAYA/YAYA準拠の「$」を使っていたのを「%」に変更  <br />
+（モディファイア値の変数展開とバッティングすることを忘れていたため）</li>
+</ul>
+<h5 class="heading2">機能追加</h5>
+<ul>
+<li>投稿のメタ情報に<code>SKIPGENERATE</code>と書くと、ファイルとして出力しないようにした  <br />
+（値は必要なく、1行に<code>SKIPGENERATE</code>と書くだけ）</li>
+<li>投稿ファイルのメタ情報に<code>DEFINE</code> <code>REPLACE</code> <code>RE_DEFINE</code> <code>RE_REPLACE</code>を追加  <br />
+詳細→<a href="../../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+<li>sinonome 独自のログを出力を実装（プロファイルディレクトリに log.txt を出力します）</li>
+</ul>
+<h5 class="heading2">その他変更・修正等</h5>
+<ul>
+<li>DATE 未指定の場合は出力時刻が使用されるが、その場合にdate系のタグで出力できていなかったのを修正</li>
+<li>範囲タグを入れ子にした場合に誤検知していたが、ある程度きちんと判定するようにした</li>
+<li>サンプルテーマの修正</li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/06/19</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220619.html">sinonome preview 8</a></h3>
+		</div>
+		<div class="body">
+				<p><a href="../../distribute/sinonome/preview/sinonome_preview_0008.zip">ダウンロード</a></p>
+<h4 class="heading1">記事ファイルの記述フォーマットを変更</h4>
+<p>まず最重要事項として、<strong>記事・ウェブページファイルの記述フォーマットを変更</strong>しました。以下のようになります。<br />
+単純なMarkdown形式になったので、各種テキストエディターの色分け機能やアウトライン機能との親和性向上が望めます。</p>
+<p>本文の最高レベルの見出しが<code>##</code>になってしまったのは残念ですが、上記の恩恵を考えるとまあいいかなという気がしています。</p>
+<pre><code class="">&lt;!--
+TAG: このファイルの投稿に適用するタグ名
+--&gt;
+
+# 休日が終わった
+&lt;!--
+DATE: 2022-06-19
+OUTPUTPATH: holiday-end
+--&gt;
+
+## いいいいいいいい
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+# 休日が始まった
+&lt;!--
+DATE: 2022-06-18
+OUTPUTPATH: holiday-start
+--&gt;
+
+## ああああああああ
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+..
+</code></pre>
+<h4 class="heading1">変更内容</h4>
+<h5 class="heading2">記事ファイル・ウェブページファイルのフォーマット変更</h5>
+<ul>
+<li>上述の通り、フォーマットを変更</li>
+<li>メタ情報で指定していたセパレータ変更機能（SEP・SECTIONSEP）を廃止</li>
+<li>ファイルや各記事等のメタ情報を（必要なければ）入力不要とした  <br /></li>
+<li><code>{entrybody}</code>等のモディファイア<code>headinglevel</code>の挙動を変更  <br />
+旧）「#」を何タグで出力するかを決める<br />
+新）「##」を何タグで出力するかを決める<br />
+（一番上のレベルのタグからheading1～のクラスが付与されるのは変更なし）</li>
+<li>同梱サンプルテーマを新フォーマットで書き直し</li>
+</ul>
+<h5 class="heading2">機能・タグ・モディファイア等の追加</h5>
+<ul>
+<li>下書き機能の実装（タイトルの前に(draft)と書くだけ）</li>
+<li><code>{tagid}</code>追加（タグのタグID（英数字の方）を出力）</li>
+<li>グローバルモディファイア<code>strform</code>追加（出力内容がある場合、書式化して出力）</li>
+<li><code>{entries}</code>タグに<code>tag</code>モディファイアを追加（指定したタグを設定した投稿のみ表示できます）</li>
+<li><code>{if}</code>タグのモディファイアに<code>ne</code>を追加（一致しない場合に真、いわゆる<code>!=</code>）</li>
+<li>アーカイブマッピング用のタグに以下を追加  <br />
+<code>&lt;entrydateyear&gt;</code> DATEの年部分<br />
+<code>&lt;entrydatemonth&gt;</code> DATEの月部分<br />
+<code>&lt;entrytag&gt;</code> TAGで最初に指定したタグのタグID</li>
+</ul>
+<h5 class="heading2">各種変更・修正</h5>
+<ul>
+<li>YAYA 5.69.7.0 → 5.71.2.0</li>
+<li>モディファイア<code>headinglevel</code>を指定可能なタグについて、指定していないのに指定されているものとして処理していたのを修正</li>
+<li>基本設定<code>remove_blankline, 1</code>で、preタグ内でも改行を削除してしまっていたのを修正  <br /></li>
+<li><code>{entryfield}</code>の出力がコロン記号まで含んでいたのを修正</li>
+<li><code>{pageid}</code>タグを削除（OUTPUTPATHの値等で代用してください）</li>
+<li>sino.exeをリビルド（少しサイズが小さくなりました 150KB→90KB）</li>
+</ul>
+<h5 class="heading2">preview 7 の記事ファイルの扱いの変更に関連する項目</h5>
+<ul>
+<li>アーカイブのループの際、entryarchive のコンテキストで<code>{archivetitle}</code>タグは何も返さないように変更（ファイル別アーカイブがなくなったため）</li>
+<li><code>{datafiletitle}</code>タグを廃止し、ウェブページ専用の<code>{pagefiletitle}</code>タグを追加した</li>
+<li>以下のモディファイア、および値を廃止した  <br />
+<code>{entries}</code>の<code>file</code><br />
+<code>{entryprev}`</code>{entrynext}<code>の</code>scope<code>の値のうち</code>file`</li>
+<li>記事ファイル処理時に出力していたファイル「-sortbydate.md」を生成されないようにした</li>
+<li>ログ取得時、Markdown変換用SAORIのI/Oが大量に記録されてしまうため、リクエスト直前とレスポンス直後にiologのon/offを切り替えるようにした（YAYAのSETSETTING()関数を使用）</li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/05/03</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
+				<ul>
+<li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
+<li>タグアーカイブでページネーションを実装</li>
+<li><code>{entrynext}</code> <code>{entryprev}</code> の <code>scope</code> モディファイアの値に <code>tag</code> を追加（タグを複数設定している場合は、一番最初に指定したタグが対象となります）</li>
+<li>各タグにおける相対パスの出力処理がおかしかったのを修正</li>
+<li>ファイル分割によるカテゴリー分け機能を廃止（カテゴライズは「タグ」機能のみに変更）</li>
+<li>その他の内部的変更</li>
+</ul>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0007.zip">ダウンロード</a></p>
+<h4 class="heading1">ファイル記事分割についての仕様変更</h4>
+<p>今までは、ファイルを分割することで「カテゴリー」として扱っていました。<br />
+しかし preview 7以降は、デフォルトでは<strong>記事ファイルの分割は特に意味を持ちません。</strong><br />
+記事のカテゴライズは、「タグ」のみで行うことになります。</p>
+<p>なお、ファイルのヘッダーに以下の行を記述することで、そのファイル内の投稿全てにタグを付与することができます。<br /></p>
+<pre><code class="">TAG: 日常
+</code></pre>
+<p>ファイルのヘッダーにこう書くことで、ファイル内の投稿に全て<code>日常</code>タグが付与されます。</p>
+<h4 class="heading1">文からYAYAへの変更に際して</h4>
+<p>前述の通り、YAYAに変更したきっかけは「文では絵文字を扱うのが困難だったから」です。<br />
+しかし、絵文字は数値文字参照にすればいい（🌻なら&amp;#x1f33b;）だけであり、そんなに大きい問題ではありません。<br /></p>
+<p>文には大変思い入れがあります。しかしその思い入れを優先するために、今後制限事項が徐々に増えていったり、クオリティ低下に直結する作業量の増大が発生するのは作り手にとっても受け手にとっても望ましくはない、という判断に至りました。</p>
+<p>なぜ文に思い入れがあるのかというと、私にとって大事な存在だからです。理由は二つ。<br />
+一つは、空想を形にするという、人生で一番楽しいことを実現してくれるから。<br />
+もう一つは、私に現実に生きるためのプログラミングの力をくれたからです。</p>
+<p>文と出会ったのは高校の頃で、それ以前からもJavaScriptなどでコードを書くことはしていましたが、文は当時の私にとってはとても本格的なプログラミング言語でした。C言語のように複雑なことができるのに、規模が抑えられておりシンプルで、プログラミング初学者だった私にとっては大変扱いやすい言語でした。</p>
+<p>ライブラリとしての構造もまたシンプルで、読み込む側のアプリケーションを作ることも、読み込む拡張モジュールを作ることも、特別に難しくはありません。このことは、私がコンパイル型というタイプの異なる言語を（断続的ではありますが）学び続けるきっかけになってくれました。</p>
+<p>これ以上個人的事情を書くのはやめておこうと思いますが（書きたくなったら外部のブログ等に書くことにします）、つまるところ、文と出会えたおかげで、今の私があります。</p>
+<p>文作者のumeiciさんに、心から感謝申し上げます。<br />
+伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
+<p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2020/11/29</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
+				<ul>
+<li><code>{else}</code>節にさらに<code>{else}</code>がある場合、正常に動作していなかったのを修正</li>
+<li>preview 4でモディファイアの値に変数が使用可能になったため、<code>{if}</code>タグのモディファイア<code>eqvar</code>を廃止</li>
+<li><code>DATE:</code>に年月日を入力しており時刻だけ入力していない場合、時刻を00時00分00秒と見なすよう変更（今までは現在の時刻が使用されていた）</li>
+<li><code>{pagedate}</code> <code>{entrydate}</code>の仕様があやふやだったので明確化して<a href="../../sinonome/03-resource/template-tags.html">タグリファレンス</a>に記載</li>
+</ul>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0006.zip">ダウンロード</a></p>
+<p>（<code>{if}</code>の<code>eq</code>に限らず）モディファイアの値の頭に<code>$</code>を付けると変数名と見なされ、その変数の値が参照されます。<br />
+つまり、<code>eqvar</code>を使っていた場合は、以下のように書き直してください。</p>
+<pre><code class="html">（旧）
+{if name="変数名1" eqvar="変数名2"}
+（新）
+{if name="変数名1" eq="$変数名2"}
+</code></pre>
+		</div>
+	</article>
+</div>
+<div class="pager">
+<ul><li class="current"><a href="../../tags/sinonome/index.html">1</a></li><li ><a href="../../tags/sinonome/index2.html">2</a></li></ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome preview 7 - nu</title>
+<link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../../index.html"><img src="../../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../../all/index.html">全カテゴリ</a></li>
+							<li><a href="../../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/05/03</p>
+			</div>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h2>
+		</div>
+		<div class="body">
+				<ul>
+<li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
+<li>タグアーカイブでページネーションを実装</li>
+<li><code>{entrynext}</code> <code>{entryprev}</code> の <code>scope</code> モディファイアの値に <code>tag</code> を追加（タグを複数設定している場合は、一番最初に指定したタグが対象となります）</li>
+<li>各タグにおける相対パスの出力処理がおかしかったのを修正</li>
+<li>ファイル分割によるカテゴリー分け機能を廃止（カテゴライズは「タグ」機能のみに変更）</li>
+<li>その他の内部的変更</li>
+</ul>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0007.zip">ダウンロード</a></p>
+<h3 class="heading1">ファイル記事分割についての仕様変更</h3>
+<p>今までは、ファイルを分割することで「カテゴリー」として扱っていました。<br />
+しかし preview 7以降は、デフォルトでは<strong>記事ファイルの分割は特に意味を持ちません。</strong><br />
+記事のカテゴライズは、「タグ」のみで行うことになります。</p>
+<p>なお、ファイルのヘッダーに以下の行を記述することで、そのファイル内の投稿全てにタグを付与することができます。<br /></p>
+<pre><code class="">TAG: 日常
+</code></pre>
+<p>ファイルのヘッダーにこう書くことで、ファイル内の投稿に全て<code>日常</code>タグが付与されます。</p>
+<h3 class="heading1">文からYAYAへの変更に際して</h3>
+<p>前述の通り、YAYAに変更したきっかけは「文では絵文字を扱うのが困難だったから」です。<br />
+しかし、絵文字は数値文字参照にすればいい（🌻なら&amp;#x1f33b;）だけであり、そんなに大きい問題ではありません。<br /></p>
+<p>文には大変思い入れがあります。しかしその思い入れを優先するために、今後制限事項が徐々に増えていったり、クオリティ低下に直結する作業量の増大が発生するのは作り手にとっても受け手にとっても望ましくはない、という判断に至りました。</p>
+<p>なぜ文に思い入れがあるのかというと、私にとって大事な存在だからです。理由は二つ。<br />
+一つは、空想を形にするという、人生で一番楽しいことを実現してくれるから。<br />
+もう一つは、私に現実に生きるためのプログラミングの力をくれたからです。</p>
+<p>文と出会ったのは高校の頃で、それ以前からもJavaScriptなどでコードを書くことはしていましたが、文は当時の私にとってはとても本格的なプログラミング言語でした。C言語のように複雑なことができるのに、規模が抑えられておりシンプルで、プログラミング初学者だった私にとっては大変扱いやすい言語でした。</p>
+<p>ライブラリとしての構造もまたシンプルで、読み込む側のアプリケーションを作ることも、読み込む拡張モジュールを作ることも、特別に難しくはありません。このことは、私がコンパイル型というタイプの異なる言語を（断続的ではありますが）学び続けるきっかけになってくれました。</p>
+<p>これ以上個人的事情を書くのはやめておこうと思いますが（書きたくなったら外部のブログ等に書くことにします）、つまるところ、文と出会えたおかげで、今の私があります。</p>
+<p>文作者のumeiciさんに、心から感謝申し上げます。<br />
+伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
+<p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
+		</div>
+	</article>
+</div>
+<div class="prevnext">
+	<ul>
+		<li>
+			<a href="../../archives/sinonome/20220619.html">
+				<span>NEXT</span>
+				<span>sinonome preview 8</span>
+			</a>
+		</li>
+		<li>
+			<a href="../../archives/sinonome/20201129.html">
+				<span>PREV</span>
+				<span>sinonome preview 6</span>
+			</a>
+		</li>
+	</ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

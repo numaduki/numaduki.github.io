@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome | リソース（開発者向け） - nu</title>
+<link rel="stylesheet" type="text/css" href="../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../index.html"><img src="../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../all/index.html">全カテゴリ</a></li>
+							<li><a href="../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="date">last update: 2022/06/29</p>
+			</div>
+			<h2 class="articleheading"><a href="../sinonome/03-resource-develop.html">sinonome / リソース（開発者向け）</a></h2>
+		</div>
+		<div class="subnav">
+			<ul><li><a href="#c_templatetag">テンプレートタグ</a></li><li><a href="#c_todo">ToDo</a></li><li><a href="#c_library">使用ライブラリ等</a></li></ul>
+		</div>
+		<div class="body">
+			<h3 class="heading1" id="c_templatetag">テンプレートタグ</h3>
+<p>sinonome のテンプレートタグ（以下「テンプレートタグ」）は、記法的にはHTMLに類似しています。</p>
+<p>ただし、HTMLタグは基本的には文書構造を記述する一方、テンプレートタグは以下のような様々な機能を持ちます。</p>
+<ul>
+<li>コードを変数として格納したり、呼び出したりする</li>
+<li>ブログ記事やウェブページを、繰り返し出力する</li>
+<li>ブログ記事やウェブページの情報を呼び出す</li>
+<li>条件によって異なる内容を出力したり、異なる処理を行ったりする</li>
+</ul>
+<p>また、HTMLタグは<code>&lt;tag&gt;</code>あるいは<code>&lt;tag&gt;～&lt;/tag&gt;</code>という形式で入力しますが、テンプレートタグは、<code>{tag}</code>あるいは<code>{tag}～{/tag}</code>という形式で入力します。</p>
+<p>以下は、各テンプレートタグの解説です。<br />
+範囲タグとインラインタグで分け、それぞれ汎用→記事→ページ→アーカイブ→タグ→そのほか、とゆるく分けて並べてあります。</p>
+<h4 class="heading2">範囲タグ</h4>
+<p><code>{tag}～{/tag}</code>という形式で、範囲を囲むタグです。</p>
+<h5 class="heading3">ignore</h5>
+<p>このタグで囲んだ領域は無視されます。</p>
+<h5 class="heading3">if</h5>
+<p>指定した条件が真の場合に処理します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>変数名を指定します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>eq</td>
+    <td>name がこの値の場合、処理を行います。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ne</td>
+    <td>name がこの値でない場合、処理を行います。</td>
+    <td></td>
+  </tr>
+</table>
+<h5 class="heading3">else</h5>
+<p>if タグの領域の中に書き、ifタグで指定された条件が偽の場合に処理します。</p>
+<h6 class="heading4">（例）設定した変数「ページタイトル」の値が「トップページ」の場合とそうでない場合とで、titleタグの内容を変化させる</h6>
+<pre><code class="html">{if name="ページタイトル" eq="トップページ"}
+    &lt;title&gt;サイトタイトル - サイトの概要&lt;/title&gt;
+{else}
+    &lt;title&gt;{getvar name="ページタイトル"} | サイトタイトル&lt;/title&gt;
+{/if}
+</code></pre>
+<p>なお<code>else</code>タグは、<code>if</code>タグだけでなく、他のタグの中でも書く場合があります。<br />
+詳しくはそれぞれのタグの説明をご参照ください。</p>
+<h5 class="heading3">entries</h5>
+<p>記事のデータを出力するループ（記事ループ）です。<br />
+このループの中に各種タグを記述することで、順番に記事のデータを取り出すことができます。<br />
+どのように出力するかは、アーカイブテンプレートに応じて自動で設定されますが、モディファイアで指定することもできます。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>index</td>
+    <td>指定したindexの記事のみを出力します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>ループのはじまりのindex値を指定します。</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>上限を指定します。</td>
+    <td>9999</td>
+  </tr>
+  <tr>
+    <td>tag</td>
+    <td>指定したタグIDの記事のみを出力します。</td>
+    <td>指定なし（全ての記事ファイルが対象）</td>
+  </tr>
+</table>
+<h5 class="heading3">entrynext</h5>
+<p>次の記事を出力します。<br />
+<code>else</code>タグで、次の記事が存在しない場合の出力も書けます。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>scope</td>
+    <td>範囲を指定します。<br>tag: 範囲を同一タグ内に限定します。タグが複数付与されている場合は、最初に付与されているタグが対象になります。<br>all: 全ての記事ファイルを範囲とします。（デフォルト）</td>
+    <td>all</td>
+  </tr>
+</table>
+<pre><code class="html">{entrynext}
+    {entrytitle}&lt;!--次の記事のタイトル--&gt;
+{else}
+    次の記事はありません
+{/entrynext}
+</code></pre>
+<h5 class="heading3">entryprev</h5>
+<p>前の記事を出力します。<br />
+モディファイア等は<code>entrynext</code>と同様です。</p>
+<h5 class="heading3">pages</h5>
+<p>ページのデータを出力するループ（ページループ）です。<br />
+このループの中に各種タグを記述することで、順番にページのデータを取り出すことができます。<br />
+どのように出力するかは、アーカイブテンプレートに応じて自動で設定されますが、モディファイアで指定することもできます。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>index</td>
+    <td>指定したindexの記事のみを出力します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>ループのはじまりのindex値を指定します。</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>上限を指定します。</td>
+    <td>9999</td>
+  </tr>
+  <tr>
+    <td>file</td>
+    <td>ページファイルのファイル名を指定します。拡張子は必要ありません。</td>
+    <td>指定なし（全てのページファイルが対象）</td>
+  </tr>
+</table>
+<h5 class="heading3">pagenext</h5>
+<p>次のページを出力します。<br />
+モディファイア等は<code>entrynext</code>と同様です。</p>
+<h5 class="heading3">pageprev</h5>
+<p>前のページを出力します。<br />
+モディファイア等は<code>entrynext</code>と同様です。</p>
+<h5 class="heading3">archives</h5>
+<p>アーカイブのデータを出力するループ（アーカイブループ）です。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>ループのはじまりのindex値を指定します。</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>上限を指定します。</td>
+    <td>9999</td>
+  </tr>
+  <tr>
+    <td>archive_type</td>
+    <td>アーカイブのタイプを指定します。<br>entryarchive: ファイル別（ファイルを分けた通りに分割する）アーカイブ<br>tagarchive: タグ別のアーカイブ</td>
+    <td></td>
+  </tr>
+</table>
+<h6 class="heading4">（例）ファイル別アーカイブページのリンク一覧を表示</h6>
+<pre><code class="html">&lt;ul&gt;
+{archives archive_type="entryarchive"}
+    &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;&lt;/li&gt;
+{/archives}
+&lt;/ul&gt;
+</code></pre>
+<h5 class="heading3">tags</h5>
+<p>記事に付けたタグを出力するループ（タグループ）です。<br />
+このループの中に各種タグを記述することで、順番にタグのデータを取り出すことができます。</p>
+<h5 class="heading3">loop</h5>
+<p>変数に格納した配列の各要素に順番にアクセスするループです。<br />
+配列の使用方法については別に解説します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>配列が格納された変数名を指定します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>glue</td>
+    <td>要素と要素の間に出力する内容を指定します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>reverse</td>
+    <td>1を指定すると、後ろから前に向かってアクセスします。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>ループの上限回数を指定します。</td>
+    <td></td>
+  </tr>
+</table>
+<p>なお、ループの中のコードについて、<code>__index__</code>と書かれた部分が、ループの回数に置き換わります。<br />
+普通に数字を出力もできますが、getvar タグによる序数付きでの値の取り出しにも使います。</p>
+<h6 class="heading4">（例）「変数名」に格納された配列の値を順番に取り出して表示</h6>
+<pre><code class="html">{setvar name="変数名[]" value="あ"}
+{setvar name="変数名[]" value="い"}
+{setvar name="変数名[]" value="う"}
+{setvar name="変数名[]" value="え"}
+{loop name="変数名" glue="・" reverse="1" limit="3" }
+    {getvar name="変数名[__index__]"}
+{/loop}
+</code></pre>
+<p>「え・う・い」と表示されます。<br />
+<code>reverse="1"</code>なので逆順に取り出され、<code>limit="3"</code>なので4つ目の「あ」は出力されません。</p>
+<h5 class="heading3">setvarblock</h5>
+<p>変数に、囲んだ内容を格納します。<br />
+格納前に、内容が解釈されます。</p>
+<pre><code class="html">{setvarblock name="変数"}
+    {blogtitle}
+{/setvarblock}
+</code></pre>
+<p>ブログ名が「サンプルブログ」の場合、「変数」には「サンプルブログ」が格納されます。</p>
+<p>ひとつの変数に、複数のデータを、配列として格納することもできます。<br />
+変数名の直後に<code>[]</code>を書いてください。</p>
+<pre><code class="html">{setvarblock name="ひらがな[]"}あ{/setvarblock}
+{setvarblock name="ひらがな[]"}い{/setvarblock}
+{setvarblock name="ひらがな[]"}う{/setvarblock}
+</code></pre>
+<p>変数「ひらがな」の0番目に「あ」、1番目に「い」、2番目に「う」が格納されます。<br />
+配列のデータの取り出しは、以下のように行います。</p>
+<pre><code class="html">{getvar name="ひらがな[1]"}
+</code></pre>
+<p>「い」が取り出されます。</p>
+<p><code>setvartemplate</code>と<code>setvar</code>も、同様の方法で配列を格納できます。</p>
+<h5 class="heading3">setvartemplate</h5>
+<p>変数に、囲んだ内容を格納します。<br />
+ただし<code>setvarblock</code>と異なり、<strong>内容は解釈せず、コードをそのまま格納</strong>します。</p>
+<p>タグ名が示す通り、テンプレートの一部を変数に格納し、複数の箇所から呼び出して使うのが主な用途となります。</p>
+<pre><code class="html">{setvartemplate name"記事本文のコード"}
+    &lt;h2&gt;{entrytitle}&lt;/h2&gt;
+    &lt;div class="honbun"&gt;
+        {entrybody}
+        {entrymore}
+    &lt;/div&gt;
+{/setvartemplate}
+</code></pre>
+<h4 class="heading2">インラインタグ</h4>
+<h5 class="heading3">blogname</h5>
+<p>ブログ名を表示します。</p>
+<h5 class="heading3">blogdescription</h5>
+<p>ブログの概要を表示します。</p>
+<h5 class="heading3">blogauthor</h5>
+<p>ブログの作者を表示します。</p>
+<h5 class="heading3">blogurl</h5>
+<p>ブログのURLを表示します。</p>
+<h5 class="heading3">entrytitle</h5>
+<p>記事のタイトルを表示します。</p>
+<h5 class="heading3">entrybody</h5>
+<p>記事の本文を表示します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>headinglevel</td>
+    <td>一番上の見出しレベルを指定します。<br>最も上のレベルの見出しから順に<code>heading1</code>～<code>heading6</code>というクラスが付与されます。</td>
+    <td>2</td>
+  </tr>
+</table>
+<p>sinonomeでは、本文中の一番上の見出しレベルは2、つまり<code>##</code>となります。<br />
+（<code>#</code>は記事のタイトルとして使用するため、本文では使いません）</p>
+<p>通常、Markdownでは、<code>##</code>を<code>&lt;h2&gt;</code>タグとして出力します。<br />
+しかし<code>headinglevel</code>を指定することで、これを<code>&lt;h1&gt;</code>～<code>&lt;h6&gt;</code>のどれかに変えられます。<br />
+同時に、CSS設定に利用できるクラス名を付与します。</p>
+<p>例えば、以下のような記事の本文があるとします。</p>
+<pre><code class="html">## シャープ記号2つの見出し
+### シャープ記号3つの見出し1
+### シャープ記号3つの見出し2
+#### シャープ記号4つの見出し
+</code></pre>
+<p>そして、テンプレートが以下のようになっているとします。</p>
+<pre><code class="html">&lt;!-- トップページ --&gt;
+&lt;h1&gt;サイトのタイトル&lt;/h1&gt;
+&lt;h2&gt;最新記事&lt;/h2&gt;
+{entries limit="1"}
+&lt;h3&gt;{entrytitle}&lt;/h3&gt;
+
+{entrybody headinglevel="4"}
+
+{/entries}
+</code></pre>
+<p>すると、次のような出力になります。</p>
+<pre><code class="html">&lt;!-- トップページ --&gt;
+&lt;h1&gt;サイトのタイトル&lt;/h1&gt;
+&lt;h2&gt;最新記事&lt;/h2&gt;
+&lt;h3&gt;記事タイトル&lt;/h3&gt;
+
+&lt;h4 class="heading1"&gt;シャープ記号1つの見出し&lt;/h4&gt;
+&lt;h5 class="heading2"&gt;シャープ記号2つの見出し1&lt;/h5&gt;
+&lt;h5 class="heading2"&gt;シャープ記号2つの見出し2&lt;/h5&gt;
+&lt;h6 class="heading3"&gt;シャープ記号3つの見出し&lt;/h6&gt;
+</code></pre>
+<p><code>headinglevel</code>を<code>4</code>に設定したため、<code>##</code>による見出しが<code>&lt;h2&gt;</code>ではなく、<code>&lt;h4&gt;</code>で出力されます。<br />
+また、一番上のレベルの見出しには<code>heading1</code>、その次のレベルの見出しには<code>heading2</code>…というふうにクラスが付与されます。<br /></p>
+<p>この仕組みにより、ユーザーはテンプレートによって適切な見出しレベルを意識することなく、<strong>本文の<code>#</code>記号は2つから始める、という原則通りに記事を書ける</strong>ようになります。</p>
+<p>テーマ開発者は上記を保証するため、当タグを用いる際には<code>headinglevel</code>属性（とCSS）を適切に設定する必要があります。</p>
+<h5 class="heading3">entrymore</h5>
+<p>記事の本文の続きを表示します。<br />
+使用可能なモディファイアは<code>entrybody</code>と同様です。</p>
+<h5 class="heading3">entrydate</h5>
+<p>記事の日付を表示します。<br />
+DATEに記載した内容が表示されます。<br /></p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>format</td>
+    <td>フォーマットを指定します。</td>
+    <td>%Y-%m-%d %H:%M:%S</td>
+  </tr>
+</table>
+<p>DATEの値として許容されるのは、以下の形式のみです。<br />
+DATEが以下以外の形式で書かれている場合、またはDATEが書かれていない場合は、出力した時点の年月日・時刻が使用されます。</p>
+<table>
+  <tr>
+    <th>形式</th>
+    <th>例</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <td>西暦4桁-月2桁-日2桁 時2桁:分2桁:秒2桁</td>
+    <td>2020-04-15 23:12:06</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>西暦4桁-月2桁-日2桁</td>
+    <td>2020-04-15</td>
+    <td>時刻部分は「00:00:00」と見なされます</td>
+  </tr>
+</table>
+<p>例えばある投稿のDATEの値が 2020-09-28 なら、以下のコードは「2020年09月28日 00時00分00秒」を出力します。</p>
+<pre><code class="html">{pagedate format="%Y年%m月%d日 %H時%M分%S秒 "}
+</code></pre>
+<p>フォーマットには以下の記法が使用できます。</p>
+<table>
+  <tr>
+    <th>記法</th>
+    <th>意味</th>
+    <th>実装状況（記載なしは実装済み）</th>
+  </tr>
+  <tr>
+    <td>%Y</td>
+    <td>年を4桁</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%y</td>
+    <td>年を2桁</td>
+    <td>●未実装</td>
+  </tr>
+  <tr>
+    <td>%b</td>
+    <td>月を省略形式で</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%B</td>
+    <td>月を完全形式で</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%m</td>
+    <td>月を2桁</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%d</td>
+    <td>日を2桁</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%e</td>
+    <td>日を2桁 空白パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%j</td>
+    <td>年初からの日を、3桁の数字で表示します。<br>1桁、2桁の場合は、0が付加されます。(例: 078)</td>
+    <td>●未実装</td>
+  </tr>
+  <tr>
+    <td>%H</td>
+    <td>時を24hの2桁 0パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%k</td>
+    <td>時を24hの2桁 空白パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%I</td>
+    <td>時を12hの2桁 0パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%l</td>
+    <td>時を12hの2桁 空白パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%M</td>
+    <td>分を2桁 0パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%S</td>
+    <td>秒を2桁 0パディング</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%p</td>
+    <td>AM PM</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%a</td>
+    <td>曜日 省略形式</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%A</td>
+    <td>曜日 完全形式</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%w</td>
+    <td>曜日 完全形式</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%x</td>
+    <td>言語に合わせて日付を表示<br>ほとんどの言語では %B %d, %Y と同じ<br>(例: September 06, 2002、2002年09月06日)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>%X</td>
+    <td>言語に合わせて時刻を表示<br>ほとんどの言語では %I:%M %p と同じ<br>(例: 04:31 PM、16:31)</td>
+    <td></td>
+  </tr>
+</table>
+<h5 class="heading3">entryfield</h5>
+<p>記事のメタ情報を表示します。<br />
+メタ情報の領域には好きな情報を入れることができますので、それらを取り出す場合に使用します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>メタ情報の名前を指定します。</td>
+    <td></td>
+  </tr>
+</table>
+<pre><code class="html"># クリスマス（2020年）
+&lt;!--
+ENGLISH_TITLE: CHRISTMAS 2020
+--&gt;
+本文…
+</code></pre>
+<pre><code class="">{entryfield name="ENGLISH_TITLE"}
+</code></pre>
+<p>例えば記事の日本語タイトルの下に、飾りとして英字を入れたいというケースがあるとします。<br />
+その場合、メタ情報領域に<code>ENGLISH_TITLE:</code>で始まる行を書き、上記のタグを呼び出す、といった風に使えます。</p>
+<h5 class="heading3">entrylink</h5>
+<p>記事のURLを表示します。</p>
+<h5 class="heading3">entrybasename</h5>
+<p>記事の OUTPUTPATH を表示します。</p>
+<h5 class="heading3">pagetitle</h5>
+<p>ページのタイトルを表示します。</p>
+<h5 class="heading3">pagebody</h5>
+<p>ページの本文を表示します。</p>
+<h5 class="heading3">pagemore</h5>
+<p>ページの続き部分を表示します。</p>
+<h5 class="heading3">pagedate</h5>
+<p>ページの日付を表示します。<br />
+詳細は<code>entrydate</code>と同じです。</p>
+<h5 class="heading3">pagefield</h5>
+<p>ページのメタ情報を表示します。<br />
+詳細は<code>entryfield</code>と同じです。</p>
+<h5 class="heading3">pagelink</h5>
+<p>ページのURLを表示します。</p>
+<h5 class="heading3">pagebasename</h5>
+<p>ページの OUTPUTPATH を表示します。</p>
+<h5 class="heading3">pagefiletitle</h5>
+<p>ページファイルのタイトルを表示します。<br />
+ページファイルのヘッダーに記入された TITLE の内容が呼び出されます。</p>
+<p>ページファイルのヘッダーは、ファイルの冒頭に置いた<code>&lt;!-- ～ --&gt;</code>内に記述します。<br /></p>
+<pre><code class="html">&lt;!--
+TITLE: ページファイルのタイトル
+--&gt;
+
+# ページ1
+
+&lt;!--
+OUTPUTPATH: page1
+--&gt;
+
+ページ1の本文…
+
+# ページ２
+
+&lt;!--
+OUTPUTPATH: page2
+--&gt;
+
+ページ2の本文…
+</code></pre>
+<h5 class="heading3">archivetitle</h5>
+<p>アーカイブファイルに指定したタイトルを表示します。</p>
+<h5 class="heading3">archivelink</h5>
+<p>アーカイブページのURLを表示します。</p>
+<h5 class="heading3">archivepager</h5>
+<p>アーカイブページがページで区切られている時、各ページへのリンクを表示します。<br />
+以下のようなHTMLが表示されます。</p>
+<pre><code class="html">&lt;ul&gt;
+    &lt;li&gt;&lt;a href="ページ1のURL"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="ページ2のURL"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="ページ3のURL"&gt;3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h5 class="heading3">archivepagenum</h5>
+<p>アーカイブページがページで区切られている時、ページの番号を表示します。</p>
+<h5 class="heading3">archivepagetotal</h5>
+<p>アーカイブページがページで区切られている時、ページの総数を表示します。</p>
+<h5 class="heading3">tagname</h5>
+<p>タグの名前を表示します。</p>
+<h5 class="heading3">tagid</h5>
+<p>タグのタグIDを表示します。</p>
+<h5 class="heading3">taglink</h5>
+<p>タグアーカイブへのリンクを表示します。</p>
+<h5 class="heading3">include</h5>
+<p><code>modules.html</code>に記述した各モジュールを呼び出します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>module</td>
+    <td>モジュールの名前を指定します。（TITLEに指定した名前）</td>
+    <td></td>
+  </tr>
+</table>
+<h5 class="heading3">setvar</h5>
+<p>変数を格納します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>変数名を指定します。</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>格納する値を指定します。</td>
+    <td></td>
+  </tr>
+</table>
+<h5 class="heading3">getvar</h5>
+<p>変数の内容を表示します。</p>
+<table>
+  <tr>
+    <th>モディファイア</th>
+    <th>概要</th>
+    <th>デフォルト値</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>変数名を指定します。</td>
+    <td></td>
+  </tr>
+</table>
+<h4 class="heading2">特殊なタグ</h4>
+<p>以下は、テンプレートだけではなく、<strong>記事本文やウェブページ本文でも使うことのできるタグ</strong>です。</p>
+<h5 class="heading3">root</h5>
+<p>トップページディレクトリへの相対パスを表示します。<br />
+出力されるページによって、相対パスは変化します。</p>
+<p>トップページにリンクしたい場合、単に</p>
+<pre><code class="html">&lt;a href="index.html"&gt;トップ&lt;/a&gt;
+</code></pre>
+<p>と書くと、<br />
+(1) <code>index.html</code>と同じ階層にあるページ ならOKですが、<br />
+(2) サブディレクトリ<code>\sub</code>の中にあるページ ではリンク切れになります。</p>
+<p>そこで、以下のように記述します。</p>
+<pre><code class="html">&lt;a href="{root}index.html"&gt;トップ&lt;/a&gt;
+</code></pre>
+<p><code>{root}</code>は、「出力されるページから見た、トップページディレクトリへの相対パス」に置き換わります。<br />
+つまり、(1)では空文字列、(2)では「../」に置き換わりますので、リンク切れが発生しません。</p>
+<p>画像についても同じです。<br />
+例えば、\files\logo.png を表示するために以下を書きます。</p>
+<pre><code class="html">&lt;img src="{root}logo.png" alt="ロゴ"&gt;
+</code></pre>
+<p>ページが \sub\sub2\sub3\sub4\sub5 に生成された場合は、コードは以下のように出力されます。</p>
+<pre><code class="html">&lt;img src="../../../../../files/logo.png" alt="ロゴ"&gt;
+</code></pre>
+<h5 class="heading3">タグそのものを書きたい場合</h5>
+<p>記事やウェブページ上にも書けるタグについて、（例えばこの文書のように）そのものを書きたい場合は、タグの開始・終了記号<code>{</code><code>}</code>を実体参照で記述してください。<br />
+また実体参照での記述に問題がある場合は、開始記号と終了記号を二重にしてください。出力の直前に一つ分に置換されます。</p>
+<p>../ ← <code>{root}</code>　普通に記述<br />
+&#123;root&#125; ← <code>&amp;#123;root&amp;#125;</code>　実体参照で記述<br />
+{root} ← <code>{{root}}</code>　開始記号と終了記号で二重に囲む</p>
+<h4 class="heading2">グローバルモディファイア</h4>
+<p>全てのタグに使用できるモディファイアです。</p>
+<h5 class="heading3">trim</h5>
+<p>文字列の前後の空白文字を削除します。</p>
+<pre><code class="html">{setvar name="テキスト" value="    TEST    " }
+{getvar name="テキスト" trim="1" }
+</code></pre>
+<p>両端に空白のない「TEST」と表示されます。</p>
+<h5 class="heading3">replace</h5>
+<p>指定した文字列を全て、指定した文字列に置き換えます。対象の文字列と置き換えた後の文字列をカンマで区切って入力します。<br />
+必要であれば、2回以上書くこともできます。</p>
+<pre><code class="html">{setvar name="テキスト" value="TEST" }
+{getvar name="テキスト" replace="T,W" }
+
+{setvar name="テキスト2" value="NORTH" }
+{getvar name="テキスト2" replace="N,S" replace="R,U" }
+</code></pre>
+<p>上は「WESW」と表示され、下は「SOUTH」と表示されます。</p>
+<h5 class="heading3">remove_html</h5>
+<p>HTMLタグを取り除きます。<br />
+正確には、実在するタグかどうかの検証は行わず、&lt; と &gt; で囲まれた部分を全て削除します。</p>
+<pre><code class="html">{setvar name="テキスト" value="&lt;strong&gt;TEST&lt;/strong&gt;" }
+{getvar name="テキスト" remove_html="1" }
+</code></pre>
+<p>strongタグが取り除かれますので、通常の文字の太さで「TEST」と表示されるでしょう。</p>
+<h5 class="heading3">strform</h5>
+<p>出力内容がある場合に、出力内容を書式化します。<br /></p>
+<pre><code class="html">{setvar name="テキスト" value="NEW" }
+{getvar name="テキスト" strform="&lt;strong&gt;%s&lt;/strong&gt;" }
+
+{setvar name="テキスト2" value="" }
+{getvar name="テキスト2" strform="&lt;strong&gt;%s&lt;/strong&gt;" }
+</code></pre>
+<p>変数「テキスト」をgetvarしている上の方は、<code>&lt;strong&gt;NEW&lt;/strong&gt;</code>と出力されます。<br />
+変数「テキスト2」をgetvarしている下の方は、出力内容がないのでstrformは適用されず、したがって単に空文字列が出力されます。</p>
+<h4 class="heading2">Tips</h4>
+<p>モディファイアの値には変数を使用できます。<br />
+値の頭に「$」をつけると、その変数の値が参照されます。</p>
+<pre><code class="text">{tags}
+    {setvarblock name="タグのID"}{tagid}{/setvarblock}
+    &lt;h2&gt;{tagname}&lt;/h2&gt;
+    &lt;ul&gt;
+        {entries tag="$タグのID" limit="3"}
+            &lt;li&gt;&lt;a href="{entrylink}"&gt;{entrytitle}&lt;/a&gt;&lt;/li&gt;
+        {/entries}
+    &lt;/ul&gt;
+{/tags}
+</code></pre>
+<p>全てのタグごとに、記事一覧（最大3記事まで）を表示する例です。<br />
+<code>{tagid}</code>の値を「タグのID」という変数に入れ、<code>{entries}</code>の<code>tag</code>モディファイアの値として使用しています。</p>
+<h3 class="heading1" id="c_todo">ToDo</h3>
+<h4 class="heading2">sinonome の現状について</h4>
+<p>sinonome は現在、アルファバージョンかそれ以前の段階であり、常用はおすすめしません。<br />
+例えば、今後以下のような互換性がない変更を予定しています。</p>
+<ul>
+<li>ディレクトリ構造の変更（プロファイル的に扱う）</li>
+<li>出力ファイル名を指定していない場合の動作の仕様変更</li>
+</ul>
+<p>いつ頃ベータ版になるかは今のところ未定です。</p>
+<h4 class="heading2">今後の改良点など</h4>
+<p>以下、作者が今後対応したいと考えている事項等を列挙します。<br />
+大量に列挙していましたが、2022年6月に整理しました。</p>
+<ul>
+<li><p>pages の file 指定は前方一致もあったほうがいい（？）  <br /></p>
+</li>
+<li><p>ifタグのeqは完全一致だが、前方一致もほしい（後方一致はいらない？）  <br />
+ただいろいろ増やすよりは正規表現を使えるようにした方がいいかもしれない</p>
+</li>
+<li><p>文字列をsplitして変数（の配列）に入れるのが欲しい  <br />
+TITLEとかを階層的にして、SPLITして0番目の要素でコンテンツの種類を判定したりとか</p>
+</li>
+<li><p>entrytitleとかのサニタイズ　つまり&lt;や&gt;を実体参照にしたりとか  <br />
+使われる箇所によって適切なサニタイズが異なると思われるのでグローバルモディファイアで実装する？<br />
+sanitize=&ldquo;html&rdquo; とか sanitize=&ldquo;url&rdquo; とか</p>
+</li>
+</ul>
+<h5 class="heading3">仕様とするもの</h5>
+<ul>
+<li>モディファイアの値を囲むのはダブルクォート「&ldquo;&ldquo;」のみで、現状シングルクォート「''」は不可  <br />
+絶対にシングルクォートにできないと困るというケースが思い浮かばない<br />
+クォートなしも許容するのか、という話になってしまうのでダブルクォート固定がいい</li>
+</ul>
+<h5 class="heading3">未検証</h5>
+<ul>
+<li>インストールパスにUnicode文字があるとaya.dllがロードできない  <br />
+具体的にはload時にカレントディレクトリを渡す時点でエラーになる<br />
+TAMAにDnDしてもロードできないのでAYAの仕様っぽい<br />
+<del>ただこの件、確か大昔にも知っていて、でも何かを見て「あぁ、じゃあ仕方ない（あるいは対応する意味ないっぽい）」と思った気がする（もしかしたらだけどMATERIAがUnicodeなパスの取り扱いできないとかそういう感じの件だったかも）</del><br />
+→実際確認して、MATERIAやSSPではUnicodeパスで起動しないのを確認した つまりAYAのこの仕様も仕方ないというレベル<br />
+そもそもユーザー層を考えると、Unicodeが含まれるパスで使うということ自体あまりないはずなので仕様ということにする<br /></li>
+</ul>
+<h3 class="heading1" id="c_library">使用ライブラリ等</h3>
+<p>以下のライブラリを使用しました。</p>
+<ul>
+<li>fpc-markdown: Markdown Processor for FPC<br />
+<a href="https://github.com/luridarmawan/fpc-markdown">https://github.com/luridarmawan/fpc-markdown</a></li>
+<li>YAYA(Yet another AYA)<br />
+<a href="http://ms.shillest.net">http://ms.shillest.net</a><br />
+<a href="https://github.com/ponapalt/yaya-shiori">https://github.com/ponapalt/yaya-shiori</a></li>
+</ul>
+<p>上記 YAYA は AYA をもとに作成されています。<br />
+AYAのその作者さんについて、詳細は<a href="../archives/sinonome/20201010.html">この記事</a>で述べた通りです。</p>
+<ul>
+<li>AYA（文字列加工ライブラリ）<br />
+<a href="http://umeici.onjn.jp">http://umeici.onjn.jp</a></li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="prevnext">
+	<ul>
+		<li>
+			<a href="../sinonome/03-resource.html">
+				<span>PREV</span>
+				<span>リソース（ユーザー向け）</span>
+			</a>
+		</li>
+	</ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

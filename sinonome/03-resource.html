@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../files/apple-touch-icon-20220504.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>sinonome | リソース（ユーザー向け） - nu</title>
+<link rel="stylesheet" type="text/css" href="../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../resources/print.css" media="print">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="subpage">
+			<header>
+				<div class="varea">
+					<h1>
+						<a href="../index.html"><img src="../files/logo.svg" alt="nu"> numaduki creation</a>
+					</h1>
+				</div>
+			</header>
+			<label for="spmenutoggle">メニューを表示</label>
+		</div>
+		<hr>
+		<input type="checkbox" id="spmenutoggle">
+		<div id="mainmenu">
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html">トップページ</a>
+					</li>
+					<li>
+						アーカイブ
+						<ul>
+							<li><a href="../all/index.html">全カテゴリ</a></li>
+							<li><a href="../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../tags/columns/index.html">コラム</a></li>
+						</ul>
+					</li>
+					<li>
+						sinonome<small>（静的サイトジェネレーター）</small>
+						<ul>
+								<li><a href="../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+						</ul>
+					</li>
+					<li>
+						伺か<small>（デスクトップキャラクター）</small>
+						<ul>
+								<li><a href="../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../ukagaka/others.html">その他</a></li>
+						</ul>
+					</li>
+					<li>
+						その他
+						<ul>
+								<li><a href="../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../others/shinachiku.html">しなちく</a></li>
+						</ul>
+					</li>
+					<li>
+						このサイトについて
+						<ul>
+								<li><a href="../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../appendix/contact.html">連絡先</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr>
+		<div id="main">
+			<main>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="date">last update: 2022/06/29</p>
+			</div>
+			<h2 class="articleheading"><a href="../sinonome/03-resource.html">sinonome / リソース（ユーザー向け）</a></h2>
+		</div>
+		<div class="subnav">
+			<ul><li><a href="#c_metainfo">メタ情報</a></li><li><a href="#c_multiprofile">複数プロファイル</a></li><li><a href="#c_parameter">起動パラメーター</a></li></ul>
+		</div>
+		<div class="body">
+			<p>※開発者向けリソースは<a href="03-resource-develop.html">別ページに移動しました</a>。</p>
+<h3 class="heading1" id="c_metainfo">メタ情報</h3>
+<p>各投稿、及び投稿ファイルに記述するメタ情報の一覧です。</p>
+<p>メタ情報は、一番最初に記述されているものが使われます。<br />
+（例外として、「複数行記述可能」としているものについては全て処理します）</p>
+<h4 class="heading2">投稿（記事・ウェブページ）のメタ情報</h4>
+<pre><code class="text">&lt;!--
+DATE: 2022-03-03
+OUTPUTPATH: 2022-hinamatsuri
+TAG: 行事,家族
+SKIPGENERATE
+--&gt;
+</code></pre>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>概要</th>
+    <th>フォーマット</th>
+    <th>未入力時のデフォルト値</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <td>DATE</td>
+    <td>投稿日</td>
+    <td>年4桁-月2桁-日2桁<br>年4桁-月2桁-日2桁 時2桁:分2桁:秒2桁</td>
+    <td>sinonome 処理時の年月日と時分秒</td>
+    <td>左記以外のフォーマットは未入力扱い</td>
+  </tr>
+  <tr>
+    <td>OUTPUTPATH</td>
+    <td>投稿名</td>
+    <td>ファイル名に使用可能な半角英数字記号</td>
+    <td>数値（自動割り振り）</td>
+    <td>URLの一部（特にファイル名）になる</td>
+  </tr>
+  <tr>
+    <td>TAG ※記事のみ</td>
+    <td>タグ</td>
+    <td>タグ名（カンマで列挙）</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SKIPGENERATE</td>
+    <td>ページとして出力しない</td>
+    <td>なし</td>
+    <td></td>
+    <td>値は不要</td>
+  </tr>
+</table>
+<h5 class="heading3">補足</h5>
+<p><code>SKIPGENERATE</code>を記述すると、<code>pagetitle</code>や<code>pagebody</code>などのタグで内容を呼び出すことはできますが、ファイルとして出力はされません。</p>
+<p>たとえばテンプレート内に以下のように記述すると、ウェブページファイル osirase.md に記述した内容を表示させることができ、かつ osirase.md はウェブページとしては出力されません。</p>
+<pre><code class="html">{pages file="osirase"}
+    &lt;h2&gt;おしらせ&lt;/h2&gt;
+    {pagebody}
+{/pages}
+</code></pre>
+<h4 class="heading2">ファイルのメタ情報</h4>
+<pre><code class="">&lt;!--
+TITLE: このサイトについて
+OUTPUTPATH: about-this-site
+DELIM: →
+RE_DEFINE: 📅 (\d{4}\-\d{2}-\d{2})→DATE: $1
+--&gt;
+</code></pre>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>概要</th>
+    <th>フォーマット</th>
+    <th>未入力時のデフォルト値</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <td>TITLE ※ウェブページファイルのみ</td>
+    <td>ファイルのタイトル</td>
+    <td></td>
+    <td></td>
+    <td>テンプレートタグから呼び出される</td>
+  </tr>
+  <tr>
+    <td>OUTPUTPATH ※ウェブページファイルのみ</td>
+    <td>出力パスに使用される文字列</td>
+    <td>半角英数字記号</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DEFINE / REPLACE<br>RE_DEFINE / RE_REPLACE</td>
+    <td>文字列置換</td>
+    <td>カンマ区切り<br>（またはDELIMで指定した記号）</td>
+    <td></td>
+    <td>複数行記述可能</td>
+  </tr>
+  <tr>
+    <td>DELIM</td>
+    <td>区切り文字変更</td>
+    <td></td>
+    <td>,</td>
+    <td>書いた行の下から有効</td>
+  </tr>
+</table>
+<h5 class="heading3">補足（DEFINE/RE_DEFINE/REPLACE/RE_REPLACE）</h5>
+<p><code>DEFINE</code> <code>RE_DEFINE</code> <code>REPLACE</code> <code>RE_REPLACE</code>について説明します。<br /></p>
+<h6 class="heading4">DEFINE</h6>
+<p><code>DEFINE</code>は、<strong>投稿ファイルがsinonomeのフォーマットにしたがってパースされる前に</strong>置換処理を行います。</p>
+<p>パースされる前の置換なので、sinonomeの記法をハックできます。<br />
+たとえば各投稿のメタ情報は通常、HTMLのコメントアウトの中に記述するので、Markdownビューアーでは見えません。<br />
+これをMarkdownビューアーで見えるようにするために、コードブロックにしてみます。</p>
+<pre><code class="text">&lt;!--
+DEFINE: ~~~~~~~~ meta,&lt;!(hyphen)-,~~~~~~~~,-(hyphen)&gt;
+DEFINE: &lt;!(hyphen)//,&lt;!-,(hyphen)&gt;,-&gt;
+--&gt;
+</code></pre>
+<p>上記の通り、「置換前,置換後」で記述します。<br />
+「置換1前,置換1後,置換2前,置換2後,..」と続けて書くこともできます。<br />
+また、2行以上書くことができ、その場合は上から処理されます。</p>
+<p>これで、各投稿のメタ情報を、以下のように書くことができるようになります。<br /></p>
+<pre><code class="text">~~~~~~~~ meta
+DATE: 2022-06-22
+~~~~~~~~
+</code></pre>
+<h6 class="heading4">REPLACE</h6>
+<p>REPLACEは、<strong>投稿ファイルがパースされた後、各投稿の本文に対して</strong>置換処理を行います。<br /></p>
+<pre><code class="text">&lt;!--
+DELIM: →
+REPLACE: ，→,
+--&gt;
+</code></pre>
+<p>全角カンマを半角カンマに変換します。<br />
+カンマはデフォルトでは置換文字列に含むことができないので、DELIMで区切り文字を変更しています。</p>
+<h6 class="heading4">RE_DEFINE / RE_REPLACE</h6>
+<p><code>RE_DEFINE</code> <code>RE_REPLACE</code> はRE_のついていないものと処理タイミングは同じですが、正規表現が使えます。<br />
+perl風のメタ文字が使用可能なので、たとえば以下のようなことができます。</p>
+<pre><code class="text">&lt;!--
+RE_REPLACE: &lt;a(\s+.*?href="http.+?\")&gt;(.*?)&lt;\/a&gt;,&lt;a$1 data-type="external"&gt;🔗$2&lt;/a&gt;
+--&gt;
+</code></pre>
+<p><code>a</code>タグの<code>href</code>が「http」で始まる場合、テキストの前にリンクの絵文字が付きます。</p>
+<h5 class="heading3">補足2（define_replace.txt）</h5>
+<p>全ての投稿ファイルに同じ<code>DEFINE</code>等を適用したい場合に、全てのファイルに書くのは手間です。<br />
+そのような場合には、プロファイルディレクトリに define_replace.txt を作成して、内容を記述してください。<br /></p>
+<p>ただし、<strong>ファイルに書いたものと、define_replace.txtに書いたものとでは、処理タイミングが異なります</strong>。<br />
+これを把握していないと、意図しない置換動作になる可能性があります。<br />
+おかしいなと思ったら、以下を確認してみてください。</p>
+<ol>
+<li>投稿ファイルが読み込まれる</li>
+<li>define_replace.txtの <code>DEFINE</code> <code>RE_DEFINE</code></li>
+<li>ファイルの <code>DEFINE</code> <code>RE_DEFINE</code></li>
+<li>ファイルがパースされ、各投稿に分解される</li>
+<li>各投稿に対して、ファイルの <code>REPLACE</code> <code>RE_REPLACE</code></li>
+<li>テンプレートタグが処理され、htmlファイルに書き込まれる内容が準備される</li>
+<li>htmlファイルに書き込まれる内容に対して、<strong>define_replace.txtの <code>REPLACE</code> <code>RE_REPLACE</code></strong></li>
+</ol>
+<p>特に注意すべきなのは、上記の5.と7.の間に、テンプレート処理が入ることです。<br />
+テンプレート処理が終わってからREPLACEしたい場合は、define_replace.txtに書く必要があります。
+もっとシンプルにいえば、テンプレートタグによる出力内容を置換したい場合は、define_replace.txtに書く必要があります。</p>
+<p>たとえばあるテーマで、<code>{entrydate}</code>タグで<code>2022年06月01日</code>と出力されたとします。<br />
+普通「06月」「01日」という表現はしないので、<code>REPLACE</code>で0を取り除こうと思います。<br />
+このとき、<code>REPLACE</code>はファイルのメタ情報とdefine_replace.txt、どちらに書くべきでしょうか？</p>
+<pre><code class="text">REPLACE: 年0,年,月0,月
+</code></pre>
+<p><code>{entrydate}</code>はテンプレートタグなので、6.で日付が出力されます。<br />
+よって、ファイルのメタ情報（5.）に書いても処理ができません。<br />
+define_replace.txt（7.）に書くことで、意図通りに処理されます。</p>
+<h3 class="heading1" id="c_multiprofile">複数プロファイル</h3>
+<p>sinonome は複数プロファイルに対応しています。<br />
+これにより、簡易的に複数の別のウェブサイトを生成することができます。</p>
+<p>使用するプロファイルを指定するには、インストールディレクトリに <code>profile.txt</code> を設置します。<br />
+そこにプロファイルのディレクトリ名を記入してください。</p>
+<pre><code class="text">// コメントアウトが使えます。
+// いちいちディレクトリ名を入力するのは不便なので、コメントアウトの付け外しで運用できます
+
+//default
+myblog
+</code></pre>
+<p>1行目から調べて、最初に発見したディレクトリ名が採用されます。<br />
+存在しないディレクトリ名は採用されず、無視されます。</p>
+<pre><code class="text">// myblog の方が先に書いてありますので、myblog が使用されます。
+myblog
+default
+</code></pre>
+<p><code>profile.txt</code> が存在しない場合や、有効な記述がなかった場合は「default」を指定したと見なされます。</p>
+<p>プロファイルの指定は、起動パラメーターでも可能です。<br />
+<code>profile.txt</code> と起動パラメーターの両方で指定した場合は、起動パラメーターが優先されます。</p>
+<h3 class="heading1" id="c_parameter">起動パラメーター</h3>
+<p>sino.exeに以下の引数を渡して起動すると、動作を変更することができます。<br />
+複数渡すことができます。</p>
+<table>
+  <tr>
+    <th>パラメーター</th>
+    <th>概要</th>
+  </tr>
+  <tr>
+    <td>-nat</td>
+    <td>アーカイブテンプレートの処理を省略します。<br>（アーカイブテンプレートファイル自体の読み込みは行われます）</td>
+  </tr>
+  <tr>
+    <td>-nit</td>
+    <td>インデックステンプレートの処理を省略します。<br>（インデックステンプレートファイル自体の読み込みは行われます）</td>
+  </tr>
+  <tr>
+    <td>-nfc</td>
+    <td>・テーマの \resources ディレクトリ<br>・プロファイルディレクトリの \files ディレクトリ<br>上記を出力ディレクトリへコピーする動作を省略します。</td>
+  </tr>
+  <tr>
+    <td>-profile ディレクトリ名</td>
+    <td>プロファイルのディレクトリ名を指定します。無効なディレクトリ名の場合は処理を行いません。</td>
+  </tr>
+</table>
+		</div>
+	</article>
+</div>
+<div class="prevnext">
+	<ul>
+		<li>
+			<a href="../sinonome/02-develop.html">
+				<span>PREV</span>
+				<span>テーマ開発マニュアル</span>
+			</a>
+		</li>
+		<li>
+			<a href="../sinonome/03-resource-develop.html">
+				<span>NEXT</span>
+				<span>リソース（開発者向け）</span>
+			</a>
+		</li>
+	</ul>
+</div>
+			</main>
+		</div>
+		<hr>
+		<div id="footer">
+			<footer>
+				<span class="copy">&copy; numaduki / generated by <a href="../sinonome/index.html">sinonome</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
