@@ -82,7 +82,7 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="date">last update: 2022/06/19</p>
+				<p class="date">last update: 2022/08/14</p>
 			</div>
 			<h2 class="articleheading"><a href="../sinonome/01-basic.html">sinonome / ユーザーマニュアル</a></h2>
 		</div>
@@ -108,7 +108,8 @@
 <p>について解説します。</p>
 <h3 class="heading1" id="c_setting">基本設定</h3>
 <p>\profiles\default 内の settings.txt で、基本の設定を行います。<br />
-「キー, 値」のフォーマットで書いていきます。<br />
+（settings.txt は、sinonome を実行した直後に自動で生成されます。手動で作成したい場合は、同じディレクトリにある settings_default.txt の内容を複製してください）</p>
+<p>「キー, 値」のフォーマットで書いていきます。<br />
 カンマの後ろには半角スペースが必要ですのでご注意ください。</p>
 <p><strong>sitetitle</strong>,<br />
 サイト名</p>
@@ -120,7 +121,7 @@
 使用するテンプレートのディレクトリ名</p>
 <p><strong>output_directory</strong>, sitefile\<br />
 サイトファイル一式を出力するパス<br />
-（相対パスで指定し、最後は必ず \ で終わるようにします）<br />
+（絶対パスまたは相対パスで指定し、最後は必ず \ で終わるようにします）<br />
 （上のディレクトリ「..\」は指定しないようにしてください）</p>
 <p><strong>output_skipifnotchange</strong>, 1<br />
 出力結果に変化がない場合は出力しない<br />
