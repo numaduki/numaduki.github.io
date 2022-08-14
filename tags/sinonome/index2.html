@@ -78,7 +78,42 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">アーカイブ - sinonome (2 / 2)</h2>
+<h2 class="sectionheading">アーカイブ - sinonome (2 / 3)</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2020/11/29</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li><code>{else}</code>節にさらに<code>{else}</code>がある場合、正常に動作していなかったのを修正</li>
+<li>preview 4でモディファイアの値に変数が使用可能になったため、<code>{if}</code>タグのモディファイア<code>eqvar</code>を廃止</li>
+<li><code>DATE:</code>に年月日を入力しており時刻だけ入力していない場合、時刻を00時00分00秒と見なすよう変更（今までは現在の時刻が使用されていた）</li>
+<li><code>{pagedate}</code> <code>{entrydate}</code>の仕様があやふやだったので明確化して<a href="../../sinonome/03-resource/template-tags.html">タグリファレンス</a>に記載</li>
+</ul>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0006.zip">ダウンロード</a></p>
+<p>（<code>{if}</code>の<code>eq</code>に限らず）モディファイアの値の頭に<code>$</code>を付けると変数名と見なされ、その変数の値が参照されます。<br />
+つまり、<code>eqvar</code>を使っていた場合は、以下のように書き直してください。</p>
+<pre><code class="html">（旧）
+{if name="変数名1" eqvar="変数名2"}
+（新）
+{if name="変数名1" eq="$変数名2"}
+</code></pre>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +121,13 @@
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2020/11/22</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../../archives/sinonome/20201122.html">sinonome preview 5</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li>テンプレートタグ <code>{relpath}</code> を <code>{root}</code> に変更</li>
 <li>複数プロファイルに対応した（ディレクトリ構成の変更あり）</li>
@@ -209,33 +248,8 @@ default
 		</div>
 	</article>
 </div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/10/10</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201010.html">sinonome preview 1 / sinonome 公開によせて</a></h3>
-		</div>
-		<div class="body">
-				<p>詳しい操作法は上記「ユーザーマニュアル」をご参照ください。</p>
-<p><a href="../../distribute/sinonome/alpha/sinonome_preview_0001.zip">ダウンロード</a></p>
-<h4 class="heading1">なぜ作ったのか</h4>
-<p>知っている人は説明しなくても知っているだろうけど知らない人は全く知らないだろうと思うので説明すると、AYAは偽春菜（現「伺か」）の「偽AI」としてよく使われているDLLです。それは旧バージョンがそもそもそのために作られた、というルーツがあるからなのですが、最新版のaya.dllは「偽AI」としての機能を維持しつつ本質的には「文字列加工DLL」として開発されています。つまり偽AIとしての互換性を維持しながら、汎用的な文字列加工DLLとしての用途という新たな可能性を開いたということなのです。すげえ。</p>
-<p>そういうことなので、最新版のAYAなら、そもそもプレーンテキストであるウェブページ出力器も作れるはずで、都合がいいことにファイルの出入力までできるので、よし作ろう、となったのがおそらく7年くらい前で（「おそらく」とか言っている時点で実のところあやふやなのですが）、そのための実行ファイルなどもおそらく6～7年くらい前にコンパイルした代物です。ただ肝心の辞書ファイルは作りかけで放置された状態であり、そのまま出すのも恥ずかしいので、この度体裁を整え、それなりに動くように書き換えたりして、公開という運びになりました。</p>
-<p>昔は「バグだと言われるくらいならあえて崩しててきとーに作った感を出す」といった方が気がラクだった気もしますが、今はどちらかと言うと「てきとーに作った感が出るくらいならそれなりに体裁を整えてバグがあったら直す（か仕様だと言い張る）」方がラク、という気もします。単に作っている物の完成度にもよる気がしますし、「おいバグだぞ」と言われた時に「バグだよ（仕様だよ）」とさらっと言い返せるだけの胆力（鈍感力ともいう）がついたという可能性もありますが、「てきとーなものを出すのはちょっとな……」という気分が強くなっただけ大人になったのかもしれないし、そうでもないかもしれない。</p>
-<p>ただ、今も昔もウェブサイトを作るのは好きで、今でもそれなりにウェブ界隈の動きを観察しつつ作ったりしているのですが、CGIとかいう高尚な魔法で表示されるウェブサイトと違って、やはり手元にhtmlを作って、それをFTPでアップロードする、という畑仕事は楽しいものです。なんならあの頃のように全部メモ帳で打つのが一番楽しいに決まっていますが、時が経ち大人になると誰しもHTMLタグ以外にもいじりたいものが増えると思うので、一部を魔法にした感じのものを作りました。これでHTMLタグをいじる時間を節約して、開いた時間で他にいじりたいものをいじってください。</p>
-<p>先のページにも書いた通り、静的ジェネレータ界隈では「jekyll（ジキル）」という有名なツールがあるのですが、アレはまあ、本当にその道の人がその道に偶然転がっていたツールを組み合わせて作ったもの、というだけであって、別に俺の技術力すげーだろ、などと言いたくて作ったわけではないはずで、つまり私も私の道に静置してあったツールで作ったというだけなのであって、別に私こんなの作ったよ！すごいでしょ！と自画自賛したいというわけでもなく、ただ単純にシンプルな静的ジェネレータが欲しいな、と思ったら過去に自分が作りかけて放置していたブツがあった、ということであり、つまりそれがsinonomeです。そんな感じなので、ましてや「今の静的ジェネレータ界隈に風穴を開ける」といった高い志の元に開発が行われた、などというわけでもないのです。念のため。</p>
-<p>じゃあ何なのかというと、sinonomeには限界が多くあり、改良にも限界がありますが、「流石にメモ帳でゼロから打つ暇はないし、ホームページビルダーはアレだし、Dreamweaverは名前は聞くけどよく知らないし今となっては月額制だし……」という人にとって、「こういうのあるんだけど、誰かこういうの作ってよ」の「こういうの」になれればいいな、と思っているのです。もしよければ、あなたの周りの有能そうな人にsinonomeを渡してみて、こういうの作れ、とけしかけてください。そうすれば、あなたが本当に必要としているものがこの世に生まれるかもしれない。</p>
-<h4 class="heading1">sinonomeという名前について</h4>
-<p>sinonomeという名前は前述の「jekyll」（ジキル博士）からの「はかせ」つながりです。仮称だったのですが、他にこれといった名前が浮かばず正式名称となりました。ということは流儀的にはsinonomeの辞書一式は「NANO」で、テーマシステムは「SAKAMOTO」とか命名すべきなのかもしれませんが、ウェブサイト生成というブツの性質上、全世界の人々が使いだす可能性も（月が地球にKISSをするくらいの確率で）あり、そうなるとネーミングセンスがちょっと求めるツールのノリと違うな、どうしよっかな、と思う人も多かろうと思われるので、ひとまず保留。</p>
-<p>以上です。</p>
-		</div>
-	</article>
-</div>
 <div class="pager">
-<ul><li ><a href="../../tags/sinonome/index.html">1</a></li><li class="current"><a href="../../tags/sinonome/index2.html">2</a></li></ul>
+<ul><li ><a href="../../tags/sinonome/index.html">1</a></li><li class="current"><a href="../../tags/sinonome/index2.html">2</a></li><li ><a href="../../tags/sinonome/index3.html">3</a></li></ul>
 </div>
 			</main>
 		</div>
