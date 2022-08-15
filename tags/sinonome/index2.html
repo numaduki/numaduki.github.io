@@ -84,11 +84,66 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/11/29</p>
+				<p class="date">2022/05/03</p>
 			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
 		</div>
 		<div class="body">
+				<ul>
+<li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
+<li>タグアーカイブでページネーションを実装</li>
+<li><code>{entrynext}</code> <code>{entryprev}</code> の <code>scope</code> モディファイアの値に <code>tag</code> を追加（タグを複数設定している場合は、一番最初に指定したタグが対象となります）</li>
+<li>各タグにおける相対パスの出力処理がおかしかったのを修正</li>
+<li>ファイル分割によるカテゴリー分け機能を廃止（カテゴライズは「タグ」機能のみに変更）</li>
+<li>その他の内部的変更</li>
+</ul>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0007.zip">ダウンロード</a></p>
+<h4 class="heading1">ファイル記事分割についての仕様変更</h4>
+<p>今までは、ファイルを分割することで「カテゴリー」として扱っていました。<br />
+しかし preview 7以降は、デフォルトでは<strong>記事ファイルの分割は特に意味を持ちません。</strong><br />
+記事のカテゴライズは、「タグ」のみで行うことになります。</p>
+<p>なお、ファイルのヘッダーに以下の行を記述することで、そのファイル内の投稿全てにタグを付与することができます。<br /></p>
+<pre><code class="">TAG: 日常
+</code></pre>
+<p>ファイルのヘッダーにこう書くことで、ファイル内の投稿に全て<code>日常</code>タグが付与されます。</p>
+<h4 class="heading1">文からYAYAへの変更に際して</h4>
+<p>前述の通り、YAYAに変更したきっかけは「文では絵文字を扱うのが困難だったから」です。<br />
+しかし、絵文字は数値文字参照にすればいい（🌻なら&amp;#x1f33b;）だけであり、そんなに大きい問題ではありません。<br /></p>
+<p>文には大変思い入れがあります。しかしその思い入れを優先するために、今後制限事項が徐々に増えていったり、クオリティ低下に直結する作業量の増大が発生するのは作り手にとっても受け手にとっても望ましくはない、という判断に至りました。</p>
+<p>なぜ文に思い入れがあるのかというと、私にとって大事な存在だからです。理由は二つ。<br />
+一つは、空想を形にするという、人生で一番楽しいことを実現してくれるから。<br />
+もう一つは、私に現実に生きるためのプログラミングの力をくれたからです。</p>
+<p>文と出会ったのは高校の頃で、それ以前からもJavaScriptなどでコードを書くことはしていましたが、文は当時の私にとってはとても本格的なプログラミング言語でした。C言語のように複雑なことができるのに、規模が抑えられておりシンプルで、プログラミング初学者だった私にとっては大変扱いやすい言語でした。</p>
+<p>ライブラリとしての構造もまたシンプルで、読み込む側のアプリケーションを作ることも、読み込む拡張モジュールを作ることも、特別に難しくはありません。このことは、私がコンパイル型というタイプの異なる言語を（断続的ではありますが）学び続けるきっかけになってくれました。</p>
+<p>これ以上個人的事情を書くのはやめておこうと思いますが（書きたくなったら外部のブログ等に書くことにします）、つまるところ、文と出会えたおかげで、今の私があります。</p>
+<p>文作者のumeiciさんに、心から感謝申し上げます。<br />
+伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
+<p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2020/11/29</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<ul>
 <li><code>{else}</code>節にさらに<code>{else}</code>がある場合、正常に動作していなかったのを修正</li>
 <li>preview 4でモディファイアの値に変数が使用可能になったため、<code>{if}</code>タグのモディファイア<code>eqvar</code>を廃止</li>
@@ -227,24 +282,6 @@ default
 <li>他潜在的バグの修正</li>
 </ul>
 <p><a href="../../distribute/sinonome/alpha/sinonome_preview_0003.zip">ダウンロード</a></p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/10/11</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201011.html">sinonome preview 2</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li>{pagedate}が動作していなかったのを修正</li>
-<li><a href="../../sinonome/02-develop/original-theme.html">マニュアル</a>にテーマのリソースの設置場所を追記</li>
-</ul>
-<p><a href="../../distribute/sinonome/alpha/sinonome_preview_0002.zip">ダウンロード</a></p>
 		</div>
 	</article>
 </div>

@@ -2,12 +2,12 @@
 <html>
 	<head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href=".././files/favicon-20220504.png">
-	<link rel="apple-touch-icon" href=".././files/apple-touch-icon-20220504.png">
+	<link rel="icon" type="image/png" href="../files/favicon-20220504.png">
+	<link rel="apple-touch-icon" href="../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>nu - numaduki creation</title>
-<link rel="stylesheet" type="text/css" href=".././resources/screen.css" media="screen">
-<link rel="stylesheet" type="text/css" href=".././resources/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="../resources/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../resources/print.css" media="print">
 </head>
 <body>
 	<div id="wrapper">
@@ -15,7 +15,7 @@
 			<header>
 				<div class="varea">
 					<h1>
-						<a href=".././index.html"><img src=".././files/logo.svg" alt="nu"> numaduki creation</a>
+						<a href="../index.html"><img src="../files/logo.svg" alt="nu"> numaduki creation</a>
 					</h1>
 				</div>
 			</header>
@@ -27,49 +27,49 @@
 			<nav>
 				<ul>
 					<li>
-						<a href=".././index.html">トップページ</a>
+						<a href="../index.html">トップページ</a>
 					</li>
 					<li>
 						アーカイブ
 						<ul>
-							<li><a href=".././all/index.html">全カテゴリ</a></li>
-							<li><a href=".././tags/information/index.html">お知らせ</a></li>
-							<li><a href=".././tags/sinonome/index.html">sinonome</a></li>
-							<li><a href=".././tags/ukagaka/index.html">伺か</a></li>
-							<li><a href=".././tags/columns/index.html">コラム</a></li>
+							<li><a href="../all/index.html">全カテゴリ</a></li>
+							<li><a href="../tags/information/index.html">お知らせ</a></li>
+							<li><a href="../tags/sinonome/index.html">sinonome</a></li>
+							<li><a href="../tags/ukagaka/index.html">伺か</a></li>
+							<li><a href="../tags/columns/index.html">コラム</a></li>
 						</ul>
 					</li>
 					<li>
 						sinonome<small>（静的サイトジェネレーター）</small>
 						<ul>
-								<li><a href=".././sinonome/index.html">イントロダクション</a></li>
-								<li><a href=".././sinonome/01-basic.html">ユーザーマニュアル</a></li>
-								<li><a href=".././sinonome/02-develop.html">テーマ開発マニュアル</a></li>
-								<li><a href=".././sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
-								<li><a href=".././sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
+								<li><a href="../sinonome/index.html">イントロダクション</a></li>
+								<li><a href="../sinonome/01-basic.html">ユーザーマニュアル</a></li>
+								<li><a href="../sinonome/02-develop.html">テーマ開発マニュアル</a></li>
+								<li><a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+								<li><a href="../sinonome/03-resource-develop.html">リソース（開発者向け）</a></li>
 						</ul>
 					</li>
 					<li>
 						伺か<small>（デスクトップキャラクター）</small>
 						<ul>
-								<li><a href=".././ukagaka/ghost.html">ゴースト</a></li>
-								<li><a href=".././ukagaka/balloon.html">バルーン</a></li>
-								<li><a href=".././ukagaka/others.html">その他</a></li>
+								<li><a href="../ukagaka/ghost.html">ゴースト</a></li>
+								<li><a href="../ukagaka/balloon.html">バルーン</a></li>
+								<li><a href="../ukagaka/others.html">その他</a></li>
 						</ul>
 					</li>
 					<li>
 						その他
 						<ul>
-								<li><a href=".././others/tools-for-windows.html">Windows用ツール</a></li>
-								<li><a href=".././others/shinachiku.html">しなちく</a></li>
+								<li><a href="../others/tools-for-windows.html">Windows用ツール</a></li>
+								<li><a href="../others/shinachiku.html">しなちく</a></li>
 						</ul>
 					</li>
 					<li>
 						このサイトについて
 						<ul>
-								<li><a href=".././appendix/index.html">サイトと作者</a></li>
-								<li><a href=".././appendix/guideline.html">ガイドライン</a></li>
-								<li><a href=".././appendix/contact.html">連絡先</a></li>
+								<li><a href="../appendix/index.html">サイトと作者</a></li>
+								<li><a href="../appendix/guideline.html">ガイドライン</a></li>
+								<li><a href="../appendix/contact.html">連絡先</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -83,10 +83,53 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="tags"><a href=".././tags/columns/index.html">コラム</a></p>
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/05/03</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
+<li>タグアーカイブでページネーションを実装</li>
+<li><code>{entrynext}</code> <code>{entryprev}</code> の <code>scope</code> モディファイアの値に <code>tag</code> を追加（タグを複数設定している場合は、一番最初に指定したタグが対象となります）</li>
+<li>各タグにおける相対パスの出力処理がおかしかったのを修正</li>
+<li>ファイル分割によるカテゴリー分け機能を廃止（カテゴライズは「タグ」機能のみに変更）</li>
+<li>その他の内部的変更</li>
+</ul>
+<p><a href="../distribute/sinonome/preview/sinonome_preview_0007.zip">ダウンロード</a></p>
+<h4 class="heading1">ファイル記事分割についての仕様変更</h4>
+<p>今までは、ファイルを分割することで「カテゴリー」として扱っていました。<br />
+しかし preview 7以降は、デフォルトでは<strong>記事ファイルの分割は特に意味を持ちません。</strong><br />
+記事のカテゴライズは、「タグ」のみで行うことになります。</p>
+<p>なお、ファイルのヘッダーに以下の行を記述することで、そのファイル内の投稿全てにタグを付与することができます。<br /></p>
+<pre><code class="">TAG: 日常
+</code></pre>
+<p>ファイルのヘッダーにこう書くことで、ファイル内の投稿に全て<code>日常</code>タグが付与されます。</p>
+<h4 class="heading1">文からYAYAへの変更に際して</h4>
+<p>前述の通り、YAYAに変更したきっかけは「文では絵文字を扱うのが困難だったから」です。<br />
+しかし、絵文字は数値文字参照にすればいい（🌻なら&amp;#x1f33b;）だけであり、そんなに大きい問題ではありません。<br /></p>
+<p>文には大変思い入れがあります。しかしその思い入れを優先するために、今後制限事項が徐々に増えていったり、クオリティ低下に直結する作業量の増大が発生するのは作り手にとっても受け手にとっても望ましくはない、という判断に至りました。</p>
+<p>なぜ文に思い入れがあるのかというと、私にとって大事な存在だからです。理由は二つ。<br />
+一つは、空想を形にするという、人生で一番楽しいことを実現してくれるから。<br />
+もう一つは、私に現実に生きるためのプログラミングの力をくれたからです。</p>
+<p>文と出会ったのは高校の頃で、それ以前からもJavaScriptなどでコードを書くことはしていましたが、文は当時の私にとってはとても本格的なプログラミング言語でした。C言語のように複雑なことができるのに、規模が抑えられておりシンプルで、プログラミング初学者だった私にとっては大変扱いやすい言語でした。</p>
+<p>ライブラリとしての構造もまたシンプルで、読み込む側のアプリケーションを作ることも、読み込む拡張モジュールを作ることも、特別に難しくはありません。このことは、私がコンパイル型というタイプの異なる言語を（断続的ではありますが）学び続けるきっかけになってくれました。</p>
+<p>これ以上個人的事情を書くのはやめておこうと思いますが（書きたくなったら外部のブログ等に書くことにします）、つまるところ、文と出会えたおかげで、今の私があります。</p>
+<p>文作者のumeiciさんに、心から感謝申し上げます。<br />
+伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
+<p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/columns/index.html">コラム</a></p>
 				<p class="date">2021/07/24</p>
 			</div>
-			<h3 class="articleheading"><a href=".././archives/columns/20210724.html">科学者アルキメデス</a></h3>
+			<h3 class="articleheading"><a href="../archives/columns/20210724.html">科学者アルキメデス</a></h3>
 		</div>
 		<div class="body">
 				<p>　古代ギリシアには偉い人がたくさんいました。<br />
@@ -120,17 +163,17 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="tags"><a href=".././tags/ukagaka/index.html">伺か</a></p>
+				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
 				<p class="date">2021/07/24</p>
 			</div>
-			<h3 class="articleheading"><a href=".././archives/ukagaka/20210724.html">初心占い師ほたる phase7.1.6</a></h3>
+			<h3 class="articleheading"><a href="../archives/ukagaka/20210724.html">初心占い師ほたる phase7.1.6</a></h3>
 		</div>
 		<div class="body">
 				<ul>
-<li><a href=".././ukagaka/ghost/hotaru.html">詳細ページ</a></li>
-<li><a href=".././update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
+<li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
+<li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
 </ul>
-<p><a href=".././ukagaka/ghost/hotaru.html">初心占い師ほたる</a>の祝日判定の問題修正と、マスカレードのメニューに「今日は何の日？」を追加しました。<br />
+<p><a href="../ukagaka/ghost/hotaru.html">初心占い師ほたる</a>の祝日判定の問題修正と、マスカレードのメニューに「今日は何の日？」を追加しました。<br />
 ネットワーク更新で取得可能です。<br /></p>
 <p>なお、今回はトークの追加はありませんが、祝日が正常に判定されるようになったことで、今まで見られなかったトークが見られるようになるかもしれません。<br />
 なお、昨日（スポーツの日）に関するトークは特にありません。すみません。</p>
@@ -146,17 +189,17 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="tags"><a href=".././tags/ukagaka/index.html">伺か</a></p>
+				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
 				<p class="date">2021/06/06</p>
 			</div>
-			<h3 class="articleheading"><a href=".././archives/ukagaka/20210606.html">初心占い師ほたる phase7.1.5</a></h3>
+			<h3 class="articleheading"><a href="../archives/ukagaka/20210606.html">初心占い師ほたる phase7.1.5</a></h3>
 		</div>
 		<div class="body">
 				<ul>
-<li><a href=".././ukagaka/ghost/hotaru.html">詳細ページ</a></li>
-<li><a href=".././update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
+<li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
+<li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
 </ul>
-<p><a href=".././ukagaka/ghost/hotaru.html">初心占い師ほたる</a>のトークを追加しました。ネットワーク更新で取得可能です。<br />
+<p><a href="../ukagaka/ghost/hotaru.html">初心占い師ほたる</a>のトークを追加しました。ネットワーク更新で取得可能です。<br />
 寝ていてもうちわが動くガールの話。<br /></p>
 <p>伺かとか、あるいは繰り返し見る可能性の高い会話形式のコンテンツの場合、最初に見た時は「？」て思うけど、また見たら「あぁ……そういう面白さだったのかこれ」ってなるようなトークが色んな意味でいいトークなのかもしれない、と思っているところがあり、そういう意味では今回のトークはそういうトークかもしれません。別に何か深みのあるトーク、というのではなく単純に少しわかりにくいトークです、ということなのですが、まあ私ももう三十代も後半になってしまっているので、若に時代特有のあまり意味もないこだわりというものもありません。もしかしたらハートマークも初めて使ったかもしれない。<br /></p>
 <p>さて、三十にして立つ、四十にして惑わず、という言葉があります。前述の通り私は三十代をあと数年で終わるというフェーズを迎えているのでもうかなり立っているはずなのですが、それでもなお言葉の意味の思い違いをしていることが少なからずあったりします。なので、今回も念のため「寝ていてもうちわの動く親心」という川柳の解釈を調べてみたのですが、案の定、思っていたのと違う解釈がありました。<br />
@@ -166,8 +209,8 @@
 あるいは江戸時代の川柳なので、当時の衛生状況を考えると蚊よりも蝿のほうがウザがられていた可能性もあり、であればあいつらちょっと気配をちらつかせただけでも飛んでいってしまうので、やっぱりうちわは蚊というより蝿シフトなのかもしれません。<br />
 いやあ、文芸作品は時代背景を踏まえて読むのが重要なんですね。ちょっぴり立ちました。<br /></p>
 <p>コラムの方にもうちわについて思うところを書いていますので、よろしければお読みください。<br />
-<a href=".././archives/columns/20210605.html">プラスチックうちわが如何に切ない存在なのかを説明する前半</a><br />
-<a href=".././archives/columns/20210606.html">厚紙うちわがなぜ日本うちわ協会に公認されないのかについてを考察する後半</a></p>
+<a href="../archives/columns/20210605.html">プラスチックうちわが如何に切ない存在なのかを説明する前半</a><br />
+<a href="../archives/columns/20210606.html">厚紙うちわがなぜ日本うちわ協会に公認されないのかについてを考察する後半</a></p>
 		</div>
 	</article>
 </div>
@@ -175,10 +218,10 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="tags"><a href=".././tags/columns/index.html">コラム</a></p>
+				<p class="tags"><a href="../tags/columns/index.html">コラム</a></p>
 				<p class="date">2021/06/06</p>
 			</div>
-			<h3 class="articleheading"><a href=".././archives/columns/20210606.html">うちわ(2)</a></h3>
+			<h3 class="articleheading"><a href="../archives/columns/20210606.html">うちわ(2)</a></h3>
 		</div>
 		<div class="body">
 				<p>　昨日は、プラスチックうちわという存在の切なさについて説明しました。</p>
@@ -205,43 +248,15 @@
 		</div>
 	</article>
 </div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href=".././tags/columns/index.html">コラム</a></p>
-				<p class="date">2021/06/05</p>
-			</div>
-			<h3 class="articleheading"><a href=".././archives/columns/20210605.html">うちわ</a></h3>
-		</div>
-		<div class="body">
-				<p>　部屋にうちわを常備しました。</p>
-<p>　本来であれば竹や和紙で作られた趣のあるうちわをチョイスするところなのですが、なぜか今の私の部屋には<a href="http://jpn.nec.com/bazar/">黄色いバックグラウンドに変なさる</a>が描かれたプラスチックうちわしかありません。</p>
-<p>　竹や和紙で作られたうちわは、たおやかではんなりとした浴衣女子のイメージです。<br />
-　しかしプラスチックうちわにはそんなオーガニックな要素は何一つありません。無表情な無機質女子を彷彿とさせます。 「私が扇ぐ――風が動き始める――あなたに涼しさをもたらす。これは因果律で説明がつく――」といった声が聞こえてくるような気がします。</p>
-<p>　そんなプラスチックうちわですが、かつては家電量販店などでノベルティとしてよく配られていました。<br />
-　すなわち、大量生産される広告の一種ともいえます。<br />
-　しかしうちわの形をして生まれてきた以上、彼女もまたうちわであることには違いないのです。</p>
-<p>　――私は何のために生まれたのだろう？<br />
-　家電量販店の宣伝のため？ それとも納涼のため？<br />
-　私はうちわの姿をした広告？ それとも広告を刷られたうちわ？<br />
-　どちらも大して変わらない、どちらにしても私はキミに嘘をついてる――。</p>
-<p>　自らの存在意義に起因する終わらない苛立ちを今日も心の奥に押し込めて、今日も彼女は半裸の持ち主に上下に振られているのかもしれません。<br /></p>
-<p>　いつだったか「最終兵器彼女」という漫画がありました。<br />
-　このケースではまさに「販促団扇彼女」ということなのです。<br />
-　切ないじゃありませんか。</p>
-		</div>
-	</article>
-</div>
 <div class="pager">
-<ul><li ><a href=".././all/./index.html">1</a></li><li ><a href=".././all/./index2.html">2</a></li><li class="current"><a href=".././all/./index3.html">3</a></li><li ><a href=".././all/./index4.html">4</a></li><li ><a href=".././all/./index5.html">5</a></li><li ><a href=".././all/./index6.html">6</a></li><li ><a href=".././all/./index7.html">7</a></li></ul>
+<ul><li ><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li class="current"><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li></ul>
 </div>
 			</main>
 		</div>
 		<hr>
 		<div id="footer">
 			<footer>
-				<span class="copy">&copy; numaduki / generated by <a href=".././sinonome/index.html">sinonome</a>
+				<span class="copy">&copy; numaduki / generated by <a href="../sinonome/index.html">sinonome</a>
 			</footer>
 		</div>
 	</div>

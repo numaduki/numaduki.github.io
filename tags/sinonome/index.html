@@ -84,6 +84,27 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/15</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220815.html">sinonome v0.0.12</a></h3>
+		</div>
+		<div class="body">
+				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
+おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
+<p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
+そもそも相対パス生成部分の実装にすっきりしない部分があり、どうせなら根本的になおしたいと思っていたのですが、なかなかそこまではできないので、ひとまず機械的に<code>./</code>を削除しています。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/14</p>
 			</div>
 			<h3 class="articleheading"><a href="../../archives/sinonome/20220814.html">sinonome v0.0.11</a></h3>
@@ -287,61 +308,6 @@ OUTPUTPATH: holiday-start
 <li>記事ファイル処理時に出力していたファイル「-sortbydate.md」を生成されないようにした</li>
 <li>ログ取得時、Markdown変換用SAORIのI/Oが大量に記録されてしまうため、リクエスト直前とレスポンス直後にiologのon/offを切り替えるようにした（YAYAのSETSETTING()関数を使用）</li>
 </ul>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/05/03</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<ul>
-<li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
-<li>タグアーカイブでページネーションを実装</li>
-<li><code>{entrynext}</code> <code>{entryprev}</code> の <code>scope</code> モディファイアの値に <code>tag</code> を追加（タグを複数設定している場合は、一番最初に指定したタグが対象となります）</li>
-<li>各タグにおける相対パスの出力処理がおかしかったのを修正</li>
-<li>ファイル分割によるカテゴリー分け機能を廃止（カテゴライズは「タグ」機能のみに変更）</li>
-<li>その他の内部的変更</li>
-</ul>
-<p><a href="../../distribute/sinonome/preview/sinonome_preview_0007.zip">ダウンロード</a></p>
-<h4 class="heading1">ファイル記事分割についての仕様変更</h4>
-<p>今までは、ファイルを分割することで「カテゴリー」として扱っていました。<br />
-しかし preview 7以降は、デフォルトでは<strong>記事ファイルの分割は特に意味を持ちません。</strong><br />
-記事のカテゴライズは、「タグ」のみで行うことになります。</p>
-<p>なお、ファイルのヘッダーに以下の行を記述することで、そのファイル内の投稿全てにタグを付与することができます。<br /></p>
-<pre><code class="">TAG: 日常
-</code></pre>
-<p>ファイルのヘッダーにこう書くことで、ファイル内の投稿に全て<code>日常</code>タグが付与されます。</p>
-<h4 class="heading1">文からYAYAへの変更に際して</h4>
-<p>前述の通り、YAYAに変更したきっかけは「文では絵文字を扱うのが困難だったから」です。<br />
-しかし、絵文字は数値文字参照にすればいい（🌻なら&amp;#x1f33b;）だけであり、そんなに大きい問題ではありません。<br /></p>
-<p>文には大変思い入れがあります。しかしその思い入れを優先するために、今後制限事項が徐々に増えていったり、クオリティ低下に直結する作業量の増大が発生するのは作り手にとっても受け手にとっても望ましくはない、という判断に至りました。</p>
-<p>なぜ文に思い入れがあるのかというと、私にとって大事な存在だからです。理由は二つ。<br />
-一つは、空想を形にするという、人生で一番楽しいことを実現してくれるから。<br />
-もう一つは、私に現実に生きるためのプログラミングの力をくれたからです。</p>
-<p>文と出会ったのは高校の頃で、それ以前からもJavaScriptなどでコードを書くことはしていましたが、文は当時の私にとってはとても本格的なプログラミング言語でした。C言語のように複雑なことができるのに、規模が抑えられておりシンプルで、プログラミング初学者だった私にとっては大変扱いやすい言語でした。</p>
-<p>ライブラリとしての構造もまたシンプルで、読み込む側のアプリケーションを作ることも、読み込む拡張モジュールを作ることも、特別に難しくはありません。このことは、私がコンパイル型というタイプの異なる言語を（断続的ではありますが）学び続けるきっかけになってくれました。</p>
-<p>これ以上個人的事情を書くのはやめておこうと思いますが（書きたくなったら外部のブログ等に書くことにします）、つまるところ、文と出会えたおかげで、今の私があります。</p>
-<p>文作者のumeiciさんに、心から感謝申し上げます。<br />
-伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
-<p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
 		</div>
 	</article>
 </div>

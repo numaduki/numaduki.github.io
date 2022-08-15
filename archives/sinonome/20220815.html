@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.11 - nu</title>
+	<title>sinonome v0.0.12 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,19 +83,17 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/14</p>
+				<p class="date">2022/08/15</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220814.html">sinonome v0.0.11</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220815.html">sinonome v0.0.12</a></h2>
 		</div>
 		<div class="body">
-				<p>今まではサイトファイルの出力先に相対パスしか使えませんでしたが、絶対パスも使えるようになりました。<br />
-プロファイルディレクトリ<code>settings.txt</code>内の<code>output_directory</code>で絶対パスを指定してください。</p>
-<pre><code class="txt">output_directory, D:\sinonome_sitefile\
-</code></pre>
-<p>システムディレクトリなどの本当にヤバい場所を指定してしまうのは（書き込み時にアラートの類が出るとしても）まあマズいだろうと思いますが、むしろ普通のディレクトリに別のサイトの静的ファイル一式を置いており、うっかりそのパスを指定してしまった、というような悲劇のほうがよっぽどあり得るかと思います。くれぐれもお気をつけください。</p>
-<p>その他、内部の細かい変更をしています。</p>
+				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
+おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
+<p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
+そもそも相対パス生成部分の実装にすっきりしない部分があり、どうせなら根本的になおしたいと思っていたのですが、なかなかそこまではできないので、ひとまず機械的に<code>./</code>を削除しています。</p>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.11.zip">v0.0.11 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -103,16 +101,11 @@
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20220815.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.12</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220711.html">
+			<a href="../../archives/sinonome/20220814.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.10</span>
+				<span>sinonome v0.0.11</span>
 			</a>
 		</li>
 	</ul>
