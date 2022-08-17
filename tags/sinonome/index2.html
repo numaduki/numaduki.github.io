@@ -84,11 +84,112 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/05/03</p>
+				<p class="date">2022/06/19</p>
 			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220619.html">sinonome preview 8</a></h3>
 		</div>
 		<div class="body">
+				<p><a href="../../distribute/sinonome/preview/sinonome_preview_0008.zip">ダウンロード</a></p>
+<h4 class="heading1">記事ファイルの記述フォーマットを変更</h4>
+<p>まず最重要事項として、<strong>記事・ウェブページファイルの記述フォーマットを変更</strong>しました。以下のようになります。<br />
+単純なMarkdown形式になったので、各種テキストエディターの色分け機能やアウトライン機能との親和性向上が望めます。</p>
+<p>本文の最高レベルの見出しが<code>##</code>になってしまったのは残念ですが、上記の恩恵を考えるとまあいいかなという気がしています。</p>
+<pre><code class="">&lt;!--
+TAG: このファイルの投稿に適用するタグ名
+--&gt;
+
+# 休日が終わった
+&lt;!--
+DATE: 2022-06-19
+OUTPUTPATH: holiday-end
+--&gt;
+
+## いいいいいいいい
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+# 休日が始まった
+&lt;!--
+DATE: 2022-06-18
+OUTPUTPATH: holiday-start
+--&gt;
+
+## ああああああああ
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+..
+</code></pre>
+<h4 class="heading1">変更内容</h4>
+<h5 class="heading2">記事ファイル・ウェブページファイルのフォーマット変更</h5>
+<ul>
+<li>上述の通り、フォーマットを変更</li>
+<li>メタ情報で指定していたセパレータ変更機能（SEP・SECTIONSEP）を廃止</li>
+<li>ファイルや各記事等のメタ情報を（必要なければ）入力不要とした  <br /></li>
+<li><code>{entrybody}</code>等のモディファイア<code>headinglevel</code>の挙動を変更  <br />
+旧）「#」を何タグで出力するかを決める<br />
+新）「##」を何タグで出力するかを決める<br />
+（一番上のレベルのタグからheading1～のクラスが付与されるのは変更なし）</li>
+<li>同梱サンプルテーマを新フォーマットで書き直し</li>
+</ul>
+<h5 class="heading2">機能・タグ・モディファイア等の追加</h5>
+<ul>
+<li>下書き機能の実装（タイトルの前に(draft)と書くだけ）</li>
+<li><code>{tagid}</code>追加（タグのタグID（英数字の方）を出力）</li>
+<li>グローバルモディファイア<code>strform</code>追加（出力内容がある場合、書式化して出力）</li>
+<li><code>{entries}</code>タグに<code>tag</code>モディファイアを追加（指定したタグを設定した投稿のみ表示できます）</li>
+<li><code>{if}</code>タグのモディファイアに<code>ne</code>を追加（一致しない場合に真、いわゆる<code>!=</code>）</li>
+<li>アーカイブマッピング用のタグに以下を追加  <br />
+<code>&lt;entrydateyear&gt;</code> DATEの年部分<br />
+<code>&lt;entrydatemonth&gt;</code> DATEの月部分<br />
+<code>&lt;entrytag&gt;</code> TAGで最初に指定したタグのタグID</li>
+</ul>
+<h5 class="heading2">各種変更・修正</h5>
+<ul>
+<li>YAYA 5.69.7.0 → 5.71.2.0</li>
+<li>モディファイア<code>headinglevel</code>を指定可能なタグについて、指定していないのに指定されているものとして処理していたのを修正</li>
+<li>基本設定<code>remove_blankline, 1</code>で、preタグ内でも改行を削除してしまっていたのを修正  <br /></li>
+<li><code>{entryfield}</code>の出力がコロン記号まで含んでいたのを修正</li>
+<li><code>{pageid}</code>タグを削除（OUTPUTPATHの値等で代用してください）</li>
+<li>sino.exeをリビルド（少しサイズが小さくなりました 150KB→90KB）</li>
+</ul>
+<h5 class="heading2">preview 7 の記事ファイルの扱いの変更に関連する項目</h5>
+<ul>
+<li>アーカイブのループの際、entryarchive のコンテキストで<code>{archivetitle}</code>タグは何も返さないように変更（ファイル別アーカイブがなくなったため）</li>
+<li><code>{datafiletitle}</code>タグを廃止し、ウェブページ専用の<code>{pagefiletitle}</code>タグを追加した</li>
+<li>以下のモディファイア、および値を廃止した  <br />
+<code>{entries}</code>の<code>file</code><br />
+<code>{entryprev}`</code>{entrynext}<code>の</code>scope<code>の値のうち</code>file`</li>
+<li>記事ファイル処理時に出力していたファイル「-sortbydate.md」を生成されないようにした</li>
+<li>ログ取得時、Markdown変換用SAORIのI/Oが大量に記録されてしまうため、リクエスト直前とレスポンス直後にiologのon/offを切り替えるようにした（YAYAのSETSETTING()関数を使用）</li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/05/03</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<ul>
 <li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
 <li>タグアーカイブでページネーションを実装</li>
@@ -262,26 +363,6 @@ default
 <p>詳しくは<a href="../../sinonome/01-basic/index.html">マニュアルのページ</a>をご覧ください。</p>
 <p>本当は文字列処理DLLのポテンシャルを最大限に活かすという意味でも全てAYAでやりたかったのですが、まずは基本的な機能の実装にリソースを集中するための判断となります。</p>
 <p><strong>仕様が固まるまでの間、このレベルの変更は今後もありえます</strong>ので、どうぞご了承ください。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/10/19</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201019.html">sinonome preview 3</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li>HTMLタグを除去するグローバルモディファイア remove_html を追加</li>
-<li>{pages}{entries}でfileを指定した場合、offsetとlimitが無視されていたのを修正</li>
-<li>記号がバックスラッシュで正しくエスケープされない場合があるのを修正</li>
-<li>他潜在的バグの修正</li>
-</ul>
-<p><a href="../../distribute/sinonome/alpha/sinonome_preview_0003.zip">ダウンロード</a></p>
 		</div>
 	</article>
 </div>

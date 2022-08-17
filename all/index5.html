@@ -78,7 +78,42 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">全カテゴリアーカイブ 5 / 7</h2>
+<h2 class="sectionheading">全カテゴリアーカイブ 5 / 8</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2020/11/29</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li><code>{else}</code>節にさらに<code>{else}</code>がある場合、正常に動作していなかったのを修正</li>
+<li>preview 4でモディファイアの値に変数が使用可能になったため、<code>{if}</code>タグのモディファイア<code>eqvar</code>を廃止</li>
+<li><code>DATE:</code>に年月日を入力しており時刻だけ入力していない場合、時刻を00時00分00秒と見なすよう変更（今までは現在の時刻が使用されていた）</li>
+<li><code>{pagedate}</code> <code>{entrydate}</code>の仕様があやふやだったので明確化して<a href="../sinonome/03-resource/template-tags.html">タグリファレンス</a>に記載</li>
+</ul>
+<p><a href="../distribute/sinonome/preview/sinonome_preview_0006.zip">ダウンロード</a></p>
+<p>（<code>{if}</code>の<code>eq</code>に限らず）モディファイアの値の頭に<code>$</code>を付けると変数名と見なされ、その変数の値が参照されます。<br />
+つまり、<code>eqvar</code>を使っていた場合は、以下のように書き直してください。</p>
+<pre><code class="html">（旧）
+{if name="変数名1" eqvar="変数名2"}
+（新）
+{if name="変数名1" eq="$変数名2"}
+</code></pre>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +121,13 @@
 				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
 				<p class="date">2020/11/28</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/ukagaka/20201128.html">初心占い師ほたる phase7.1.2</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
 <li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
@@ -102,9 +141,17 @@
 <p>ところで私個人としては紅白に関しては<a href="https://www.youtube.com/user/MrChildren/videos">Mr.Children</a>が出るという点を重視しており、おそらく30代あたりのおっさんおばさん的にはそれにしか期待してないのではないでしょうか。個人的には「さよなら2001年」の2020年バージョンを歌ってほしいんですが、それをするとお茶の間のテンションが「ゆく年くる年」までもたなさそうなので、まあ無難に「himawari」とか「Birthday」とかの近年の曲を歌う方向性に持って行く気がします。でも視聴者層的には「名もなき詩」「Tomorrow never knows」「innocent world」あたりのミスチルメンバーの気持ちを一切考えない中年向けよくばりセットへの期待も大きいはずです。</p>
 <p>ああ、いやもちろん歌いたいのを歌うのが一番ですよ。（ミスチルメンバーが）幸せなら（何歌っても）OKです。バンドマンが歌で評価されたがっているというのは想像に難くないですが、ミスチルの場合はそれこそ評価がカンストしているのでもう曲がどうこうという次元ではなく、何歌ってもらっても満足です。みんなツイッターとかでは「知らない曲だしガキ使見るよォ」とか言いつつ、時が来たらリモコンに手を伸ばすことでしょう。</p>
 <p>あとはもう三山ひろしの<a href="https://kendama-japan.jp/miyama-hiroshi/">けん玉</a>くらいですね。</p>
+
+				
+			
 		</div>
 	</article>
 </div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -112,9 +159,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2020/11/22</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20201122.html">sinonome preview 5</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li>テンプレートタグ <code>{relpath}</code> を <code>{root}</code> に変更</li>
 <li>複数プロファイルに対応した（ディレクトリ構成の変更あり）</li>
@@ -165,17 +216,9 @@ default
 <h5 class="heading2">パラメータによる指定（仮対応）</h5>
 <p>パラメータで指定することもできます。「-profile ディレクトリ名」と指定してください。<br>
 無効なディレクトリ名が指定されていた場合は、sinonome は何も処理せずそのまま終了します。</p>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -183,13 +226,9 @@ default
 				<p class="tags"><a href="../tags/columns/index.html">コラム</a></p>
 				<p class="date">2020/11/15</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../archives/columns/20201115.html">江藤新平について</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<p>　「江藤新平」という、明治時代の傑物がいます。</p>
 <p>　おそらくこれを読んでいる人は、「江藤新平」という名前は知っているものの、どういう人物なのかについてはよく知らない、という向きが大半でしょう。<br />
 　そんな彼ですが、実はいろいろあり、最期は晒し首に処されてしまいます。</p>
@@ -236,17 +275,9 @@ default
 　次のＮＨＫ大河ドラマの主人公は渋沢栄一ですが、時代が重なっているので、もしかしたら人間の弱さや陰鬱とした部分を象徴するシーンとして、イケメン晒し首シーンが使われるかもしれません。<br />
 　イケメンといえばジャニーズであり、大河ドラマに最近よく見るジャニーズといえば<a href="https://www.johnnys-net.jp/page?id=artistTop&amp;artist=30">風間</a>です。<br />
 　なにせ台の上に首だけなので演じるのは相当難しいはずですが、完璧に演じ切れば俳優としての評価は爆上がりし、いずれは大河の主演も夢ではありません。がんばってほしいです。</p>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -254,13 +285,9 @@ default
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2020/11/08</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../archives/sinonome/20201108.html">sinonome preview 4</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<ul>
 <li>モディファイアの値に変数を指定できるようにした（値の頭に「$」を付けると変数と見なされます）</li>
 <li>本文のHTML変換を外部ライブラリに切り替え（Markdownへの変換をDLLで実装）</li>
@@ -277,48 +304,11 @@ default
 <p>詳しくは<a href="../sinonome/01-basic/index.html">マニュアルのページ</a>をご覧ください。</p>
 <p>本当は文字列処理DLLのポテンシャルを最大限に活かすという意味でも全てAYAでやりたかったのですが、まずは基本的な機能の実装にリソースを集中するための判断となります。</p>
 <p><strong>仕様が固まるまでの間、このレベルの変更は今後もありえます</strong>ので、どうぞご了承ください。</p>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
-				<p class="date">2020/10/26</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../archives/ukagaka/20201026.html">バルーン「Sunao」「Sunao D」を公開しました</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<p>「初心占い師ほたる」の同梱バルーン「Sunao」の単体配布を開始しました。<br>
-また、その黒バージョンの「Sunao D」を公開しました。</p>
-<ul>
-<li><a href="../ukagaka/balloon/sunao.html">ダウンロードページ</a></li>
-</ul>
-<p>フォント「M PLUS 1p」を同梱しており、SSPでは同フォントで表示されます。<br />
-フォントサイズ自体もやや大きめにしています。</p>
-<p>なおMATERIAではＭＳ ゴシックで表示されますが、それはそれで私は好きです。<figure><img src="../files/ukagaka/20201026-0001.jpg" alt="Sunao DをMATERIAで表示した場合"/><figcaption>↑Sunao DをMATERIAで表示した場合</figcaption></figure></p>
-<p>むしろＭＳゴシックの方がいい、という人は、同梱のフォントファイルをリネームすればOKです。</p>
-<pre><code class="">（変更前）ベースウェアのインストールディレクトリ\balloon\sunao\MPLUS1p-Regular.ttf
-（変更後）ベースウェアのインストールディレクトリ\balloon\sunao\_MPLUS1p-Regular.ttf
-</code></pre>
 		</div>
 	</article>
 </div>
 <div class="pager">
-<ul><li ><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li class="current"><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li></ul>
+<ul><li ><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li class="current"><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li></ul>
 </div>
 			</main>
 		</div>

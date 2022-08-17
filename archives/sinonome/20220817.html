@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.12 - nu</title>
+	<title>sinonome v0.0.13 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,17 +83,27 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/15</p>
+				<p class="date">2022/08/17</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220815.html">sinonome v0.0.12</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220817.html">sinonome v0.0.13</a></h2>
 		</div>
 		<div class="body">
-				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
-おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
-<p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
-そもそも相対パス生成部分の実装にすっきりしない部分があり、どうせなら根本的になおしたいと思っていたのですが、なかなかそこまではできないので、ひとまず機械的に<code>./</code>を削除しています。</p>
+				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
+<strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
+<p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
+複数ある場合は複数書けます。</p>
+<pre><code class="txt">entries_file, D:\foobar\external_entry.md
+entries_file, D:\foobar\external_entry2.md
+webpages_file, D:\foobar\external_webpage.md
+</code></pre>
+<p>ディレクトリを指定することもできます。この場合、そのディレクトリ内の全ファイルを読み込みます。<br />
+こちらも複数書けます。</p>
+<pre><code class="txt">entries_file, D:\foobar_entry\
+webpages_file, D:\foobar_webpage\
+</code></pre>
+<p>その他、細かい変更を行っています。</p>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -101,16 +111,11 @@
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20220817.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.13</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220814.html">
+			<a href="../../archives/sinonome/20220815.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.11</span>
+				<span>sinonome v0.0.12</span>
 			</a>
 		</li>
 	</ul>
