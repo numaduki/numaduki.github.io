@@ -84,6 +84,44 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/07/03</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220703.html">sinonome preview 9</a></h3>
+		</div>
+		<div class="body">
+				<p>まず非常に重要な変更点として、<strong>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更しました。</strong><br />
+Markdownで<code>[]</code>はよく使われるため、これを避けたいという意図です。<br />
+（当初はMarkdownの利用を考えていなかったので、他の言語と被らないという基準で<code>[:～:]</code>としていました）</p>
+<p><a href="../../distribute/sinonome/preview/sinonome_preview_0009.zip">ダウンロード</a></p>
+<h4 class="heading1">変更点</h4>
+<h5 class="heading2">重要な変更</h5>
+<ul>
+<li>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更</li>
+<li><code>strform</code>モディファイアの値にAYA/YAYA準拠の「$」を使っていたのを「%」に変更  <br />
+（モディファイア値の変数展開とバッティングすることを忘れていたため）</li>
+</ul>
+<h5 class="heading2">機能追加</h5>
+<ul>
+<li>投稿のメタ情報に<code>SKIPGENERATE</code>と書くと、ファイルとして出力しないようにした  <br />
+（値は必要なく、1行に<code>SKIPGENERATE</code>と書くだけ）</li>
+<li>投稿ファイルのメタ情報に<code>DEFINE</code> <code>REPLACE</code> <code>RE_DEFINE</code> <code>RE_REPLACE</code>を追加  <br />
+詳細→<a href="../../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+<li>sinonome 独自のログを出力を実装（プロファイルディレクトリに log.txt を出力します）</li>
+</ul>
+<h5 class="heading2">その他変更・修正等</h5>
+<ul>
+<li>DATE 未指定の場合は出力時刻が使用されるが、その場合にdate系のタグで出力できていなかったのを修正</li>
+<li>範囲タグを入れ子にした場合に誤検知していたが、ある程度きちんと判定するようにした</li>
+<li>サンプルテーマの修正</li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/06/19</p>
 			</div>
 			<h3 class="articleheading"><a href="../../archives/sinonome/20220619.html">sinonome preview 8</a></h3>
@@ -334,35 +372,6 @@ default
 <h5 class="heading2">パラメータによる指定（仮対応）</h5>
 <p>パラメータで指定することもできます。「-profile ディレクトリ名」と指定してください。<br>
 無効なディレクトリ名が指定されていた場合は、sinonome は何も処理せずそのまま終了します。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/11/08</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201108.html">sinonome preview 4</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li>モディファイアの値に変数を指定できるようにした（値の頭に「$」を付けると変数と見なされます）</li>
-<li>本文のHTML変換を外部ライブラリに切り替え（Markdownへの変換をDLLで実装）</li>
-</ul>
-<p><a href="../../distribute/sinonome/alpha/sinonome_preview_0004.zip">ダウンロード</a></p>
-<h4 class="heading1">HTML変換ライブラリの変更について</h4>
-<p>使用されるフォーマットは、Markdownの中でも特に「CommonMark」というものになります。<br />
-参考: <a href="https://qiita.com/Prof-Cheese/items/9629438b06aacc068c98">https://qiita.com/Prof-Cheese/items/9629438b06aacc068c98</a></p>
-<p>この変更により、記法の大幅な追加や各種問題の解消が行われましたが、以下のような点で非互換も発生しています。</p>
-<ul>
-<li>リストの「-」記号の直後には必ずスペースを開ける必要がある</li>
-<li>改行は&lt;br&gt;に変換されない　等</li>
-</ul>
-<p>詳しくは<a href="../../sinonome/01-basic/index.html">マニュアルのページ</a>をご覧ください。</p>
-<p>本当は文字列処理DLLのポテンシャルを最大限に活かすという意味でも全てAYAでやりたかったのですが、まずは基本的な機能の実装にリソースを集中するための判断となります。</p>
-<p><strong>仕様が固まるまでの間、このレベルの変更は今後もありえます</strong>ので、どうぞご了承ください。</p>
 		</div>
 	</article>
 </div>

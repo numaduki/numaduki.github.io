@@ -84,11 +84,61 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/17</p>
+				<p class="date">2022/08/18</p>
 			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
 		</div>
 		<div class="body">
+				<p>大きい仕様変更があります。<br />
+プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
+つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
+<ul>
+<li>v0.0.13まで: <code>SITEFILE\files\favicon.ico</code></li>
+<li>v0.0.14以降: <code>SITEFILE\favicon.ico</code></li>
+</ul>
+<p>となります。<br />
+<strong>v0.0.13までの仕様に戻すには、files\ の中に、もう1つ files\ を作ってください。</strong><br />
+これで出力ディレクトリに files\ ディレクトリがコピーされることになります。<br /></p>
+<p>もう一つこれは機能拡張ですが、v0.0.13で実装した記事ファイル・ウェブページファイル指定で、相対パスを使えるようになりました。<br />
+プロファイルディレクトリ直下にファイルを置きたい場合は、こう書けます。</p>
+<pre><code class="txt">entries_file, 記事.md
+</code></pre>
+<p>なお<code>settings.txt</code>の指定では、（うまく動くか確信がもてないので）相対パスで上のディレクトリ<code>..\</code>は指定しないでください、としていますが、<code>entries_file</code>と<code>webpages_file</code>だけは<code>..\</code>も使えるように実装しています。<br />
+たとえば、「全てのプロファイルで共通のウェブページを持ちたい」とか「別のプロファイルの投稿ファイルを読み込みたい」といったケースで使えるかもしれません。</p>
+<pre><code class="txt">webpages_file, ..\全サイト用の重要なお知らせ.md
+entries_file, ..\別のプロファイル\entries\
+</code></pre>
+<p>その他、細かい修正をしています。<br />
+特に、v0.0.12で実装した「./」の削除がうまく動作していないケースがあったので、改善しました。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.14.zip">v0.0.14 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/17</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
 <strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
 <p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
@@ -200,44 +250,6 @@ webpages_file, D:\foobar_webpage\
 <p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
 ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
 よろしくお願いします。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/07/03</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220703.html">sinonome preview 9</a></h3>
-		</div>
-		<div class="body">
-				<p>まず非常に重要な変更点として、<strong>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更しました。</strong><br />
-Markdownで<code>[]</code>はよく使われるため、これを避けたいという意図です。<br />
-（当初はMarkdownの利用を考えていなかったので、他の言語と被らないという基準で<code>[:～:]</code>としていました）</p>
-<p><a href="../../distribute/sinonome/preview/sinonome_preview_0009.zip">ダウンロード</a></p>
-<h4 class="heading1">変更点</h4>
-<h5 class="heading2">重要な変更</h5>
-<ul>
-<li>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更</li>
-<li><code>strform</code>モディファイアの値にAYA/YAYA準拠の「$」を使っていたのを「%」に変更  <br />
-（モディファイア値の変数展開とバッティングすることを忘れていたため）</li>
-</ul>
-<h5 class="heading2">機能追加</h5>
-<ul>
-<li>投稿のメタ情報に<code>SKIPGENERATE</code>と書くと、ファイルとして出力しないようにした  <br />
-（値は必要なく、1行に<code>SKIPGENERATE</code>と書くだけ）</li>
-<li>投稿ファイルのメタ情報に<code>DEFINE</code> <code>REPLACE</code> <code>RE_DEFINE</code> <code>RE_REPLACE</code>を追加  <br />
-詳細→<a href="../../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
-<li>sinonome 独自のログを出力を実装（プロファイルディレクトリに log.txt を出力します）</li>
-</ul>
-<h5 class="heading2">その他変更・修正等</h5>
-<ul>
-<li>DATE 未指定の場合は出力時刻が使用されるが、その場合にdate系のタグで出力できていなかったのを修正</li>
-<li>範囲タグを入れ子にした場合に誤検知していたが、ある程度きちんと判定するようにした</li>
-<li>サンプルテーマの修正</li>
-</ul>
 		</div>
 	</article>
 </div>

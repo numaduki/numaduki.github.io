@@ -83,20 +83,130 @@
 	<article>
 		<div class="head">
 			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/06/19</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220619.html">sinonome preview 8</a></h3>
+		</div>
+		<div class="body">
+				<p><a href="../distribute/sinonome/preview/sinonome_preview_0008.zip">ダウンロード</a></p>
+<h4 class="heading1">記事ファイルの記述フォーマットを変更</h4>
+<p>まず最重要事項として、<strong>記事・ウェブページファイルの記述フォーマットを変更</strong>しました。以下のようになります。<br />
+単純なMarkdown形式になったので、各種テキストエディターの色分け機能やアウトライン機能との親和性向上が望めます。</p>
+<p>本文の最高レベルの見出しが<code>##</code>になってしまったのは残念ですが、上記の恩恵を考えるとまあいいかなという気がしています。</p>
+<pre><code class="">&lt;!--
+TAG: このファイルの投稿に適用するタグ名
+--&gt;
+
+# 休日が終わった
+&lt;!--
+DATE: 2022-06-19
+OUTPUTPATH: holiday-end
+--&gt;
+
+## いいいいいいいい
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+# 休日が始まった
+&lt;!--
+DATE: 2022-06-18
+OUTPUTPATH: holiday-start
+--&gt;
+
+## ああああああああ
+
+本文本文本文本文本文本文本文本文
+本文本文本文本文本文本文本文本文
+
+..
+</code></pre>
+<h4 class="heading1">変更内容</h4>
+<h5 class="heading2">記事ファイル・ウェブページファイルのフォーマット変更</h5>
+<ul>
+<li>上述の通り、フォーマットを変更</li>
+<li>メタ情報で指定していたセパレータ変更機能（SEP・SECTIONSEP）を廃止</li>
+<li>ファイルや各記事等のメタ情報を（必要なければ）入力不要とした  <br /></li>
+<li><code>{entrybody}</code>等のモディファイア<code>headinglevel</code>の挙動を変更  <br />
+旧）「#」を何タグで出力するかを決める<br />
+新）「##」を何タグで出力するかを決める<br />
+（一番上のレベルのタグからheading1～のクラスが付与されるのは変更なし）</li>
+<li>同梱サンプルテーマを新フォーマットで書き直し</li>
+</ul>
+<h5 class="heading2">機能・タグ・モディファイア等の追加</h5>
+<ul>
+<li>下書き機能の実装（タイトルの前に(draft)と書くだけ）</li>
+<li><code>{tagid}</code>追加（タグのタグID（英数字の方）を出力）</li>
+<li>グローバルモディファイア<code>strform</code>追加（出力内容がある場合、書式化して出力）</li>
+<li><code>{entries}</code>タグに<code>tag</code>モディファイアを追加（指定したタグを設定した投稿のみ表示できます）</li>
+<li><code>{if}</code>タグのモディファイアに<code>ne</code>を追加（一致しない場合に真、いわゆる<code>!=</code>）</li>
+<li>アーカイブマッピング用のタグに以下を追加  <br />
+<code>&lt;entrydateyear&gt;</code> DATEの年部分<br />
+<code>&lt;entrydatemonth&gt;</code> DATEの月部分<br />
+<code>&lt;entrytag&gt;</code> TAGで最初に指定したタグのタグID</li>
+</ul>
+<h5 class="heading2">各種変更・修正</h5>
+<ul>
+<li>YAYA 5.69.7.0 → 5.71.2.0</li>
+<li>モディファイア<code>headinglevel</code>を指定可能なタグについて、指定していないのに指定されているものとして処理していたのを修正</li>
+<li>基本設定<code>remove_blankline, 1</code>で、preタグ内でも改行を削除してしまっていたのを修正  <br /></li>
+<li><code>{entryfield}</code>の出力がコロン記号まで含んでいたのを修正</li>
+<li><code>{pageid}</code>タグを削除（OUTPUTPATHの値等で代用してください）</li>
+<li>sino.exeをリビルド（少しサイズが小さくなりました 150KB→90KB）</li>
+</ul>
+<h5 class="heading2">preview 7 の記事ファイルの扱いの変更に関連する項目</h5>
+<ul>
+<li>アーカイブのループの際、entryarchive のコンテキストで<code>{archivetitle}</code>タグは何も返さないように変更（ファイル別アーカイブがなくなったため）</li>
+<li><code>{datafiletitle}</code>タグを廃止し、ウェブページ専用の<code>{pagefiletitle}</code>タグを追加した</li>
+<li>以下のモディファイア、および値を廃止した  <br />
+<code>{entries}</code>の<code>file</code><br />
+<code>{entryprev}`</code>{entrynext}<code>の</code>scope<code>の値のうち</code>file`</li>
+<li>記事ファイル処理時に出力していたファイル「-sortbydate.md」を生成されないようにした</li>
+<li>ログ取得時、Markdown変換用SAORIのI/Oが大量に記録されてしまうため、リクエスト直前とレスポンス直後にiologのon/offを切り替えるようにした（YAYAのSETSETTING()関数を使用）</li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
 				<p class="tags"><a href="../tags/information/index.html">お知らせ</a></p>
 				<p class="date">2022/05/04</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/information/20220504.html">ウェブサイトの方針に関するお知らせ（再追記あり）</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<h4 class="heading1">再追記 2022/06/13</h4>
 <p>テキストコンテンツのみ外部ブログの利用を考えていました（実際1ヶ月程度使ってみました）が、使い勝手や内容の方針について大変思い悩んでしまったため、<em>ブログの利用はキャンセル</em>します。<br />
 ではどうするのか――といった予告はできるだけしたいのですが、それをしてまた諸事情でキャンセル……、といったことを繰り返したりするとさすがによくないので、ひとまず何か動きがあるまでお待ちください。</p>
 <p>というわけなので、以下の文章は過去の内容になります。</p>
+
+				
 					<p><a href="../archives/information/20220504.html">続きを読む</a></p>
+				
+			
 		</div>
 	</article>
 </div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -104,9 +214,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/05/03</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20220503.html">sinonome preview 7</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li>コア sino.dll を 「文」から「YAYA」に変更（絵文字（😀など）が出力可能になっています）</li>
 <li>タグアーカイブでページネーションを実装</li>
@@ -200,35 +314,6 @@
 <p>　天才少女科学者であり、しかもちょっとエキセントリックな性格だったとなると、クールジャパンでいうところのお約束というか、ストリーキングというよりもむしろサーヴィスカットという属性のものだった可能性もあります。古代ギリシアやりおったなという向きも出てきます。</p>
 <p>　そんなアルキメデスさんの最期の言葉は、シラクサの街を占領したローマ兵に向かって発した「わたしの円を踏むな！」なのだそうです。<br />
 　全裸で街を駆けるという大胆さ、描いた円を踏まれただけで怒るという繊細さ、敵国の兵士に対峙して垣間見せた凛然たる意志の強さ――古代ギリシアに生きた少女のハートは、現代の少女たちにも瑞々しく受け継がれているように思えてなりません。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
-				<p class="date">2021/06/06</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/ukagaka/20210606.html">初心占い師ほたる phase7.1.5</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
-<li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
-</ul>
-<p><a href="../ukagaka/ghost/hotaru.html">初心占い師ほたる</a>のトークを追加しました。ネットワーク更新で取得可能です。<br />
-寝ていてもうちわが動くガールの話。<br /></p>
-<p>伺かとか、あるいは繰り返し見る可能性の高い会話形式のコンテンツの場合、最初に見た時は「？」て思うけど、また見たら「あぁ……そういう面白さだったのかこれ」ってなるようなトークが色んな意味でいいトークなのかもしれない、と思っているところがあり、そういう意味では今回のトークはそういうトークかもしれません。別に何か深みのあるトーク、というのではなく単純に少しわかりにくいトークです、ということなのですが、まあ私ももう三十代も後半になってしまっているので、若に時代特有のあまり意味もないこだわりというものもありません。もしかしたらハートマークも初めて使ったかもしれない。<br /></p>
-<p>さて、三十にして立つ、四十にして惑わず、という言葉があります。前述の通り私は三十代をあと数年で終わるというフェーズを迎えているのでもうかなり立っているはずなのですが、それでもなお言葉の意味の思い違いをしていることが少なからずあったりします。なので、今回も念のため「寝ていてもうちわの動く親心」という川柳の解釈を調べてみたのですが、案の定、思っていたのと違う解釈がありました。<br />
-おそらく一般的には「暑い中、赤ちゃんが涼しく眠れるようにうちわであおいでいる」と読まれると思うのですが、<a href="https://www.bioweather.net/column/weather/contents/mame002.htm">渡辺信一郎著「<cite>江戸川柳</cite>」（岩波書店）を引用するコラム</a>によると、<q cite="https://www.bioweather.net/column/weather/contents/mame002.htm">乳を飲んで寝込んだ赤子に添い寝している母親もウトウトとし、それでも赤子にたかる虫を寄せ付けないようにと、手にした団扇だけは扇ぎ揺らせているという光景で、赤子に対する母親の気遣いの様子が描かれています。それとともに、赤子に風を送り涼しくしているとも考えられます。</q>とのこと。<br />
-上記がこのコラム筆者の独自見解なのか、書籍にそう書かれていたのかは定かではありませんが、普通は何らかの知見がなければ「うちわであおぐ＝虫を寄せ付けないため」とは解釈しないと思うので、書籍の中でそう紹介されているんだろうなぁと想像します。なるほどその機能があったか。<br />
-しかしその一方で、赤ちゃんが冷えすぎない程度の風圧を発生させたところで虫は退散してくれるもんだろうか？　向かい風に耐えて赤ちゃんにたかってくるのではないだろうか？　とも思うわけですが、夏の虫と言えば蚊、あいつら見た目にもそんなに頑丈ではなさそうなので、意外と風を送るだけでもいけるのかもしれません。<br />
-あるいは江戸時代の川柳なので、当時の衛生状況を考えると蚊よりも蝿のほうがウザがられていた可能性もあり、であればあいつらちょっと気配をちらつかせただけでも飛んでいってしまうので、やっぱりうちわは蚊というより蝿シフトなのかもしれません。<br />
-いやあ、文芸作品は時代背景を踏まえて読むのが重要なんですね。ちょっぴり立ちました。<br /></p>
-<p>コラムの方にもうちわについて思うところを書いていますので、よろしければお読みください。<br />
-<a href="../archives/columns/20210605.html">プラスチックうちわが如何に切ない存在なのかを説明する前半</a><br />
-<a href="../archives/columns/20210606.html">厚紙うちわがなぜ日本うちわ協会に公認されないのかについてを考察する後半</a></p>
 		</div>
 	</article>
 </div>

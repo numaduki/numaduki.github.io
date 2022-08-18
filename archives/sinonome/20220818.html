@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.13 - nu</title>
+	<title>sinonome v0.0.14 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,27 +83,34 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/17</p>
+				<p class="date">2022/08/18</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220817.html">sinonome v0.0.13</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220818.html">sinonome v0.0.14</a></h2>
 		</div>
 		<div class="body">
-				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
-<strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
-<p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
-複数ある場合は複数書けます。</p>
-<pre><code class="txt">entries_file, D:\foobar\external_entry.md
-entries_file, D:\foobar\external_entry2.md
-webpages_file, D:\foobar\external_webpage.md
-</code></pre>
-<p>ディレクトリを指定することもできます。この場合、そのディレクトリ内の全ファイルを読み込みます。<br />
-こちらも複数書けます。</p>
-<pre><code class="txt">entries_file, D:\foobar_entry\
-webpages_file, D:\foobar_webpage\
-</code></pre>
-<p>その他、細かい変更を行っています。</p>
+				<p>大きい仕様変更があります。<br />
+プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
+つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
+<li>v0.0.13まで: <code>SITEFILE\files\favicon.ico</code></li>
+<li>v0.0.14以降: <code>SITEFILE\favicon.ico</code></li>
+</ul>
+<p>となります。<br />
+<strong>v0.0.13までの仕様に戻すには、files\ の中に、もう1つ files\ を作ってください。</strong><br />
+これで出力ディレクトリに files\ ディレクトリがコピーされることになります。<br /></p>
+<p>もう一つこれは機能拡張ですが、v0.0.13で実装した記事ファイル・ウェブページファイル指定で、相対パスを使えるようになりました。<br />
+プロファイルディレクトリ直下にファイルを置きたい場合は、こう書けます。</p>
+<pre><code class="txt">entries_file, 記事.md
+</code></pre>
+<p>なお<code>settings.txt</code>の指定では、（うまく動くか確信がもてないので）相対パスで上のディレクトリ<code>..\</code>は指定しないでください、としていますが、<code>entries_file</code>と<code>webpages_file</code>だけは<code>..\</code>も使えるように実装しています。<br />
+たとえば、「全てのプロファイルで共通のウェブページを持ちたい」とか「別のプロファイルの投稿ファイルを読み込みたい」といったケースで使えるかもしれません。</p>
+<pre><code class="txt">webpages_file, ..\全サイト用の重要なお知らせ.md
+entries_file, ..\別のプロファイル\entries\
+</code></pre>
+<p>その他、細かい修正をしています。<br />
+特に、v0.0.12で実装した「./」の削除がうまく動作していないケースがあったので、改善しました。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.14.zip">v0.0.14 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -111,16 +118,11 @@ webpages_file, D:\foobar_webpage\
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20220818.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.14</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220815.html">
+			<a href="../../archives/sinonome/20220817.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.12</span>
+				<span>sinonome v0.0.13</span>
 			</a>
 		</li>
 	</ul>

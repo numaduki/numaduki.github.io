@@ -84,11 +84,61 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/17</p>
+				<p class="date">2022/08/18</p>
 			</div>
-			<h3 class="articleheading"><a href="../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
 		</div>
 		<div class="body">
+				<p>大きい仕様変更があります。<br />
+プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
+つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
+<ul>
+<li>v0.0.13まで: <code>SITEFILE\files\favicon.ico</code></li>
+<li>v0.0.14以降: <code>SITEFILE\favicon.ico</code></li>
+</ul>
+<p>となります。<br />
+<strong>v0.0.13までの仕様に戻すには、files\ の中に、もう1つ files\ を作ってください。</strong><br />
+これで出力ディレクトリに files\ ディレクトリがコピーされることになります。<br /></p>
+<p>もう一つこれは機能拡張ですが、v0.0.13で実装した記事ファイル・ウェブページファイル指定で、相対パスを使えるようになりました。<br />
+プロファイルディレクトリ直下にファイルを置きたい場合は、こう書けます。</p>
+<pre><code class="txt">entries_file, 記事.md
+</code></pre>
+<p>なお<code>settings.txt</code>の指定では、（うまく動くか確信がもてないので）相対パスで上のディレクトリ<code>..\</code>は指定しないでください、としていますが、<code>entries_file</code>と<code>webpages_file</code>だけは<code>..\</code>も使えるように実装しています。<br />
+たとえば、「全てのプロファイルで共通のウェブページを持ちたい」とか「別のプロファイルの投稿ファイルを読み込みたい」といったケースで使えるかもしれません。</p>
+<pre><code class="txt">webpages_file, ..\全サイト用の重要なお知らせ.md
+entries_file, ..\別のプロファイル\entries\
+</code></pre>
+<p>その他、細かい修正をしています。<br />
+特に、v0.0.12で実装した「./」の削除がうまく動作していないケースがあったので、改善しました。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.14.zip">v0.0.14 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/17</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
 <strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
 <p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
@@ -191,30 +241,6 @@ webpages_file, D:\foobar_webpage\
 				<p>さくらのレンタルサーバで運営していた当ウェブサイトですが、GitHub Pagesに移行しました。GitHubというのは、プログラミングに詳しい人たちがソースコードを持ち寄ってみんなで開発をしたり、みんなで開発をしている人たちを眺めながらひとりぼっちで開発をしたりするサービスです。</p>
 <p>そうやってGitHubで開発をしていると、何かができます。できあがったものは開発中の思い出と一緒に心の中にしまっておけばいいわけですが、ちょっとみんなに見せてやろう、と思う人もおり、そういう人がそのためのウェブサイトをそれっぽく作れるのがGitHub Pagesです。</p>
 <p>さくらのレンタルサーバ時代のURL <a href="https://nu.skr.jp/">https://nu.skr.jp/</a> は、2023年7月頃に使えなくなる予定ですので、新URL <a href="https://numaduki.github.io/">https://numaduki.github.io/</a> にリンクの張り替えをお願いします。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
-				<p class="date">2022/07/11</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/ukagaka/20220711.html">ネットワーク更新URL HTTPS化による影響のお知らせ</a></h3>
-		</div>
-		<div class="body">
-				<p><a href="../ukagaka/ghost.html#c_hotaru">初心占い師ほたる</a>、<a href="../ukagaka/ghost.html#c_hinoki">ひのき &ldquo;the ChopSticks&rdquo;</a>、<a href="../ukagaka/ghost.html#c_matchamilk">まっちゃみるく。</a>をネットワーク更新しました。<br />
-各コンテンツのGitHubへの移行に伴い、ネットワーク更新URLを変更しています。<br />
-普通にネットワーク更新をお願いします。</p>
-<h4 class="heading1">MATERIAをお使いの方へ</h4>
-<p>今回の変更で、MATERIAではネットワーク更新ができなくなってしまいます。<br />
-これはおそらく、ネットワーク更新URLが「https://」で始まるURLになるためです。</p>
-<p>アーカイブ更新を待っていただくのが最も簡単ですが、手動でネットワーク更新を適用することもできます。<br />
-くわしくはこちらのページをご覧ください。<br />
-<a href="https://github.com/numaduki/ukagaka-ghost-hotaru">https://github.com/numaduki/ukagaka-ghost-hotaru</a></p>
-<p>それ以外の要素については、引き続きMATERIAでも使えます。<br />
-これからもよろしくお願いします。</p>
 		</div>
 	</article>
 </div>
