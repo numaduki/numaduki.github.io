@@ -253,13 +253,13 @@
   </tr>
   <tr>
     <td>archive_type</td>
-    <td>アーカイブのタイプを指定します。<br>entryarchive: ファイル別（ファイルを分けた通りに分割する）アーカイブ<br>tagarchive: タグ別のアーカイブ</td>
+    <td>アーカイブのタイプを指定します。<br>tagarchive: タグ別のアーカイブ<br>※entryarchiveの指定は対応していません</td>
     <td></td>
   </tr>
 </table>
-<h6 class="heading4">（例）ファイル別アーカイブページのリンク一覧を表示</h6>
+<h6 class="heading4">（例）タグ別アーカイブページのリンク一覧を表示</h6>
 <pre><code class="html">&lt;ul&gt;
-{archives archive_type="entryarchive"}
+{archives archive_type="tagarchive"}
     &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;&lt;/li&gt;
 {/archives}
 &lt;/ul&gt;
@@ -625,6 +625,9 @@ OUTPUTPATH: page2
 <p>アーカイブファイルに指定したタイトルを表示します。</p>
 <h5 class="heading3">archivelink</h5>
 <p>アーカイブページのURLを表示します。</p>
+<h5 class="heading3">archivedescription</h5>
+<p>アーカイブの概要を表示します。<br />
+現在のところ、タグアーカイブの場合のにみ有効です（タグの概要を表示）。</p>
 <h5 class="heading3">archivepager</h5>
 <p>アーカイブページがページで区切られている時、各ページへのリンクを表示します。<br />
 以下のようなHTMLが表示されます。</p>
@@ -644,6 +647,8 @@ OUTPUTPATH: page2
 <p>タグのタグIDを表示します。</p>
 <h5 class="heading3">taglink</h5>
 <p>タグアーカイブへのリンクを表示します。</p>
+<h5 class="heading3">tagdescription</h5>
+<p>タグの概要を表示します。</p>
 <h5 class="heading3">include</h5>
 <p><code>modules.html</code>に記述した各モジュールを呼び出します。</p>
 <table>
