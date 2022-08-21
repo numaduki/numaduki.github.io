@@ -89,7 +89,7 @@
 		</div>
 		<div class="body">
 				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
-<p>まず、tags.txtにタグの概要記述します。カンマで区切って3番目に書いてください。</p>
+<p>まず、tags.txtにタグの概要を記述します。カンマで区切って3番目に書いてください。</p>
 <pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
 </code></pre>
 <p><code>{tagdescription}</code>は、<code>{tags}</code>のループの中で使用してください。</p>
@@ -99,7 +99,7 @@
 {/tags}
 &lt;/ul&gt;
 </code></pre>
-<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループで使ってください。</p>
+<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループの中、またはタグアーカイブのテンプレート内で使ってください。</p>
 <pre><code class="html">&lt;ul&gt;
 {archives archive_type="tagarchive"}
     &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;（{archivedescription}）&lt;/li&gt;
