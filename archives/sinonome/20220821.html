@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.14 - nu</title>
+	<title>sinonome v0.0.15 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,34 +83,31 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/18</p>
+				<p class="date">2022/08/21</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220818.html">sinonome v0.0.14</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220821.html">sinonome v0.0.15</a></h2>
 		</div>
 		<div class="body">
-				<p>大きい仕様変更があります。<br />
-プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
-つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
-<ul>
-<li>v0.0.13まで: <code>SITEFILE\files\favicon.ico</code></li>
-<li>v0.0.14以降: <code>SITEFILE\favicon.ico</code></li>
-</ul>
-<p>となります。<br />
-<strong>v0.0.13までの仕様に戻すには、files\ の中に、もう1つ files\ を作ってください。</strong><br />
-これで出力ディレクトリに files\ ディレクトリがコピーされることになります。<br /></p>
-<p>もう一つこれは機能拡張ですが、v0.0.13で実装した記事ファイル・ウェブページファイル指定で、相対パスを使えるようになりました。<br />
-プロファイルディレクトリ直下にファイルを置きたい場合は、こう書けます。</p>
-<pre><code class="txt">entries_file, 記事.md
+				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
+<p>まず、tags.txtにタグの概要記述します。カンマで区切って3番目に書いてください。</p>
+<pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
 </code></pre>
-<p>なお<code>settings.txt</code>の指定では、（うまく動くか確信がもてないので）相対パスで上のディレクトリ<code>..\</code>は指定しないでください、としていますが、<code>entries_file</code>と<code>webpages_file</code>だけは<code>..\</code>も使えるように実装しています。<br />
-たとえば、「全てのプロファイルで共通のウェブページを持ちたい」とか「別のプロファイルの投稿ファイルを読み込みたい」といったケースで使えるかもしれません。</p>
-<pre><code class="txt">webpages_file, ..\全サイト用の重要なお知らせ.md
-entries_file, ..\別のプロファイル\entries\
+<p><code>{tagdescription}</code>は、<code>{tags}</code>のループの中で使用してください。</p>
+<pre><code class="html">&lt;ul&gt;
+{tags}
+    &lt;li&gt;{tagname}（{tagdescription}）&lt;/li&gt;
+{/tags}
+&lt;/ul&gt;
 </code></pre>
-<p>その他、細かい修正をしています。<br />
-特に、v0.0.12で実装した「./」の削除がうまく動作していないケースがあったので、改善しました。</p>
+<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループで使ってください。</p>
+<pre><code class="html">&lt;ul&gt;
+{archives archive_type="tagarchive"}
+    &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;（{archivedescription}）&lt;/li&gt;
+{/archives}
+&lt;/ul&gt;
+</code></pre>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.14.zip">v0.0.14 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.15.zip">v0.0.15 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -118,16 +115,11 @@ entries_file, ..\別のプロファイル\entries\
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20220821.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.15</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220817.html">
+			<a href="../../archives/sinonome/20220818.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.13</span>
+				<span>sinonome v0.0.14</span>
 			</a>
 		</li>
 	</ul>

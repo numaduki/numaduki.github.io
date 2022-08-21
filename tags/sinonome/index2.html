@@ -84,6 +84,31 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/07/11</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220711.html">sinonome v0.0.10</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li>辞書ファイルの拡張子を<code>.c</code>から<code>.dic</code>に変更</li>
+<li>README.md 細部変更</li>
+</ul>
+<p>ソフトウェアのバージョン管理を、このバージョンよりGitHubに移行しました。<br />
+またGitHubではバージョン番号は普通につけるのが推奨されているようなので、普通の付け方に変更しました。</p>
+<p><a href="https://github.com/numaduki/ssg-sinonome/releases">リリース一覧</a>のページで、変更点の確認が可能です。<br />
+ダウンロードするには、「Latest」と書いてあるバージョンのAssetsの中の「Source code (zip)」というリンクをクリックしてください。</p>
+<p><img src="../../files/sinonome/20220710-0001.png" alt="Assetsの中のSource codeからダウンロード"/></p>
+<p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
+ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
+よろしくお願いします。</p>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/07/03</p>
 			</div>
 			<h3 class="articleheading"><a href="../../archives/sinonome/20220703.html">sinonome preview 9</a></h3>
@@ -297,81 +322,6 @@ OUTPUTPATH: holiday-start
 （新）
 {if name="変数名1" eq="$変数名2"}
 </code></pre>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2020/11/22</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../../archives/sinonome/20201122.html">sinonome preview 5</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<ul>
-<li>テンプレートタグ <code>{relpath}</code> を <code>{root}</code> に変更</li>
-<li>複数プロファイルに対応した（ディレクトリ構成の変更あり）</li>
-<li>sino.exe パラメータの取り扱いに関する改良</li>
-</ul>
-<p><a href="../../distribute/sinonome/preview/sinonome_preview_0005.zip">ダウンロード</a></p>
-<h4 class="heading1">テンプレートタグ {root}</h4>
-<p>ルートを示す相対パスを表示する {relpath} は、{root}タグに名称を変更しました。<br />
-将来的に、設定により相対パス・絶対URL・ルート相対パスを選択できようになる予定です。</p>
-<h4 class="heading1">複数プロファイルへの対応</h4>
-<p>複数のウェブサイトを扱えるようになりました。（複数のサイトを管理できるという意味です。複数ユーザーで使うのに適した構造にしたわけではありません）</p>
-<h5 class="heading2">ディレクトリ構造の変更</h5>
-<p>今までは以下の構造になっていました。</p>
-<pre><code class="test">\sources
-    \各ファイル
-</code></pre>
-<p>新しい構造は以下のようになります。</p>
-<pre><code class="test">\profiles
-    \default
-        \各ファイル
-    \myblog
-        \各ファイル
-    \私のブログ
-        \各ファイル
-    ..
-</code></pre>
-<p>新しいディレクトリ構成では、profiles\ 直下にプロファイルディレクトリを作成します。プロファイルディレクトリ以下のファイル構成は、以前の sources\ の中身と同じです。<br></p>
-<p>なお、プロファイルディレクトリ名には日本語が使えますが、Shift_JISの範囲となります。<br>
-（参考）シフトJIS漢字コード表 <a href="http://www.tohoho-web.com/ex/draft/code.htm">http://www.tohoho-web.com/ex/draft/code.htm</a><br>
-特殊な記号の付いたアルファベット（áなど）や絵文字は使えません。</p>
-<p>今バージョンからは、サイトファイルの出力用ディレクトリはプロファイルディレクトリの中に自動生成されます。</p>
-<h5 class="heading2">profile.txt の準備</h5>
-<p>使用するプロファイルを指定するには、インストールディレクトリに profile.txt を設置します。<br>
-そこにプロファイルのディレクトリ名を記入してください。</p>
-<pre><code class="text">// コメントアウトが使えます。
-// いちいちディレクトリ名を入力するのは不便なので、コメントアウトの付け外しで運用できます
-
-//default
-myblog
-</code></pre>
-<p>1行目から調べて、最初に発見したディレクトリ名が採用されます。<br>
-存在しないディレクトリ名は採用されず、無視されます。</p>
-<pre><code class="text">// myblog の方が先に書いてありますので、myblog が使用されます。
-myblog
-default
-</code></pre>
-<p>profile.txt が存在しない場合や、有効な記述がなかった場合は「default」を指定したと見なされます。</p>
-<h5 class="heading2">パラメータによる指定（仮対応）</h5>
-<p>パラメータで指定することもできます。「-profile ディレクトリ名」と指定してください。<br>
-無効なディレクトリ名が指定されていた場合は、sinonome は何も処理せずそのまま終了します。</p>
 		</div>
 	</article>
 </div>

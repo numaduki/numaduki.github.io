@@ -84,11 +84,58 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/18</p>
+				<p class="date">2022/08/21</p>
 			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220821.html">sinonome v0.0.15</a></h3>
 		</div>
 		<div class="body">
+				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
+<p>まず、tags.txtにタグの概要記述します。カンマで区切って3番目に書いてください。</p>
+<pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
+</code></pre>
+<p><code>{tagdescription}</code>は、<code>{tags}</code>のループの中で使用してください。</p>
+<pre><code class="html">&lt;ul&gt;
+{tags}
+    &lt;li&gt;{tagname}（{tagdescription}）&lt;/li&gt;
+{/tags}
+&lt;/ul&gt;
+</code></pre>
+<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループで使ってください。</p>
+<pre><code class="html">&lt;ul&gt;
+{archives archive_type="tagarchive"}
+    &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;（{archivedescription}）&lt;/li&gt;
+{/archives}
+&lt;/ul&gt;
+</code></pre>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.15.zip">v0.0.15 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/18</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<p>大きい仕様変更があります。<br />
 プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
 つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
@@ -225,31 +272,6 @@ webpages_file, D:\foobar_webpage\
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.11.zip">v0.0.11 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/07/11</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220711.html">sinonome v0.0.10</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li>辞書ファイルの拡張子を<code>.c</code>から<code>.dic</code>に変更</li>
-<li>README.md 細部変更</li>
-</ul>
-<p>ソフトウェアのバージョン管理を、このバージョンよりGitHubに移行しました。<br />
-またGitHubではバージョン番号は普通につけるのが推奨されているようなので、普通の付け方に変更しました。</p>
-<p><a href="https://github.com/numaduki/ssg-sinonome/releases">リリース一覧</a>のページで、変更点の確認が可能です。<br />
-ダウンロードするには、「Latest」と書いてあるバージョンのAssetsの中の「Source code (zip)」というリンクをクリックしてください。</p>
-<p><img src="../../files/sinonome/20220710-0001.png" alt="Assetsの中のSource codeからダウンロード"/></p>
-<p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
-ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
-よろしくお願いします。</p>
 		</div>
 	</article>
 </div>

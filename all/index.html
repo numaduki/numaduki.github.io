@@ -84,11 +84,58 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/18</p>
+				<p class="date">2022/08/21</p>
 			</div>
-			<h3 class="articleheading"><a href="../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220821.html">sinonome v0.0.15</a></h3>
 		</div>
 		<div class="body">
+				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
+<p>まず、tags.txtにタグの概要記述します。カンマで区切って3番目に書いてください。</p>
+<pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
+</code></pre>
+<p><code>{tagdescription}</code>は、<code>{tags}</code>のループの中で使用してください。</p>
+<pre><code class="html">&lt;ul&gt;
+{tags}
+    &lt;li&gt;{tagname}（{tagdescription}）&lt;/li&gt;
+{/tags}
+&lt;/ul&gt;
+</code></pre>
+<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループで使ってください。</p>
+<pre><code class="html">&lt;ul&gt;
+{archives archive_type="tagarchive"}
+    &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;（{archivedescription}）&lt;/li&gt;
+{/archives}
+&lt;/ul&gt;
+</code></pre>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.15.zip">v0.0.15 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/18</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../archives/sinonome/20220818.html">sinonome v0.0.14</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<p>大きい仕様変更があります。<br />
 プロファイルディレクトリの files\ は、今まではディレクトリごとサイトファイル出力ディレクトリにコピーされていましたが、今バージョンからは、files\ の中身が出力ディレクトリにコピーされます。<br />
 つまり、files\ に favicon.ico というファイルがあり、サイトファイル出力ディレクトリが SITEFILE\ だった場合、</p>
@@ -225,22 +272,6 @@ webpages_file, D:\foobar_webpage\
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.11.zip">v0.0.11 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/information/index.html">お知らせ</a></p>
-				<p class="date">2022/08/12</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/information/20220812.html">GitHub Pagesに移行しました</a></h3>
-		</div>
-		<div class="body">
-				<p>さくらのレンタルサーバで運営していた当ウェブサイトですが、GitHub Pagesに移行しました。GitHubというのは、プログラミングに詳しい人たちがソースコードを持ち寄ってみんなで開発をしたり、みんなで開発をしている人たちを眺めながらひとりぼっちで開発をしたりするサービスです。</p>
-<p>そうやってGitHubで開発をしていると、何かができます。できあがったものは開発中の思い出と一緒に心の中にしまっておけばいいわけですが、ちょっとみんなに見せてやろう、と思う人もおり、そういう人がそのためのウェブサイトをそれっぽく作れるのがGitHub Pagesです。</p>
-<p>さくらのレンタルサーバ時代のURL <a href="https://nu.skr.jp/">https://nu.skr.jp/</a> は、2023年7月頃に使えなくなる予定ですので、新URL <a href="https://numaduki.github.io/">https://numaduki.github.io/</a> にリンクの張り替えをお願いします。</p>
 		</div>
 	</article>
 </div>
