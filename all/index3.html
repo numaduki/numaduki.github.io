@@ -83,6 +83,44 @@
 	<article>
 		<div class="head">
 			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/07/03</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220703.html">sinonome preview 9</a></h3>
+		</div>
+		<div class="body">
+				<p>まず非常に重要な変更点として、<strong>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更しました。</strong><br />
+Markdownで<code>[]</code>はよく使われるため、これを避けたいという意図です。<br />
+（当初はMarkdownの利用を考えていなかったので、他の言語と被らないという基準で<code>[:～:]</code>としていました）</p>
+<p><a href="../distribute/sinonome/preview/sinonome_preview_0009.zip">ダウンロード</a></p>
+<h4 class="heading1">変更点</h4>
+<h5 class="heading2">重要な変更</h5>
+<ul>
+<li>タグ記号を<code>[:～:]</code>から<code>{～}</code>に変更</li>
+<li><code>strform</code>モディファイアの値にAYA/YAYA準拠の「$」を使っていたのを「%」に変更  <br />
+（モディファイア値の変数展開とバッティングすることを忘れていたため）</li>
+</ul>
+<h5 class="heading2">機能追加</h5>
+<ul>
+<li>投稿のメタ情報に<code>SKIPGENERATE</code>と書くと、ファイルとして出力しないようにした  <br />
+（値は必要なく、1行に<code>SKIPGENERATE</code>と書くだけ）</li>
+<li>投稿ファイルのメタ情報に<code>DEFINE</code> <code>REPLACE</code> <code>RE_DEFINE</code> <code>RE_REPLACE</code>を追加  <br />
+詳細→<a href="../sinonome/03-resource.html">リソース（ユーザー向け）</a></li>
+<li>sinonome 独自のログを出力を実装（プロファイルディレクトリに log.txt を出力します）</li>
+</ul>
+<h5 class="heading2">その他変更・修正等</h5>
+<ul>
+<li>DATE 未指定の場合は出力時刻が使用されるが、その場合にdate系のタグで出力できていなかったのを修正</li>
+<li>範囲タグを入れ子にした場合に誤検知していたが、ある程度きちんと判定するようにした</li>
+<li>サンプルテーマの修正</li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
 				<p class="tags"><a href="../tags/information/index.html">お知らせ</a></p>
 				<p class="date">2022/06/26</p>
 			</div>
@@ -267,32 +305,6 @@ OUTPUTPATH: holiday-start
 <p>文作者のumeiciさんに、心から感謝申し上げます。<br />
 伺かゴーストの方は文の使用を継続しますので、そういう意味でも、これからもお世話になります。<br /></p>
 <p>また、文を互換性の高いかたちで発展させてくれている、YAYA開発チームの皆様にも感謝申し上げます。</p>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
-				<p class="date">2021/07/24</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/ukagaka/20210724.html">初心占い師ほたる phase7.1.6</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
-<li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
-</ul>
-<p><a href="../ukagaka/ghost/hotaru.html">初心占い師ほたる</a>の祝日判定の問題修正と、マスカレードのメニューに「今日は何の日？」を追加しました。<br />
-ネットワーク更新で取得可能です。<br /></p>
-<p>なお、今回はトークの追加はありませんが、祝日が正常に判定されるようになったことで、今まで見られなかったトークが見られるようになるかもしれません。<br />
-なお、昨日（スポーツの日）に関するトークは特にありません。すみません。</p>
-<p>せっかくのオリンピック開会式の日だったので何かそれっぽいトークを書ければ、とも思っていたのですが、ほたるとオリンピックがどうも結びつかないというか、「街が賑やかだねぇ」とか「日本人じゃない人がたくさん街を歩いてるねぇ」とか言わせるのもご存じの通り事実に反しているのでおかしいし、「せっかくだけど私たちとはあんまり関係ないね」「来年からコミケの会場が戻ってくる……」とか言わせるのもオリンピックが好きな人の気分を下げてしまうようで嫌だし……とかいろいろ考えているうちに時間がなくなってしまいました。まあオリンピックに限らず、あんまりサブカル系ではない現実のイベントをネタとして使うのは（よほど面白くなるという確証がない限りは）やめとこう、という感じです。</p>
-<p>開会式は生放送で見ました。<br />
-イベントお祭り大好きでシャイな純日本人なので、20時からほぼ24時まで、4時間弱くらいぶっ続けで見ました。感想はネタバレになるのであえて書きませんが、少なくとも「見ることで精神的に怪我する可能性は低い」と判定しますので、実際に再放送やネット配信等で見ていただくのがいいだろうなあと思います。<br />
-ただ、視聴のヒントとして書いておくと、選手入場が始まってから終わるまでの間に特別に何かがある（会場に明確な変化があるとか、何かの映像が挿入されるとか）わけではないので、選手入場は別にいいかな……という人はガッツリ飛ばしても大丈夫だと思います。<br />
-あと、個人的には橋本聖子会長のスピーチは心に訴えかけてくるものがありました。政治家の話は聞くに値しない……と思う人もいるでしょうが、政治家というよりもアスリートとしての立場からのスピーチだったかと思います。氏に何の思い入れのない私でもほう、と思ったので、アスリートとして活躍していた頃を知っている人にはさらに響くのではと想像します。選手入場よりもさらにすっ飛ばされがちなシーンだとは思いますが、もし心に余裕があれば。</p>
 		</div>
 	</article>
 </div>
