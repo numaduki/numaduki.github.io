@@ -78,7 +78,43 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">アーカイブ - sinonome (1 / 3)</h2>
+<h2 class="sectionheading">アーカイブ - sinonome (1 / 4)</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/09/28</p>
+			</div>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220928.html">sinonome v0.0.16</a></h3>
+		</div>
+		<div class="body">
+				<p><code>##</code>の見出しレベルを指定する<code>headinglevel</code>モディファイアで、class属性を付与しない<code>noclass</code>指定が可能になりました。見出しレベルは指定したいが、classは必要ない、という場合に有用です。</p>
+<p>従来通りだと以下の通り。</p>
+<pre><code class="">{entrybody headinglevel="3"}
+　↓
+&lt;h3 class="heading1"&gt;見出し（従来通りクラスが付与される）&lt;/h3&gt;
+</code></pre>
+<p>クラスを付与しない場合は、数値の後ろにカンマ、その後ろにnoclassと書きます。以下の通り。</p>
+<pre><code class="">{entrybody headinglevel="3,noclass"}
+　↓
+&lt;h3&gt;見出し（クラスが付与されない）&lt;/h3&gt;
+</code></pre>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.16.zip">v0.0.16 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +122,13 @@
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/21</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../../archives/sinonome/20220821.html">sinonome v0.0.15</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
 <p>まず、tags.txtにタグの概要を記述します。カンマで区切って3番目に書いてください。</p>
 <pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
@@ -204,17 +244,9 @@ webpages_file, D:\foobar_webpage\
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -222,13 +254,9 @@ webpages_file, D:\foobar_webpage\
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/15</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../../archives/sinonome/20220815.html">sinonome v0.0.12</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
 おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
 <p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
@@ -237,46 +265,11 @@ webpages_file, D:\foobar_webpage\
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/14</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220814.html">sinonome v0.0.11</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<p>今まではサイトファイルの出力先に相対パスしか使えませんでしたが、絶対パスも使えるようになりました。<br />
-プロファイルディレクトリ<code>settings.txt</code>内の<code>output_directory</code>で絶対パスを指定してください。</p>
-<pre><code class="txt">output_directory, D:\sinonome_sitefile\
-</code></pre>
-<p>システムディレクトリなどの本当にヤバい場所を指定してしまうのは（書き込み時にアラートの類が出るとしても）まあマズいだろうと思いますが、むしろ普通のディレクトリに別のサイトの静的ファイル一式を置いており、うっかりそのパスを指定してしまった、というような悲劇のほうがよっぽどあり得るかと思います。くれぐれもお気をつけください。</p>
-<p>その他、内部の細かい変更をしています。</p>
-<ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.11.zip">v0.0.11 ダウンロード</a></li>
-<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
-</ul>
 		</div>
 	</article>
 </div>
 <div class="pager">
-<ul><li class="current"><a href="../../tags/sinonome/index.html">1</a></li><li ><a href="../../tags/sinonome/index2.html">2</a></li><li ><a href="../../tags/sinonome/index3.html">3</a></li></ul>
+<ul><li class="current"><a href="../../tags/sinonome/index.html">1</a></li><li ><a href="../../tags/sinonome/index2.html">2</a></li><li ><a href="../../tags/sinonome/index3.html">3</a></li><li ><a href="../../tags/sinonome/index4.html">4</a></li></ul>
 </div>
 			</main>
 		</div>

@@ -84,6 +84,27 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/15</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220815.html">sinonome v0.0.12</a></h3>
+		</div>
+		<div class="body">
+				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
+おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
+<p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
+そもそも相対パス生成部分の実装にすっきりしない部分があり、どうせなら根本的になおしたいと思っていたのですが、なかなかそこまではできないので、ひとまず機械的に<code>./</code>を削除しています。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+		</div>
+	</article>
+</div>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/14</p>
 			</div>
 			<h3 class="articleheading"><a href="../archives/sinonome/20220814.html">sinonome v0.0.11</a></h3>
@@ -99,17 +120,9 @@
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.11.zip">v0.0.11 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -117,27 +130,15 @@
 				<p class="tags"><a href="../tags/information/index.html">お知らせ</a></p>
 				<p class="date">2022/08/12</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../archives/information/20220812.html">GitHub Pagesに移行しました</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<p>さくらのレンタルサーバで運営していた当ウェブサイトですが、GitHub Pagesに移行しました。GitHubというのは、プログラミングに詳しい人たちがソースコードを持ち寄ってみんなで開発をしたり、みんなで開発をしている人たちを眺めながらひとりぼっちで開発をしたりするサービスです。</p>
 <p>そうやってGitHubで開発をしていると、何かができます。できあがったものは開発中の思い出と一緒に心の中にしまっておけばいいわけですが、ちょっとみんなに見せてやろう、と思う人もおり、そういう人がそのためのウェブサイトをそれっぽく作れるのがGitHub Pagesです。</p>
 <p>さくらのレンタルサーバ時代のURL <a href="https://nu.skr.jp/">https://nu.skr.jp/</a> は、2023年7月頃に使えなくなる予定ですので、新URL <a href="https://numaduki.github.io/">https://numaduki.github.io/</a> にリンクの張り替えをお願いします。</p>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -145,13 +146,9 @@
 				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
 				<p class="date">2022/07/11</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../archives/ukagaka/20220711.html">ネットワーク更新URL HTTPS化による影響のお知らせ</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<p><a href="../ukagaka/ghost.html#c_hotaru">初心占い師ほたる</a>、<a href="../ukagaka/ghost.html#c_hinoki">ひのき &ldquo;the ChopSticks&rdquo;</a>、<a href="../ukagaka/ghost.html#c_matchamilk">まっちゃみるく。</a>をネットワーク更新しました。<br />
 各コンテンツのGitHubへの移行に伴い、ネットワーク更新URLを変更しています。<br />
 普通にネットワーク更新をお願いします。</p>
@@ -163,17 +160,9 @@
 <a href="https://github.com/numaduki/ukagaka-ghost-hotaru">https://github.com/numaduki/ukagaka-ghost-hotaru</a></p>
 <p>それ以外の要素については、引き続きMATERIAでも使えます。<br />
 これからもよろしくお願いします。</p>
-
-				
-			
 		</div>
 	</article>
 </div>
-
-
-
-
-	
 <div class="article">
 	<article>
 		<div class="head">
@@ -181,13 +170,9 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/07/11</p>
 			</div>
-			
 			<h3 class="articleheading"><a href="../archives/sinonome/20220711.html">sinonome v0.0.10</a></h3>
-			
 		</div>
 		<div class="body">
-			
-			
 				<ul>
 <li>辞書ファイルの拡張子を<code>.c</code>から<code>.dic</code>に変更</li>
 <li>README.md 細部変更</li>
@@ -200,66 +185,6 @@
 <p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
 ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
 よろしくお願いします。</p>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
-				<p class="date">2022/07/03</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../archives/ukagaka/20220703.html">初心占い師ほたる phase7.1.7</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<ul>
-<li><a href="../ukagaka/ghost.html#c_hotaru">詳細ページ</a></li>
-<li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
-</ul>
-<p><a href="../ukagaka/ghost.html#c_hotaru">初心占い師ほたる</a>のトークを追加しました。<br />
-「マ？」の話。</p>
-<p>個人的には「マ？」は成立過程が想像できるというか、きっと</p>
-<ol>
-<li>やたら「マジ？」と言う人がいた</li>
-<li>ふとしたときに「マジ？」と言えずに「マ？」と言った</li>
-<li>みんながそれに対し「マ？」と思った</li>
-<li>みんな使い出した</li>
-</ol>
-<p>という背景があるんだろうなぁ、要するに水面下でみんなが「いいね！」と思って、それが自然とシェアされた、そういう成立過程に自然なグルーヴ感あっていいなぁ、と思えて好きです。<br />
-あと「マ？」だけでは「マジ？」の略語として成立しないので、イントネーションや表情といったメタ情報が必要なあたりも人間くさくていいなと思います。<br />
-ただその一方で、あまり私の心にフィットしない省略語もあります。それは「とりま」です。<br /></p>
-<p>おそらく「とりあえず、まあ」が「とり、まあ」と略され、それが「とりま」になったのだと思います。<br />
-ただ、「まあ」というのは、会話中において、次に発する言葉が見つかるまでの静寂を打ち消すために発され、かつ「まあ」の「あ」の形で口を開けたままにすることで発話中であることをビジュアル面でも明示する、高度な言葉です。そして聞き手も、その「まあ」を受けて何も言わずにスタンバる、という行動を自然発生させる、そういうとても人間らしい言葉でもあるのです。<br />
-それを「とり」と結合して「とりま」とワンフレーズにしてしまったら、もともとの「まあ」の機能が死んでしまうように思うのです。</p>
-<pre><code class="text">伝統を抹殺せんとするとりま勢：とりま……………………マックに行こうぜ。
-伝統的なまあによる効果的発話：とりあえず…………まあ…………マクド行こか。
-</code></pre>
-<p>どうでしょうか。</p>
-<p>ドヤ顔で「…」を8個を並べてもスルーしてもらえるのは江戸だけです。<br />
-上方では「…」は4つより多く並べると言語中枢に何らかの問題が発生していると理解され、どうしてこんなになるまで放っておいたんだと人だかりができ、それでも症状が続くとなんばグランド花月からほんわかぱっぱーを鳴らしながら救急車がやってくると聞きます。情に厚い地域だといえます。</p>
-<p>一説によると、日本人の約八割は口呼吸らしいです。<br />
-「まあ」で口が開く様子と、口呼吸でぽかんと口を開けている様子には通じるところがあり、自分は「まあ」でお口ポカーン、相手も口呼吸でお口ポカーン、互いにお口ポカーンで会話の行方、日本の行方、世界の行方、人類の行方、終末へと流れる時の行方を見つめる、それが日本語なのではないでしょうか。</p>
-<p>私はこの「まあ」のメタ言語的意味の重要性、それによる会話空間の雰囲気醸成のメカニズムを「お口ポカーン効果」と名付け、インターネットで広く発信することで、世界にお口ポカーンを広めてまいります。<br />
-ネットワーク更新よろしくおねがいします。</p>
-<p>＊　＊　＊</p>
-<p>そのほかの主な変更点としては二つ。一つはダイスの改良です。<br />
-「マイナス2面体」「マイナス1個」といった人智を越えたリクエストに対し、きちんといぶかしげな反応をするようになりました。</p>
-<p><figure><img src="../files/ukagaka/20220703-0001.png" alt="ダイスをマイナス3個"/><figcaption>……０なの？</figcaption></figure></p>
-<p>もう一つは、バルーンメニュー（ほたるは「その他の設定」内）への「ウィンドウの左上に移動」追加です。<br />
-起動時に私の環境でマスカレードが行方不明になって<code>Ctrl+Shift+F12</code>でも戻ってこない場合がよくあるので、そういう時のための機能です。ただそもそもどっちも表示されない場合には使えないので、まず<a href="https://atmarkit.itmedia.co.jp/ait/articles/0312/06/news006.html">伝統的手法</a>でどっちかを連れ戻してください。</p>
 		</div>
 	</article>
 </div>

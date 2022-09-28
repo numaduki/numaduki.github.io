@@ -82,7 +82,7 @@
 	<article>
 		<div class="head">
 			<div class="meta">
-				<p class="date">last update: 2022/06/29</p>
+				<p class="date">last update: 2022/09/28</p>
 			</div>
 			<h2 class="articleheading"><a href="../sinonome/03-resource-develop.html">sinonome / リソース（開発者向け）</a></h2>
 		</div>
@@ -363,7 +363,7 @@
   </tr>
   <tr>
     <td>headinglevel</td>
-    <td>一番上の見出しレベルを指定します。<br>最も上のレベルの見出しから順に<code>heading1</code>～<code>heading6</code>というクラスが付与されます。</td>
+    <td>一番上の見出しレベルを指定します。<br>最も上のレベルの見出しから順に<code>heading1</code>～<code>heading6</code>というクラスが付与されます。<br>クラス付与が必要ない場合は、<code>noclass</code>オプションを指定します。</td>
     <td>2</td>
   </tr>
 </table>
@@ -395,15 +395,23 @@
 &lt;h2&gt;最新記事&lt;/h2&gt;
 &lt;h3&gt;記事タイトル&lt;/h3&gt;
 
-&lt;h4 class="heading1"&gt;シャープ記号1つの見出し&lt;/h4&gt;
-&lt;h5 class="heading2"&gt;シャープ記号2つの見出し1&lt;/h5&gt;
-&lt;h5 class="heading2"&gt;シャープ記号2つの見出し2&lt;/h5&gt;
-&lt;h6 class="heading3"&gt;シャープ記号3つの見出し&lt;/h6&gt;
+&lt;h4 class="heading1"&gt;シャープ記号2つの見出し&lt;/h4&gt;
+&lt;h5 class="heading2"&gt;シャープ記号3つの見出し1&lt;/h5&gt;
+&lt;h5 class="heading2"&gt;シャープ記号3つの見出し2&lt;/h5&gt;
+&lt;h6 class="heading3"&gt;シャープ記号4つの見出し&lt;/h6&gt;
 </code></pre>
 <p><code>headinglevel</code>を<code>4</code>に設定したため、<code>##</code>による見出しが<code>&lt;h2&gt;</code>ではなく、<code>&lt;h4&gt;</code>で出力されます。<br />
 また、一番上のレベルの見出しには<code>heading1</code>、その次のレベルの見出しには<code>heading2</code>…というふうにクラスが付与されます。<br /></p>
-<p>この仕組みにより、ユーザーはテンプレートによって適切な見出しレベルを意識することなく、<strong>本文の<code>#</code>記号は2つから始める、という原則通りに記事を書ける</strong>ようになります。</p>
-<p>テーマ開発者は上記を保証するため、当タグを用いる際には<code>headinglevel</code>属性（とCSS）を適切に設定する必要があります。</p>
+<p>この仕組みにより、ユーザーはテンプレートによって適切な見出しレベルを意識することなく、<strong>本文の<code>#</code>記号は2つから始める、という原則通りに記事を書ける</strong>ようになります。<br />
+テーマ開発者は上記を保証するため、当タグを用いる際には<code>headinglevel</code>属性（とCSS）を適切に設定する必要があります。</p>
+<p>なおv0.0.16より、見出しレベル指定と同時に<code>noclass</code>を指定することで、クラスの付与を省略できます。</p>
+<pre><code class="html">{entries limit="1"}
+{entrybody headinglevel="4,noclass"}
+{/entries}
+</code></pre>
+<pre><code class="html">&lt;h4&gt;シャープ記号2つの見出し&lt;/h4&gt;
+..
+</code></pre>
 <h5 class="heading3">entrymore</h5>
 <p>記事の本文の続きを表示します。<br />
 使用可能なモディファイアは<code>entrybody</code>と同様です。</p>

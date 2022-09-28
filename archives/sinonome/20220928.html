@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.15 - nu</title>
+	<title>sinonome v0.0.16 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,31 +83,24 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/21</p>
+				<p class="date">2022/09/28</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220821.html">sinonome v0.0.15</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20220928.html">sinonome v0.0.16</a></h2>
 		</div>
 		<div class="body">
-				<p>テンプレートタグ<code>{tagdescription}</code> <code>{archivedescription}</code>が使えるようになりました。タグの概要を出力します。<br /></p>
-<p>まず、tags.txtにタグの概要を記述します。カンマで区切って3番目に書いてください。</p>
-<pre><code class="text">立位体前屈チャレンジ,standing-forward-bend,40cmに挑戦しています！
+				<p><code>##</code>の見出しレベルを指定する<code>headinglevel</code>モディファイアで、class属性を付与しない<code>noclass</code>指定が可能になりました。見出しレベルは指定したいが、classは必要ない、という場合に有用です。</p>
+<p>従来通りだと以下の通り。</p>
+<pre><code class="">{entrybody headinglevel="3"}
+　↓
+&lt;h3 class="heading1"&gt;見出し（従来通りクラスが付与される）&lt;/h3&gt;
 </code></pre>
-<p><code>{tagdescription}</code>は、<code>{tags}</code>のループの中で使用してください。</p>
-<pre><code class="html">&lt;ul&gt;
-{tags}
-    &lt;li&gt;{tagname}（{tagdescription}）&lt;/li&gt;
-{/tags}
-&lt;/ul&gt;
-</code></pre>
-<p>タグ別アーカイブで表示したい場合は、<code>{archivedescription}</code>タグを使います。こちらは<code>{archives archive_type="tagarchive"}</code>のループの中、またはタグアーカイブのテンプレート内で使ってください。</p>
-<pre><code class="html">&lt;ul&gt;
-{archives archive_type="tagarchive"}
-    &lt;li&gt;&lt;a href="{archivelink}"&gt;{archivetitle}&lt;/a&gt;（{archivedescription}）&lt;/li&gt;
-{/archives}
-&lt;/ul&gt;
+<p>クラスを付与しない場合は、数値の後ろにカンマ、その後ろにnoclassと書きます。以下の通り。</p>
+<pre><code class="">{entrybody headinglevel="3,noclass"}
+　↓
+&lt;h3&gt;見出し（クラスが付与されない）&lt;/h3&gt;
 </code></pre>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.15.zip">v0.0.15 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.16.zip">v0.0.16 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -115,16 +108,11 @@
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20220928.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.16</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220818.html">
+			<a href="../../archives/sinonome/20220821.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.14</span>
+				<span>sinonome v0.0.15</span>
 			</a>
 		</li>
 	</ul>
