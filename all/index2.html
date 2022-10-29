@@ -78,7 +78,46 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">全カテゴリアーカイブ 2 / 8</h2>
+<h2 class="sectionheading">全カテゴリアーカイブ 2 / 9</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/08/17</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
+		</div>
+		<div class="body">
+				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
+<strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
+<p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
+複数ある場合は複数書けます。</p>
+<pre><code class="txt">entries_file, D:\foobar\external_entry.md
+entries_file, D:\foobar\external_entry2.md
+webpages_file, D:\foobar\external_webpage.md
+</code></pre>
+<p>ディレクトリを指定することもできます。この場合、そのディレクトリ内の全ファイルを読み込みます。<br />
+こちらも複数書けます。</p>
+<pre><code class="txt">entries_file, D:\foobar_entry\
+webpages_file, D:\foobar_webpage\
+</code></pre>
+<p>その他、細かい変更を行っています。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +125,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/15</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20220815.html">sinonome v0.0.12</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
 おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
 <p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
@@ -97,9 +140,17 @@
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
+
+				
+			
 		</div>
 	</article>
 </div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -107,9 +158,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/08/14</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20220814.html">sinonome v0.0.11</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<p>今まではサイトファイルの出力先に相対パスしか使えませんでしたが、絶対パスも使えるようになりました。<br />
 プロファイルディレクトリ<code>settings.txt</code>内の<code>output_directory</code>で絶対パスを指定してください。</p>
 <pre><code class="txt">output_directory, D:\sinonome_sitefile\
@@ -163,33 +218,8 @@
 		</div>
 	</article>
 </div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/07/11</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/sinonome/20220711.html">sinonome v0.0.10</a></h3>
-		</div>
-		<div class="body">
-				<ul>
-<li>辞書ファイルの拡張子を<code>.c</code>から<code>.dic</code>に変更</li>
-<li>README.md 細部変更</li>
-</ul>
-<p>ソフトウェアのバージョン管理を、このバージョンよりGitHubに移行しました。<br />
-またGitHubではバージョン番号は普通につけるのが推奨されているようなので、普通の付け方に変更しました。</p>
-<p><a href="https://github.com/numaduki/ssg-sinonome/releases">リリース一覧</a>のページで、変更点の確認が可能です。<br />
-ダウンロードするには、「Latest」と書いてあるバージョンのAssetsの中の「Source code (zip)」というリンクをクリックしてください。</p>
-<p><img src="../files/sinonome/20220710-0001.png" alt="Assetsの中のSource codeからダウンロード"/></p>
-<p>なお恥ずかしながら、GitHubはあまり使ったことがなく、ヤバいくらい見切り発車です。<br />
-ソフトウェアの完成度よりも、むしろ私の完成度の方がアルファバージョン未満であり、初心者です。<br />
-よろしくお願いします。</p>
-		</div>
-	</article>
-</div>
 <div class="pager">
-<ul><li ><a href="../all/index.html">1</a></li><li class="current"><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li></ul>
+<ul><li ><a href="../all/index.html">1</a></li><li class="current"><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li><li ><a href="../all/index9.html">9</a></li></ul>
 </div>
 			</main>
 		</div>

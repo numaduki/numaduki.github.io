@@ -78,7 +78,42 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">全カテゴリアーカイブ 6 / 8</h2>
+<h2 class="sectionheading">全カテゴリアーカイブ 6 / 9</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2020/11/29</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20201129.html">sinonome preview 6</a></h3>
+		</div>
+		<div class="body">
+				<ul>
+<li><code>{else}</code>節にさらに<code>{else}</code>がある場合、正常に動作していなかったのを修正</li>
+<li>preview 4でモディファイアの値に変数が使用可能になったため、<code>{if}</code>タグのモディファイア<code>eqvar</code>を廃止</li>
+<li><code>DATE:</code>に年月日を入力しており時刻だけ入力していない場合、時刻を00時00分00秒と見なすよう変更（今までは現在の時刻が使用されていた）</li>
+<li><code>{pagedate}</code> <code>{entrydate}</code>の仕様があやふやだったので明確化して<a href="../sinonome/03-resource/template-tags.html">タグリファレンス</a>に記載</li>
+</ul>
+<p><a href="../distribute/sinonome/preview/sinonome_preview_0006.zip">ダウンロード</a></p>
+<p>（<code>{if}</code>の<code>eq</code>に限らず）モディファイアの値の頭に<code>$</code>を付けると変数名と見なされ、その変数の値が参照されます。<br />
+つまり、<code>eqvar</code>を使っていた場合は、以下のように書き直してください。</p>
+<pre><code class="html">（旧）
+{if name="変数名1" eqvar="変数名2"}
+（新）
+{if name="変数名1" eq="$変数名2"}
+</code></pre>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +121,13 @@
 				<p class="tags"><a href="../tags/ukagaka/index.html">伺か</a></p>
 				<p class="date">2020/11/28</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/ukagaka/20201128.html">初心占い師ほたる phase7.1.2</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li><a href="../ukagaka/ghost/hotaru.html">詳細ページ</a></li>
 <li><a href="../update/hotaru_hpns/releasenote.txt">リリースノート</a></li>
@@ -102,9 +141,17 @@
 <p>ところで私個人としては紅白に関しては<a href="https://www.youtube.com/user/MrChildren/videos">Mr.Children</a>が出るという点を重視しており、おそらく30代あたりのおっさんおばさん的にはそれにしか期待してないのではないでしょうか。個人的には「さよなら2001年」の2020年バージョンを歌ってほしいんですが、それをするとお茶の間のテンションが「ゆく年くる年」までもたなさそうなので、まあ無難に「himawari」とか「Birthday」とかの近年の曲を歌う方向性に持って行く気がします。でも視聴者層的には「名もなき詩」「Tomorrow never knows」「innocent world」あたりのミスチルメンバーの気持ちを一切考えない中年向けよくばりセットへの期待も大きいはずです。</p>
 <p>ああ、いやもちろん歌いたいのを歌うのが一番ですよ。（ミスチルメンバーが）幸せなら（何歌っても）OKです。バンドマンが歌で評価されたがっているというのは想像に難くないですが、ミスチルの場合はそれこそ評価がカンストしているのでもう曲がどうこうという次元ではなく、何歌ってもらっても満足です。みんなツイッターとかでは「知らない曲だしガキ使見るよォ」とか言いつつ、時が来たらリモコンに手を伸ばすことでしょう。</p>
 <p>あとはもう三山ひろしの<a href="https://kendama-japan.jp/miyama-hiroshi/">けん玉</a>くらいですね。</p>
+
+				
+			
 		</div>
 	</article>
 </div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -112,9 +159,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2020/11/22</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20201122.html">sinonome preview 5</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<ul>
 <li>テンプレートタグ <code>{relpath}</code> を <code>{root}</code> に変更</li>
 <li>複数プロファイルに対応した（ディレクトリ構成の変更あり）</li>
@@ -256,32 +307,8 @@ default
 		</div>
 	</article>
 </div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/columns/index.html">コラム</a></p>
-				<p class="date">2020/10/26</p>
-			</div>
-			<h3 class="articleheading"><a href="../archives/columns/20201026.html">入学式が9月になるということ(2)</a></h3>
-		</div>
-		<div class="body">
-				<p>　前回の続きです。</p>
-<p>　学校の入学時期を9月にすることが難しい理由のもうひとつは、単純に「まだ暑い」ということです。<br>
-　9月だしそうでもないのでは？　と思われるかもしれませんが、2020年は9月初頭にして新潟地方で摂氏40度を記録しており、もはや晩夏とはいえなくなってきています。</p>
-<p>　当たり前の話ですが、暑いとやる気が出ず、頑張れません。<br>
-　もちろん「やる気が出る季節」などというものは存在しませんが、4月入学の場合、なんとなく頑張っているのをクラスメイトに冷やかされれば「うるせー、最初だけだよ、春だし別にいいだろ」で済み、冷やかした方も「そうか、まぁ俺も最初だけ頑張ってみるか、春だし」となるものです。つまり、気まぐれに出してみた優等生的な照れくさい向上心を、春の時候のせいにできるわけです。</p>
-<p>　しかし、9月には何もありません。あるのは夏が終わるという虚無、そして終わらない灼熱だけです。<br>
-　なんとなく頑張ってみよう、という気持ちを、何のせいにすることもできません。ただ「暑い中頑張ってるエラい人」になってしまい、これではカッコがつきません。結果、9月の新入生は4月と比べ、頑張る雰囲気に恵まれないことが想像されます。</p>
-<p>　また、そもそもの話として、9月に入学式を開くということ自体、大変な危険を伴います。<br>
-　前述の通り、運が悪ければ摂氏40度を超える9月の入学式。そんな中、長大な式次第を淡々とこなさせられる学生さんたちにとっては、文字通り、狂気の宴でしかありません。<br>
-　そんな絶望感の漂う中、新入生に対して「ひまわりのように強くあれ」とか、「あさがおのようにさわやかな」とか、ましてや造花だのドライフラワーだのそんなフレーズが式辞で並べられようものなら、新入生一同が足下のスリッパを床に叩き付けて校長に一斉に襲いかかっていっても何ら不思議ではありません。</p>
-<p>　真面目な話、台風と豪雨が連続で襲いかかってくるような季節をスタートラインにして大丈夫なのか？　とかいうようなごく普通な疑問もあるわけですが、とにかく余程他に方策がない、ということでなければ、日本の風土を考えた上では、やはり従来の4月入学がベターではないかと思うのです。</p>
-		</div>
-	</article>
-</div>
 <div class="pager">
-<ul><li ><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li class="current"><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li></ul>
+<ul><li ><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li class="current"><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li><li ><a href="../all/index9.html">9</a></li></ul>
 </div>
 			</main>
 		</div>

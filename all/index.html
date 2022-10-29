@@ -78,7 +78,47 @@
 		<hr>
 		<div id="main">
 			<main>
-<h2 class="sectionheading">全カテゴリアーカイブ 1 / 8</h2>
+<h2 class="sectionheading">全カテゴリアーカイブ 1 / 9</h2>
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/10/29</p>
+			</div>
+			<h3 class="articleheading"><a href="../archives/sinonome/20221029.html">sinonome v0.0.17</a></h3>
+		</div>
+		<div class="body">
+				<p><code>entries</code> <code>pages</code> <code>loop</code>タグに、インデックス値に置き換わる<code>__index__</code>と、ループ回数に置き換わる<code>__counter__</code>を実装しました。<br /></p>
+<h4 class="heading1">インデックス値とループ回数の違い</h4>
+<p><code>__index__</code>はインデックスの値なので、最初のループが0とは限りません。取得を逆順にする<code>reverse</code>や、最初のインデックスを指定する<code>offset</code>などがあるためです。</p>
+<p>一方の<code>__counter__</code>は、<code>reverse</code>で逆にしようと<code>offset</code>で開始位置を変えようと、最初のループが必ず1です。<br />
+よって以下の例のように、「最初に表示する内容」を判定する場合は<code>__counter__</code>を使うべきでしょう。</p>
+<p>例）最初の投稿にだけ本文を表示する</p>
+<pre><code class="">{entries}
+    &lt;h3&gt;{entrytitle}&lt;/h3&gt;
+    {setvar name="counter" value="__counter__"}
+    {if name="counter" eq="1"}
+        {entrybody}
+    {/if}
+{/entries}
+</code></pre>
+<p>ループ系のタグは他に<code>archives</code>がありますが、実装し忘れました。次のバージョンで実装すると思います。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.17.zip">v0.0.17 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
 <div class="article">
 	<article>
 		<div class="head">
@@ -86,9 +126,13 @@
 				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
 				<p class="date">2022/09/28</p>
 			</div>
+			
 			<h3 class="articleheading"><a href="../archives/sinonome/20220928.html">sinonome v0.0.16.1</a></h3>
+			
 		</div>
 		<div class="body">
+			
+			
 				<p><code>##</code>の見出しレベルを指定する<code>headinglevel</code>モディファイアで、class属性を付与しない<code>noclass</code>指定が可能になりました。見出しレベルは指定したいが、classは必要ない、という場合に有用です。</p>
 <p>従来通りだと以下の通り。</p>
 <pre><code class="">{entrybody headinglevel="3"}
@@ -242,54 +286,11 @@ entries_file, ..\別のプロファイル\entries\
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.14.zip">v0.0.14 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
-
-				
-			
-		</div>
-	</article>
-</div>
-
-
-
-
-	
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/17</p>
-			</div>
-			
-			<h3 class="articleheading"><a href="../archives/sinonome/20220817.html">sinonome v0.0.13</a></h3>
-			
-		</div>
-		<div class="body">
-			
-			
-				<p>通常、記事ファイル・ウェブページファイルは profiles\user\ の entries\ または webpages\ に置きますが、それに加えて <code>settings.txt</code> で各ファイルを指定できるようになりました。<br />
-<strong>今後は、記事ファイル・ウェブページファイルは好きな場所に置けます。</strong></p>
-<p><code>settings.txt</code>に以下のように記述して、記事ファイル・ウェブページファイルを指定します。<br />
-複数ある場合は複数書けます。</p>
-<pre><code class="txt">entries_file, D:\foobar\external_entry.md
-entries_file, D:\foobar\external_entry2.md
-webpages_file, D:\foobar\external_webpage.md
-</code></pre>
-<p>ディレクトリを指定することもできます。この場合、そのディレクトリ内の全ファイルを読み込みます。<br />
-こちらも複数書けます。</p>
-<pre><code class="txt">entries_file, D:\foobar_entry\
-webpages_file, D:\foobar_webpage\
-</code></pre>
-<p>その他、細かい変更を行っています。</p>
-<ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
-<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
-</ul>
 		</div>
 	</article>
 </div>
 <div class="pager">
-<ul><li class="current"><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li></ul>
+<ul><li class="current"><a href="../all/index.html">1</a></li><li ><a href="../all/index2.html">2</a></li><li ><a href="../all/index3.html">3</a></li><li ><a href="../all/index4.html">4</a></li><li ><a href="../all/index5.html">5</a></li><li ><a href="../all/index6.html">6</a></li><li ><a href="../all/index7.html">7</a></li><li ><a href="../all/index8.html">8</a></li><li ><a href="../all/index9.html">9</a></li></ul>
 </div>
 			</main>
 		</div>

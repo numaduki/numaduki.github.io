@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../files/favicon-20220504.png">
 	<link rel="apple-touch-icon" href="../../files/apple-touch-icon-20220504.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>sinonome v0.0.16.1 - nu</title>
+	<title>sinonome v0.0.17 - nu</title>
 <link rel="stylesheet" type="text/css" href="../../resources/screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../resources/print.css" media="print">
 </head>
@@ -83,24 +83,28 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/09/28</p>
+				<p class="date">2022/10/29</p>
 			</div>
-			<h2 class="articleheading"><a href="../../archives/sinonome/20220928.html">sinonome v0.0.16.1</a></h2>
+			<h2 class="articleheading"><a href="../../archives/sinonome/20221029.html">sinonome v0.0.17</a></h2>
 		</div>
 		<div class="body">
-				<p><code>##</code>の見出しレベルを指定する<code>headinglevel</code>モディファイアで、class属性を付与しない<code>noclass</code>指定が可能になりました。見出しレベルは指定したいが、classは必要ない、という場合に有用です。</p>
-<p>従来通りだと以下の通り。</p>
-<pre><code class="">{entrybody headinglevel="3"}
-　↓
-&lt;h3 class="heading1"&gt;見出し（従来通りクラスが付与される）&lt;/h3&gt;
+				<p><code>entries</code> <code>pages</code> <code>loop</code>タグに、インデックス値に置き換わる<code>__index__</code>と、ループ回数に置き換わる<code>__counter__</code>を実装しました。<br /></p>
+<h3 class="heading1">インデックス値とループ回数の違い</h3>
+<p><code>__index__</code>はインデックスの値なので、最初のループが0とは限りません。取得を逆順にする<code>reverse</code>や、最初のインデックスを指定する<code>offset</code>などがあるためです。</p>
+<p>一方の<code>__counter__</code>は、<code>reverse</code>で逆にしようと<code>offset</code>で開始位置を変えようと、最初のループが必ず1です。<br />
+よって以下の例のように、「最初に表示する内容」を判定する場合は<code>__counter__</code>を使うべきでしょう。</p>
+<p>例）最初の投稿にだけ本文を表示する</p>
+<pre><code class="">{entries}
+    &lt;h3&gt;{entrytitle}&lt;/h3&gt;
+    {setvar name="counter" value="__counter__"}
+    {if name="counter" eq="1"}
+        {entrybody}
+    {/if}
+{/entries}
 </code></pre>
-<p>クラスを付与しない場合は、数値の後ろにカンマ、その後ろにnoclassと書きます。以下の通り。</p>
-<pre><code class="">{entrybody headinglevel="3,noclass"}
-　↓
-&lt;h3&gt;見出し（クラスが付与されない）&lt;/h3&gt;
-</code></pre>
+<p>ループ系のタグは他に<code>archives</code>がありますが、実装し忘れました。次のバージョンで実装すると思います。</p>
 <ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.16.1.zip">v0.0.16.1 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.17.zip">v0.0.17 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
@@ -108,16 +112,11 @@
 </div>
 <div class="prevnext">
 	<ul>
+			<!-- なし -->
 		<li>
-			<a href="../../archives/sinonome/20221029.html">
-				<span>NEXT</span>
-				<span>sinonome v0.0.17</span>
-			</a>
-		</li>
-		<li>
-			<a href="../../archives/sinonome/20220821.html">
+			<a href="../../archives/sinonome/20220928.html">
 				<span>PREV</span>
-				<span>sinonome v0.0.15</span>
+				<span>sinonome v0.0.16.1</span>
 			</a>
 		</li>
 	</ul>

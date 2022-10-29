@@ -84,11 +84,55 @@
 		<div class="head">
 			<div class="meta">
 				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/09/28</p>
+				<p class="date">2022/10/29</p>
 			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220928.html">sinonome v0.0.16.1</a></h3>
+			<h3 class="articleheading"><a href="../../archives/sinonome/20221029.html">sinonome v0.0.17</a></h3>
 		</div>
 		<div class="body">
+				<p><code>entries</code> <code>pages</code> <code>loop</code>タグに、インデックス値に置き換わる<code>__index__</code>と、ループ回数に置き換わる<code>__counter__</code>を実装しました。<br /></p>
+<h4 class="heading1">インデックス値とループ回数の違い</h4>
+<p><code>__index__</code>はインデックスの値なので、最初のループが0とは限りません。取得を逆順にする<code>reverse</code>や、最初のインデックスを指定する<code>offset</code>などがあるためです。</p>
+<p>一方の<code>__counter__</code>は、<code>reverse</code>で逆にしようと<code>offset</code>で開始位置を変えようと、最初のループが必ず1です。<br />
+よって以下の例のように、「最初に表示する内容」を判定する場合は<code>__counter__</code>を使うべきでしょう。</p>
+<p>例）最初の投稿にだけ本文を表示する</p>
+<pre><code class="">{entries}
+    &lt;h3&gt;{entrytitle}&lt;/h3&gt;
+    {setvar name="counter" value="__counter__"}
+    {if name="counter" eq="1"}
+        {entrybody}
+    {/if}
+{/entries}
+</code></pre>
+<p>ループ系のタグは他に<code>archives</code>がありますが、実装し忘れました。次のバージョンで実装すると思います。</p>
+<ul>
+<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.17.zip">v0.0.17 ダウンロード</a></li>
+<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
+</ul>
+
+				
+			
+		</div>
+	</article>
+</div>
+
+
+
+
+	
+<div class="article">
+	<article>
+		<div class="head">
+			<div class="meta">
+				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
+				<p class="date">2022/09/28</p>
+			</div>
+			
+			<h3 class="articleheading"><a href="../../archives/sinonome/20220928.html">sinonome v0.0.16.1</a></h3>
+			
+		</div>
+		<div class="body">
+			
+			
 				<p><code>##</code>の見出しレベルを指定する<code>headinglevel</code>モディファイアで、class属性を付与しない<code>noclass</code>指定が可能になりました。見出しレベルは指定したいが、classは必要ない、という場合に有用です。</p>
 <p>従来通りだと以下の通り。</p>
 <pre><code class="">{entrybody headinglevel="3"}
@@ -242,27 +286,6 @@ webpages_file, D:\foobar_webpage\
 <p>その他、細かい変更を行っています。</p>
 <ul>
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.13.zip">v0.0.13 ダウンロード</a></li>
-<li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
-</ul>
-		</div>
-	</article>
-</div>
-<div class="article">
-	<article>
-		<div class="head">
-			<div class="meta">
-				<p class="tags"><a href="../../tags/sinonome/index.html">sinonome</a></p>
-				<p class="date">2022/08/15</p>
-			</div>
-			<h3 class="articleheading"><a href="../../archives/sinonome/20220815.html">sinonome v0.0.12</a></h3>
-		</div>
-		<div class="body">
-				<p>グローバルモディファイア<code>replace</code>がなぜか動作しなくなっていたので、修正しました。<br />
-おそらく<code>DEFINE</code>や<code>REPLACE</code>などを実装した際のうっかりミスだと思われます。</p>
-<p>あと、出力されるコードの相対パス部分に<code>./</code>を含むケースがありましたが、<code>./</code>を含まないように変更しました。特に<code>.././resources/foobar.css</code>のような（途中に<code>./</code>を含むような）不自然なケースもありましたが、これが修正されました。<br />
-そもそも相対パス生成部分の実装にすっきりしない部分があり、どうせなら根本的になおしたいと思っていたのですが、なかなかそこまではできないので、ひとまず機械的に<code>./</code>を削除しています。</p>
-<ul>
-<li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.12.zip">v0.0.12 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
 </ul>
 		</div>
