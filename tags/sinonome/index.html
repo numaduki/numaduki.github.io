@@ -89,7 +89,12 @@
 			<h3 class="articleheading"><a href="../../archives/sinonome/20221029.html">sinonome v0.0.17</a></h3>
 		</div>
 		<div class="body">
-				<p><code>entries</code> <code>pages</code> <code>loop</code>タグに、インデックス値に置き換わる<code>__index__</code>と、ループ回数に置き換わる<code>__counter__</code>を実装しました。<br /></p>
+				<p><code>entries</code> <code>pages</code> <code>loop</code>タグに、</p>
+<ul>
+<li>インデックス値に置き換わる<code>__index__</code></li>
+<li>ループ回数に置き換わる<code>__counter__</code></li>
+</ul>
+<p>を実装しました。</p>
 <h4 class="heading1">インデックス値とループ回数の違い</h4>
 <p><code>__index__</code>はインデックスの値なので、最初のループが0とは限りません。取得を逆順にする<code>reverse</code>や、最初のインデックスを指定する<code>offset</code>などがあるためです。</p>
 <p>一方の<code>__counter__</code>は、<code>reverse</code>で逆にしようと<code>offset</code>で開始位置を変えようと、最初のループが必ず1です。<br />
@@ -103,7 +108,7 @@
     {/if}
 {/entries}
 </code></pre>
-<p>ループ系のタグは他に<code>archives</code>がありますが、実装し忘れました。次のバージョンで実装すると思います。</p>
+<p>ループ系のタグは他に<code>archives</code>がありますが、こちらには実装し忘れました。次のバージョンで実装すると思います。</p>
 <ul>
 <li><a href="https://github.com/numaduki/ssg-sinonome/archive/refs/tags/v0.0.17.zip">v0.0.17 ダウンロード</a></li>
 <li><a href="https://github.com/numaduki/ssg-sinonome/releases">詳細情報(GitHub)</a></li>
