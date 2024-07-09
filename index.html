@@ -89,14 +89,16 @@
 <!-- 😮 -->
 <!-- 😀 -->
 
-<h2 class="heading2">最近の様子</h2>
 <style type="text/css">
-	#ajax_area h2 { font-weight: bold; margin-bottom: .5em; }
+	h2.heading2 small { font-size: .75em; }
+	#ajax_area > * { margin: 1em 0!important; }
+	#ajax_area h2 { font-weight: bold; margin: 0!important; }
 	#ajax_area > *:last-child { margin-bottom: 0!important; }
-	#ajax_from { margin-top: .5em; text-align: right;}
+	#ajax_from { margin-top: .75em;}
 </style>
+<h2 class="heading2">最近の様子 <small>from <a href="https://numaduki.github.io/index2.html">(nu)log</a></small></h2>
 <div id="ajax_area"></div>
-<div id="ajax_from"><p>from <a href="https://numaduki.github.io/index2.html">(nu)log.</a></p></div>
+<div id="ajax_from"><p></p></div>
 <script>
 	// 取得したいページのURL
 	const url = 'https://numaduki.github.io/index2.html';
@@ -109,6 +111,9 @@
 
 	// GETリクエストを送信
 	xhr.open('GET', url);
+	xhr.setRequestHeader('Pragma', 'no-cache');
+	xhr.setRequestHeader('Cache-Control', 'no-cache');
+	xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
 
 	// レスポンスが受信されたら実行する関数
 	xhr.onload = function() {
