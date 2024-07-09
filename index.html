@@ -111,9 +111,6 @@
 
 	// GETリクエストを送信
 	xhr.open('GET', url);
-	xhr.setRequestHeader('Pragma', 'no-cache');
-	xhr.setRequestHeader('Cache-Control', 'no-cache');
-	xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
 
 	// レスポンスが受信されたら実行する関数
 	xhr.onload = function() {
