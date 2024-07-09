@@ -81,74 +81,12 @@
 <div class="article">
 	<article>
 		<div class="body toppage">
-
 			<!--
 ## ようこそ、ゲストさん。
 -->
 <p>コンピューター関連の創作物を公開しています。<br /></p>
 <!-- 😮 -->
 <!-- 😀 -->
-
-<h2 class="heading2">最近の様子</h2>
-<style type="text/css">
-	#ajax_area h2 { font-weight: bold; margin-bottom: .5em; }
-	#ajax_area > *:last-child { margin-bottom: 0!important; }
-	#ajax_from { margin-top: .5em; text-align: right;}
-</style>
-<div id="ajax_area"></div>
-<div id="ajax_from"><p>from <a href="https://numaduki.github.io/index2.html">(nu)log.</a></p></div>
-<script>
-	// 取得したいページのURL
-	const url = 'https://numaduki.github.io/index2.html';
-	const sample01 = document.getElementById('ajax_area');
-
-	// 非同期処理
-	async function fetchAndPrintDivContent() {
-	// XMLHttpRequestオブジェクトを作成
-	const xhr = new XMLHttpRequest();
-
-	// GETリクエストを送信
-	xhr.open('GET', url);
-
-	// レスポンスが受信されたら実行する関数
-	xhr.onload = function() {
-		// レスポンスのステータスコードが200であれば処理を実行
-		if (xhr.status === 200) {
-			// レスポンスのHTMLテキストを取得
-			const html = xhr.responseText;
-
-			// DOMParserを使ってHTMLをパース
-			const parser = new DOMParser();
-			const doc = parser.parseFromString(html, 'text/html');
-
-			// クラス「ignore」が付与されていない最初のdiv要素を取得
-			const firstDiv = doc.querySelector('section:not(.ajax_ignore)');
-
-			// div要素の中身を取得して表示
-			if (firstDiv) {
-			sample01.innerHTML = firstDiv.innerHTML;
-			} else {
-			sample01.innerHTML = '(error[1])';
-			}
-		} else {
-			sample01.innerHTML = '(error[2])';
-		}
-	};
-
-	// エラーが発生した場合は実行する関数
-	xhr.onerror = function() {
-	console.error('エラーが発生しました。');
-	};
-
-	// リクエストを送信
-	xhr.send();
-}
-
-// 非同期処理を実行
-fetchAndPrintDivContent();
-
-</script>
-
 <h2 class="heading2">最新記事</h2>
 <ul>
 <li><a href="archives/sinonome/20221029.html">2022/10/29 - <span class="tag">[sinonome]</span> sinonome v0.0.17</a></li>
