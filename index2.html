@@ -13,8 +13,8 @@
 	<h1><img src="./files/logo.svg">LOG.</h1>
 
 	<section class="ajax_ignore">
-		<h2>about</h2>
-		<p>2024年現在、作者（沼月）の創作意識が小説に全振りしていることにより<a href="../">コンピューター関連創作物サイト(numaduki creation)</a>が止まってしまっているため、生存確認的にログを書き残そうという目的のページです。</p>
+		<!--<h2>about</h2>-->
+		<p>2024年現在、作者（沼月）の創作意識が小説に全振りしていることにより<a href="./">コンピューター関連創作物サイト(numaduki creation)</a>が止まってしまっているため、生存確認的にログを書き残そうという目的のページです。</p>
 	</section>
 
 <!--
@@ -22,17 +22,47 @@
 -->
 
 <section>
-	<h2>2024-07-10(Wed) 00:44</h2>
+	<h2>2024-07-10 トマトトマトした料理</h2>
 	<p>
-		Bingによると邪馬台国はタンザニアにあるとのこと<br><a href="https://forest.watch.impress.co.jp/docs/serial/yajiuma/1606533.html">https://forest.watch.impress.co.jp/docs/serial/yajiuma/1606533.html</a>
+		ずっと疑問に思っていたことが伝わったので嬉しかった<br>
+		肉肉しいは憎々しいをもじってるわけだから並列するのは違う気がするけど
 	</p>
 	<p>
-		私の出身地である長崎県大村市にもあったらしいのでもうどこにでもあったのではという気がする<br><a href="https://www.kosho.or.jp/products/detail.php?product_id=370301193">https://www.kosho.or.jp/products/detail.php?product_id=370301193</a>
+		<img src="nulog_images/gemini_tomatotomato_01.png">
+		<img src="nulog_images/gemini_tomatotomato_02.png">
+		<img src="nulog_images/gemini_tomatotomato_03.png">
+	</p>
+</section>
+
+
+<section>
+	<h2>2024-07-10 牛丼が出てくるMr.Childrenの歌</h2>
+
+<p>
+Gemini（のハルシネーション）で遊ぶとついつい時間を削がれてしまう<br>
+想定回答は「旅人」だったけどそれを軽々と突き抜けていった<br>
+全体的におかしいんだけど後半の畳みかけは特に秀逸だと思う
+</p>
+
+	<p>
+		<img src="nulog_images/gemini_gyudon_01.png">
+		<img src="nulog_images/gemini_gyudon_02.png">
+	</p>
+	<p>
+		ただ真面目な話、インタビューまで捏造するのはさすがにちょっとな……<br>
+	</p>
+
+</section>
+
+<section>
+	<h2>2024-07-10</h2>
+	<p>
+		文章は絵以上にAIで生成したかどうかの見分けが付かないので、もう何を書いても疑いの目（？）を向けられることは必至　そんならもう好きに書いてこれが私の作品です、と胸張っていればいいよねという気がする　そもそも胸張りたいと思って書いているわけでもないけど
 	</p>
 </section>
 
 <section>
-	<h2>2024-07-09(Tue) 23:16</h2>
+	<h2>2024-07-09</h2>
 	<p>
 		ブログツールをどこかに立ててもいいんだけど、HTML手書きの方がある程度ハードルが高いので妙なことをうっかり書かずに済みそうではある<br />
 		長く書くと大量にマークアップすることになってしまうので長さも抑制できそう
@@ -42,6 +72,32 @@
 	</p>
 </section>
 
+<footer>
+	&copy; numaduki
+</footer>
+
 </div>
+
+<script type="text/javascript">
+const preTagsWithClass = document.querySelectorAll('pre.harusine');
+
+for (const preTag of preTagsWithClass) {
+	const standardText = document.createElement('div');
+	standardText.textContent = '※この内容はAIによるもので、明らかな間違いが含まれます';
+	standardText.classList.add('harusine_waring');
+	preTag.parentNode.insertBefore(standardText, preTag);
+}
+
+const imgTags = document.querySelectorAll('section img:not(:has(a))');
+
+for (const imgTag of imgTags) {
+  const newATag = document.createElement('a');
+  newATag.href = imgTag.src;
+  imgTag.parentNode.insertBefore(newATag, imgTag);
+  newATag.appendChild(imgTag);
+}
+
+</script>
+
 </body>
 </html>
