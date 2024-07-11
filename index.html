@@ -90,7 +90,7 @@
 </p>
 <p>
 	ただいま別の創作に専念しているため、当サイトの更新は止まっています。<br>
-	作者の様子は「最近の様子」および<a href=""></a>nulogでごらんください。
+	作者の様子は「最近の様子」および <a href="./index2.html">( nu ) log.</a> でごらんください。
 </p>
 <!-- 😮 -->
 <!-- 😀 -->
@@ -102,7 +102,7 @@
 	#ajax_area > *:last-child { margin-bottom: 0!important; }
 	#ajax_from { margin-top: .75em;}
 </style>
-<h2 class="heading2">最近の様子 <small>from <a href="./index2.html">(nu)log</a></small></h2>
+<h2 class="heading2">最近の様子 <small>from <a href="./index2.html">( nu ) log.</a></small></h2>
 <div id="ajax_area"><noscript><p>※JavaScriptがONの場合に表示されます</p></noscript>
 </div>
 <div id="ajax_from"><p></p></div>
@@ -110,15 +110,12 @@
 	// 取得したいページのURL
 	const url = 'https://numaduki.github.io/index2.html';
 	const sample01 = document.getElementById('ajax_area');
-
 	// 非同期処理
 	async function fetchAndPrintDivContent() {
 	// XMLHttpRequestオブジェクトを作成
 	const xhr = new XMLHttpRequest();
-
 	// GETリクエストを送信
 	xhr.open('GET', url);
-
 	// レスポンスが受信されたら実行する関数
 	xhr.onload = function() {
 		// レスポンスのステータスコードが200であれば処理を実行
@@ -143,19 +140,15 @@
 			sample01.innerHTML = '(error[2])';
 		}
 	};
-
 	// エラーが発生した場合は実行する関数
 	xhr.onerror = function() {
 	console.error('エラーが発生しました。');
 	};
-
 	// リクエストを送信
 	xhr.send();
 }
-
 // 非同期処理を実行
 fetchAndPrintDivContent();
-
 </script>
 
 <h2 class="heading2">最新記事</h2>
