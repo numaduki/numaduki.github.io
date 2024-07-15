@@ -9,7 +9,7 @@ section > *:first-child { margin-top: 0; padding-top: 0; }
 section > *:last-child { margin-bottom: 0; padding-bottom: 0; }
 section img { max-width: 100%; height: auto; }
 h2 { font-size: 1.2em; font-family: system-ui; }
-p { transform: rotateZ(.03deg); }
+/*p { transform: rotateZ(.03deg); }*/
 footer { font-size: .75em; padding: 2em; text-align: center; }
 
 /*
