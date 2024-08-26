@@ -97,15 +97,16 @@
 
 <style type="text/css">
 	h2.heading2 small { font-size: .75em; }
-	#ajax_area > * { margin: 1em 0!important; }
-	#ajax_area h2 { font-weight: bold; margin: 0!important; }
-	#ajax_area > *:last-child { margin-bottom: 0!important; }
-	#ajax_from { margin-top: .75em;}
+	#ajax_area { font-family: system-ui; }
+	#ajax_area div.ajax_item > * { margin: 1em 0!important; font-weight: normal; line-height: 1.5 !important; }
+	#ajax_area div.ajax_item > h2 { font-weight: bold; margin: 0!important; font-size: 1.1em; }
+	#ajax_area div.ajax_item > *:first-child { margin-top: 0!important; }
+	#ajax_area div.ajax_item > *:last-child { margin-bottom: 0!important; }
+	#ajax_area div.ajax_item { margin-bottom: 1.75em; margin-right: 1em; padding: .25em 1.25em; border-left: 1px dashed currentcolor;}
 </style>
 <h2 class="heading2">最近の様子 <small>from <a href="./index2.html">( nu ) log.</a></small></h2>
 <div id="ajax_area"><noscript><p>※JavaScriptがONの場合に表示されます</p></noscript>
 </div>
-<div id="ajax_from"><p></p></div>
 <script>
 	// 取得したいページのURL
 	const url = 'https://numaduki.github.io/index2.html';
@@ -127,14 +128,15 @@
 			const parser = new DOMParser();
 			const doc = parser.parseFromString(html, 'text/html');
 
-			// クラス「ignore」が付与されていない最初のdiv要素を取得
-			const firstDiv = doc.querySelector('section:not(.ajax_ignore)');
-
-			// div要素の中身を取得して表示
-			if (firstDiv) {
-			sample01.innerHTML = firstDiv.innerHTML;
-			} else {
-			sample01.innerHTML = '(error[1])';
+			// クラス「ignore」が付与されていない要素を取得
+			const sections = doc.querySelectorAll('section:not(.ajax_ignore)');
+			let item_len = 5;
+			if ( item_len > sections.length ) { item_len = sections.length; }
+			for (let i = 0; i < item_len; i ++) {
+				section_item = sections[i];
+				if ( section_item ) {
+					sample01.innerHTML += '<div class="ajax_item">' + section_item.innerHTML + '</div>';
+				}
 			}
 		} else {
 			sample01.innerHTML = '(error[2])';
