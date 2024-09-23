@@ -6,19 +6,29 @@
 		<link rel="apple-touch-icon" href="./files/apple-touch-icon-20220504.png">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>( nu ) log.</title>
-		<link rel="stylesheet" href="./index2.css">
+		<link rel="stylesheet" href="./index2.css?202409220000">
 	</head>
 	<body>
 		<div id="wrapper">
 			<h1><img src="./files/logo.svg">LOG.</h1>
 			<!--
 				メモ:
-				.ajax_ignoreの付いていない最初のsectionのinnerHTMLがajaxで取得・表示されます
+				- .ajax_ignoreの付いていない最初のsectionのinnerHTMLがajaxで取得・表示される
+				- jsにより画像には自動でその画像へのリンクが張られる（拡大用）
+				- 手動でaタグを書く場合
+					- 拡大可能アイコンを表示するにはaタグ.expandを付与
 			-->
 			<section class="ajax_ignore">
 				<!--<h2>about</h2>-->
 				<p>2024年現在、作者（沼月）の創作意識が小説に全振りしていることにより<a href="./">コンピューター関連創作物サイト(numaduki creation)</a>が止まってしまっているため、生存確認的にログを書き残そうという目的のページです。</p>
 			</section>
+
+<section>
+	<h2>2024-09-23 / 2024年の秋(2)</h2>
+	<p>
+		明らかに朝が涼しくなった　しかし昨日の天気の悪さの名残のようにも思うし天気予報では明日～明後日は少し気温が上がるようなのでまだしっぽが見えたレベル　おそらく今週で確定する
+	</p>
+</section>
 
 <section>
 	<h2>2024-09-21 / 100円ショップ</h2>
@@ -49,7 +59,7 @@
 </section>
 
 <section>
-	<h2>2024-09-01 / 秋</h2>
+	<h2>2024-09-01 / 2024年の秋</h2>
 	<p>
 		とうとう朝起きて部屋の中が暑いなと思わなかった　「もしかして秋じゃないか？」と思ってカーテン開けたけどまだ秋というまではなかった
 	</p>
@@ -322,6 +332,6 @@
 				( nu ) log. &copy; numaduki
 			</footer>
 		</div>
-		<script src="./index2.js"></script>
+		<script src="./index2.js?202409220000"></script>
 	</body>
 </html>

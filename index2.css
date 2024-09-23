@@ -1,17 +1,26 @@
-html { background-color: #f1f1f1; font-family: sans-serif; }
+/*
+	メモ: Firefoxをフォークしたブラウザーにも最大限対応したいので、入れ子での記法や新しいセレクタは使用しない方針
+*/
+html { background-color: #f1f1f1; font-family: Meiryo, sans-serif; }
 body { -webkit-text-size-adjust: none; }
-h1 { display: flex; justify-content: center; align-items: center; gap: .35em; font-size: 1em; font-family: system-ui; margin: 3em 0; letter-spacing: .05em; }
+h1, h2 { font-family: system-ui, Yu Gothic UI, Segoe UI, sans-serif; }
+h1 { display: flex; justify-content: center; align-items: center; gap: .35em; font-size: 1em; margin: 3em 0; letter-spacing: .05em; }
 h1 img { width: 1.75em; height: auto; }
-#wrapper { width: 32em; max-width: 95%; margin: auto; }
-section { line-height: 1.4; background-color: #fdfdfd; padding: 1.25em 1.5em 1.5em; border-radius: 1em; margin-bottom: 1em; }
-section.ajax_ignore { border-radius: 0; font-size: .75em; padding: 1em; }
+#wrapper { width: 32em; max-width: 97%; margin: auto; }
+section { line-height: 1.4; background-color: #fdfdfd; padding: 1.25em 1.5em 1.5em; border-radius: 0; margin-bottom: 1em; overflow-wrap: break-word; }
+section.ajax_ignore { border-radius: 1em; font-size: .75em; padding: 1.5em 1.85em; }
 section > *:first-child { margin-top: 0; padding-top: 0; }
 section > *:last-child { margin-bottom: 0; padding-bottom: 0; }
 section img { max-width: 100%; height: auto; }
-h2 { font-size: 1.2em; font-family: system-ui; }
-/*p { transform: rotateZ(.03deg); }*/
+section a.expand { position:relative; display:inline-block; margin-bottom: .5em; }
+section a.expand:last-child { margin-bottom:0; }
+section a.expand img { vertical-align:top; }
+section a.expand:before { content:'拡大表示'; display:inline-block; font-size: 11px; position:absolute; color:#000; background: url(./nulog_images/expand.svg) 4px center / auto 68% no-repeat rgba(255,255,255,.85); right:1px; bottom:1px; padding:7px 0 7px 25px; line-height:1; width: 0; overflow: hidden; white-space: nowrap; transition: width .4s, color .2s .4s, background-color .2s .4s; }
+section a.expand:hover:before { background-color:#fff; letter-spacing: 0; width:calc(4em + 5px); border-radius:0; }
+h2 { font-size: 1.2em; }
 footer { font-size: .75em; padding: 2em; text-align: center; }
-
+a.url_as_linktext { word-break: break-all; }
 /*
+p { transform: rotateZ(.03deg); }
 pre { white-space: pre-wrap; line-height: 1.2; padding: 1.5em; font-size: .9375em; background-color: #eee; }
 */
