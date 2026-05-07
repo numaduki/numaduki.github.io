@@ -858,3 +858,18 @@ form input[type=submit]:hover {
   -webkit-transform: translateX(1px) translateY(1px);
           transform: translateX(1px) translateY(1px);
 }
+
+div.important_notice {
+	background-color: #693;
+	color: #fff;
+	padding:15px 10px 12px;
+	font-size: 15px;
+	line-height:1.5;
+	text-align:center;
+	outline: 2px solid white;
+	outline-offset: -5px;
+}
+div.important_notice a {
+	font-weight: bold;
+	text-decoration:underline;
+}
